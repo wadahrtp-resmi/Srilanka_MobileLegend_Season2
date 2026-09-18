@@ -1,0 +1,5816 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Srilanka MLBB Season 2</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 0%, #1b2b55 0, transparent 32%),
+        radial-gradient(circle at 90% 100%, #401b32 0, transparent 32%),
+        #080b14;
+
+    color: #fff;
+    min-height: 100vh;
+    padding: 35px 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.tag {
+    display: inline-block;
+
+    padding: 7px 16px;
+
+    border: 1px solid #f5c451;
+    border-radius: 30px;
+
+    color: #f5c451;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 14px;
+}
+
+.header h1 {
+    font-size: clamp(30px, 5vw, 58px);
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.header h1 span {
+    color: #f5c451;
+}
+
+.header p {
+    margin-top: 9px;
+
+    color: #8993a8;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.section-toggle {
+    display: flex;
+    justify-content: center;
+
+    margin: 25px 0;
+}
+
+.toggle-btn {
+
+    width: 320px;
+
+    padding: 16px 20px;
+
+    border: 1px solid #f5c451;
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1c2438,
+            #101522
+        );
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.30);
+
+    transition: .25s;
+}
+
+.toggle-btn:hover {
+
+    transform: translateY(-3px);
+
+    border-color: #ffe28a;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.40),
+        0 0 30px rgba(245,196,81,.12);
+}
+
+.toggle-btn:active {
+    transform: scale(.98);
+}
+
+.toggle-btn .icon {
+    color: #f5c451;
+    font-size: 18px;
+}
+
+.arrow {
+    color: #f5c451;
+
+    font-size: 12px;
+
+    transition: .3s;
+}
+
+
+/* =====================================================
+   COLLAPSE
+===================================================== */
+
+.collapsible {
+
+    max-height: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    transition:
+        max-height .7s ease,
+        opacity .35s ease,
+        margin .6s ease;
+}
+
+.collapsible.open {
+
+    max-height: 50000px;
+
+    opacity: 1;
+
+    margin-bottom: 55px;
+}
+
+
+/* =====================================================
+   GROUP
+===================================================== */
+
+.groups {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 25px;
+}
+
+.group {
+
+    background:
+        rgba(15,20,34,.94);
+
+    border: 1px solid #252d42;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.30);
+}
+
+.group-title {
+
+    padding: 18px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            90deg,
+            #171e31,
+            #101522
+        );
+
+    border-bottom:
+        1px solid #252d42;
+}
+
+.group-title h2 {
+    font-size: 20px;
+}
+
+.group-title span {
+
+    color: #f5c451;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.team-list {
+    padding: 15px;
+}
+
+.team {
+
+    display: grid;
+
+    grid-template-columns:
+        40px 1fr 55px 60px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 8px;
+
+    border-radius: 11px;
+
+    background: #111726;
+
+    border:
+        1px solid transparent;
+
+    transition: .2s;
+}
+
+.team:last-child {
+    margin-bottom: 0;
+}
+
+.team:hover {
+
+    border-color: #f5c451;
+
+    transform:
+        translateX(3px);
+}
+
+.rank {
+
+    color: #667188;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.team-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.logo {
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5c451,
+            #b97917
+        );
+
+    color: #111;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 900;
+
+    font-size: 11px;
+
+    flex-shrink: 0;
+}
+
+.team-name {
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+.team-sub {
+
+    color: #667188;
+
+    font-size: 10px;
+
+    margin-top: 3px;
+}
+
+.stat {
+
+    text-align: center;
+
+    color: #b8c0d0;
+
+    font-size: 11px;
+}
+
+.stat strong {
+
+    display: block;
+
+    color: #fff;
+
+    font-size: 15px;
+}
+
+.qualified {
+
+    border-color:
+        rgba(245,196,81,.35);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(245,196,81,.08),
+            #111726
+        );
+}
+
+.qualified .rank {
+    color: #f5c451;
+}
+
+
+/* =====================================================
+   PLAYOFF
+===================================================== */
+
+.playoff-content {
+    padding-top: 10px;
+}
+
+.playoff-title {
+
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.playoff-title h2 {
+
+    font-size: 28px;
+
+    letter-spacing: 2px;
+}
+
+.playoff-title p {
+
+    color: #69748a;
+
+    margin-top: 7px;
+
+    font-size: 13px;
+}
+
+.bracket {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        80px
+        1fr
+        80px
+        1fr;
+
+    align-items: center;
+
+    max-width: 1250px;
+
+    margin: auto;
+}
+
+.round {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-around;
+
+    height: 470px;
+
+    position: relative;
+
+    gap: 35px;
+}
+
+.round-title {
+
+    position: absolute;
+
+    top: -35px;
+
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #69748a;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.match {
+
+    background: #111726;
+
+    border: 1px solid #293249;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+    transition: .2s;
+}
+
+.match:hover {
+
+    border-color: #f5c451;
+
+    transform:
+        translateY(-2px);
+}
+
+.match-title {
+
+    background: #181f31;
+
+    padding: 8px 12px;
+
+    color: #68738a;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.player {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 13px;
+
+    border-top:
+        1px solid #252d40;
+}
+
+.player span:first-child {
+
+    color: #d9deea;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.score {
+
+    color: #f5c451;
+
+    font-size: 16px;
+
+    font-weight: 900;
+}
+
+.connector {
+
+    height: 2px;
+
+    background: #323b52;
+
+    position: relative;
+}
+
+.connector::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -1px;
+
+    top: -4px;
+
+    width: 10px;
+
+    height: 10px;
+
+    border-top:
+        2px solid #323b52;
+
+    border-right:
+        2px solid #323b52;
+
+    transform:
+        rotate(45deg);
+}
+
+.final {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.final-box {
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(245,196,81,.13),
+            #111726
+        );
+
+    border:
+        1px solid #f5c451;
+
+    border-radius: 18px;
+
+    padding: 28px 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 40px rgba(245,196,81,.08);
+}
+
+.trophy {
+
+    font-size: 44px;
+
+    margin-bottom: 10px;
+}
+
+.final-box h3 {
+
+    color: #f5c451;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+.champion {
+
+    padding: 18px 10px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(245,196,81,.08);
+
+    border:
+        1px dashed #7e6630;
+
+    color: #777f90;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   SCHEDULE
+===================================================== */
+
+.schedule-title {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.schedule-title h2 {
+
+    font-size: 28px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.schedule-title p {
+
+    color: #69748a;
+
+    font-size: 13px;
+
+    margin-top: 8px;
+}
+
+.schedule-group {
+
+    margin-bottom: 35px;
+
+    background:
+        rgba(15,20,34,.94);
+
+    border:
+        1px solid #252d42;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.25);
+}
+
+.schedule-group:last-child {
+    margin-bottom: 0;
+}
+
+.schedule-group-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #171e31,
+            #101522
+        );
+
+    border-bottom:
+        1px solid #252d42;
+}
+
+.schedule-group-header h3 {
+    font-size: 19px;
+}
+
+.schedule-group-header span {
+
+    color: #f5c451;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.schedule-round {
+
+    padding: 20px;
+
+    border-bottom:
+        1px solid #20283a;
+}
+
+.schedule-round:last-child {
+    border-bottom: none;
+}
+
+.round-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+.round-number {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5c451,
+            #b97917
+        );
+
+    color: #111;
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
+
+.round-name {
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.round-info {
+
+    color: #667188;
+
+    font-size: 10px;
+
+    margin-top: 3px;
+}
+
+.schedule-matches {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 12px;
+}
+
+.schedule-match {
+
+    display: grid;
+
+    grid-template-columns:
+        90px 1fr 55px;
+
+    align-items: center;
+
+    min-height: 88px;
+
+    padding: 13px;
+
+    background: #111726;
+
+    border:
+        1px solid #252e43;
+
+    border-radius: 13px;
+
+    transition: .2s;
+}
+
+.schedule-match:hover {
+
+    border-color: #f5c451;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.25);
+}
+
+.match-date {
+
+    text-align: center;
+
+    border-right:
+        1px solid #293249;
+
+    padding-right: 12px;
+}
+
+.match-date .day {
+
+    display: block;
+
+    color: #f5c451;
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+.match-date .time {
+
+    display: block;
+
+    color: #69748a;
+
+    font-size: 10px;
+
+    margin-top: 5px;
+}
+
+.schedule-teams {
+
+    padding:
+        0 14px;
+}
+
+.schedule-team {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding: 5px 0;
+}
+
+.schedule-team-name {
+
+    color: #d9deea;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.schedule-team-code {
+
+    color: #59647a;
+
+    font-size: 9px;
+}
+
+.vs {
+
+    text-align: center;
+
+    color: #59647a;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.match-id {
+
+    text-align: center;
+
+    color: #59647a;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    border-left:
+        1px solid #293249;
+
+    padding-left: 10px;
+}
+
+
+/* =====================================================
+   TEAMS & PLAYERS
+===================================================== */
+
+.players-title {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.players-title h2 {
+
+    font-size: 28px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.players-title p {
+
+    color: #69748a;
+
+    font-size: 13px;
+
+    margin-top: 8px;
+}
+
+
+/* TEAM PLAYER GRID */
+
+.player-teams {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.player-team {
+
+    background:
+        rgba(15,20,34,.94);
+
+    border:
+        1px solid #252d42;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.25);
+
+    transition: .25s;
+}
+
+.player-team:hover {
+
+    border-color:
+        rgba(245,196,81,.55);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* TEAM HEADER */
+
+.player-team-header {
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            90deg,
+            #171e31,
+            #101522
+        );
+
+    border-bottom:
+        1px solid #252d42;
+}
+
+.player-team-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+.team-big-logo {
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5c451,
+            #b97917
+        );
+
+    color: #111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    flex-shrink: 0;
+}
+
+.player-team-name {
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    letter-spacing: .5px;
+}
+
+.player-team-region {
+
+    color: #69748a;
+
+    font-size: 10px;
+
+    margin-top: 4px;
+}
+
+.player-count {
+
+    color: #f5c451;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+/* PLAYER LIST */
+
+.player-list {
+
+    padding: 13px;
+}
+
+.player-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 12px;
+
+    margin-bottom: 7px;
+
+    background: #111726;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 10px;
+
+    transition: .2s;
+}
+
+.player-card:last-child {
+    margin-bottom: 0;
+}
+
+.player-card:hover {
+
+    border-color:
+        rgba(245,196,81,.5);
+
+    background:
+        #151c2c;
+
+    transform:
+        translateX(3px);
+}
+
+.player-number {
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background:
+        rgba(245,196,81,.10);
+
+    color: #f5c451;
+
+    font-size: 10px;
+
+    font-weight: 900;
+}
+
+.player-avatar {
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #252f46,
+            #151b2b
+        );
+
+    border:
+        1px solid #303b54;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #9ba5b8;
+
+    font-size: 10px;
+
+    font-weight: 900;
+}
+
+.player-details {
+
+    flex: 1;
+}
+
+.player-name {
+
+    color: #e1e5ee;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.player-role {
+
+    color: #59647a;
+
+    font-size: 9px;
+
+    margin-top: 3px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .7px;
+}
+
+.player-status {
+
+    color: #f5c451;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: .5px;
+}
+
+
+/* =====================================================
+   SPONSOR
+===================================================== */
+
+.sponsor-section {
+
+    margin-top: 25px;
+
+    text-align: center;
+}
+
+.sponsor-content {
+
+    padding: 40px 20px 45px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(245,196,81,.06),
+            rgba(15,20,34,.90)
+        );
+
+    border:
+        1px solid #252d42;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.30);
+}
+
+.sponsor-label {
+
+    display: inline-block;
+
+    color: #f5c451;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+.sponsor-content h2 {
+
+    font-size: 25px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.sponsor-image-box {
+
+    width: 260px;
+
+    margin: auto;
+
+    padding: 8px;
+
+    background: #0d111d;
+
+    border:
+        1px solid #30394d;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.30);
+}
+
+.sponsor-image {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 120px;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+}
+
+.sponsor-name {
+
+    margin-top: 18px;
+
+    color: #f5c451;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.sponsor-desc {
+
+    margin-top: 7px;
+
+    color: #69748a;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    text-align: center;
+
+    margin-top: 35px;
+
+    color: #4f596d;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+/* =====================================================
+   MVP & SAVAGE
+===================================================== */
+
+.mvp-savage-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.award-panel {
+    background:
+        rgba(15,20,34,.94);
+
+    border: 1px solid #252d42;
+    border-radius: 18px;
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.30);
+}
+
+.award-header {
+    padding: 20px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            90deg,
+            #171e31,
+            #101522
+        );
+
+    border-bottom: 1px solid #252d42;
+}
+
+.award-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.award-icon {
+   width: 58px;
+    height: 58px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.award-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    font-size: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5c451,
+            #b97917
+        );
+
+    box-shadow:
+        0 0 20px rgba(245,196,81,.15);
+}
+
+.savage-panel .award-icon {
+    background:
+        linear-gradient(
+            135deg,
+            #ff5c5c,
+            #a91616
+        );
+
+    box-shadow:
+        0 0 20px rgba(255,70,70,.18);
+}
+
+.award-header h3 {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.award-header p {
+    color: #69748a;
+    font-size: 9px;
+    margin-top: 4px;
+}
+
+.award-badge {
+    padding: 6px 9px;
+
+    border-radius: 20px;
+
+    color: #f5c451;
+
+    border: 1px solid rgba(245,196,81,.3);
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.savage-panel .award-badge {
+    color: #ff7777;
+    border-color: rgba(255,80,80,.3);
+}
+
+
+/* MVP ROW */
+
+.mvp-list,
+.savage-list {
+    padding: 14px;
+}
+
+.mvp-card,
+.savage-card {
+
+    display: grid;
+
+    grid-template-columns:
+        42px 1fr auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px;
+
+    margin-bottom: 8px;
+
+    border-radius: 11px;
+
+    background: #111726;
+
+    border: 1px solid transparent;
+
+    transition: .25s;
+}
+
+.mvp-card:last-child,
+.savage-card:last-child {
+    margin-bottom: 0;
+}
+
+.mvp-card:hover {
+
+    border-color: #f5c451;
+
+    transform:
+        translateX(4px);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(245,196,81,.08),
+            #111726
+        );
+}
+
+.savage-card:hover {
+
+    border-color: #ff5555;
+
+    transform:
+        translateX(4px);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,70,70,.08),
+            #111726
+        );
+}
+
+
+/* RANK */
+
+.award-rank {
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        rgba(245,196,81,.10);
+
+    color: #f5c451;
+
+    font-size: 12px;
+
+    font-weight: 900;
+}
+
+.mvp-card:nth-child(1) .award-rank {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe79a,
+            #d49b20
+        );
+
+    color: #111;
+
+    box-shadow:
+        0 0 15px rgba(245,196,81,.25);
+}
+
+.mvp-card:nth-child(2) .award-rank {
+    color: #d8dce5;
+    background: rgba(210,215,225,.10);
+}
+
+.mvp-card:nth-child(3) .award-rank {
+    color: #d99a62;
+    background: rgba(180,100,50,.10);
+}
+
+
+/* PLAYER */
+
+.award-player {
+    min-width: 0;
+}
+
+.award-player-name {
+
+    color: #e5e8ef;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.award-player-team {
+
+    color: #69748a;
+
+    font-size: 9px;
+
+    margin-top: 4px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .7px;
+}
+
+
+/* STAT */
+
+.award-stat {
+
+    text-align: right;
+}
+
+.award-stat strong {
+
+    display: block;
+
+    color: #f5c451;
+
+    font-size: 15px;
+
+    font-weight: 900;
+}
+
+.award-stat span {
+
+    color: #59647a;
+
+    font-size: 8px;
+
+    letter-spacing: .7px;
+}
+
+
+/* SAVAGE */
+
+.savage-count {
+
+    min-width: 58px;
+
+    padding: 7px 8px;
+
+    border-radius: 9px;
+
+    text-align: center;
+
+    background:
+        rgba(255,60,60,.08);
+
+    border:
+        1px solid rgba(255,60,60,.18);
+}
+
+.savage-count strong {
+
+    display: block;
+
+    color: #ff6868;
+
+    font-size: 17px;
+
+    font-weight: 900;
+}
+
+.savage-count span {
+
+    color: #8d5960;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+/* EMPTY */
+
+.award-empty {
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    color: #59647a;
+
+    font-size: 11px;
+
+    border: 1px dashed #293249;
+
+    border-radius: 12px;
+}
+
+.award-empty .empty-icon {
+
+    display: block;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+    opacity: .6;
+}
+
+
+/* MOBILE */
+
+@media(max-width: 900px) {
+
+    .mvp-savage-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .award-header {
+        padding: 16px;
+    }
+
+    .mvp-list,
+    .savage-list {
+        padding: 10px;
+    }
+
+    .mvp-card,
+    .savage-card {
+        padding: 11px;
+    }
+
+    .award-player-name {
+        font-size: 12px;
+    }
+
+}
+
+@media(max-width: 900px) {
+
+    .groups {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .player-teams {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .bracket {
+
+        display: block;
+    }
+
+    .round {
+
+        height: auto;
+
+        gap: 18px;
+
+        margin-bottom: 50px;
+    }
+
+    .round-title {
+
+        position: static;
+
+        margin-bottom: 8px;
+    }
+
+    .connector {
+        display: none;
+    }
+
+    .final {
+        margin-top: 10px;
+    }
+
+    .schedule-matches {
+
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+@media(max-width: 600px) {
+
+    body {
+
+        padding:
+            20px 12px;
+    }
+
+    .toggle-btn {
+
+        width: 100%;
+    }
+
+    .team {
+
+        grid-template-columns:
+            30px 1fr 40px;
+    }
+
+    .team .stat:last-child {
+        display: none;
+    }
+
+    .team-info {
+        gap: 8px;
+    }
+
+    .logo {
+
+        width: 31px;
+        height: 31px;
+    }
+
+    .team-name {
+        font-size: 13px;
+    }
+
+    .schedule-match {
+
+        grid-template-columns:
+            70px 1fr 42px;
+    }
+
+    .schedule-teams {
+        padding: 0 8px;
+    }
+
+    .schedule-team-name {
+        font-size: 11px;
+    }
+
+    .schedule-group-header {
+        padding: 16px;
+    }
+
+    .schedule-round {
+        padding: 14px;
+    }
+
+    .sponsor-content {
+        padding:
+            30px 12px 35px;
+    }
+
+    .sponsor-content h2 {
+        font-size: 21px;
+    }
+
+    .sponsor-image-box {
+        width: 220px;
+    }
+
+    .player-team-header {
+        padding: 15px;
+    }
+
+    .player-list {
+        padding: 10px;
+    }
+
+    .player-card {
+        padding: 10px;
+    }
+
+}
+
+
+/* =====================================================
+   HERO PHOTO MARQUEE
+===================================================== */
+
+.hero-marquee {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-bottom: 35px;
+    overflow: hidden;
+    position: relative;
+    padding: 6px 0;
+    background: rgba(0,0,0,.18);
+    border-top: 1px solid rgba(245,196,81,.15);
+    border-bottom: 1px solid rgba(245,196,81,.15);
+}
+
+.hero-track {
+    display: flex;
+    width: max-content;
+    animation: heroScroll 55s linear infinite;
+    will-change: transform;
+}
+
+.hero-set {
+    display: flex;
+    gap: 14px;
+    padding-right: 14px;
+    flex-shrink: 0;
+}
+
+.hero-photo {
+    width: 190px;
+    height: 110px;
+    flex: 0 0 190px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid #30394d;
+    background: #111726;
+    box-shadow: 0 8px 25px rgba(0,0,0,.35);
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .35s ease;
+}
+
+.hero-photo:hover img {
+    transform: scale(1.08);
+}
+
+.hero-marquee:hover .hero-track {
+    animation-play-state: paused;
+}
+
+@keyframes heroScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-track {
+        animation-duration: 42s;
+    }
+
+    .hero-set {
+        gap: 9px;
+        padding-right: 9px;
+    }
+
+    .hero-photo {
+        width: 130px;
+        height: 78px;
+        flex-basis: 130px;
+        border-radius: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-track {
+        animation: none;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+
+
+
+<!-- =====================================================
+     HERO PHOTO MARQUEE - 20 FOTO, BERGERAK KANAN -> KIRI
+===================================================== --><!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="tag">
+        MOBILE LEGENDS : BANG BANG
+    </div>
+
+    <h1>
+       SRILANKA MLBB <span>TOURNAMENT</span>
+    </h1>
+
+    <p>
+        Srilanka MLBB Season 2 • Tournament
+    </p>
+
+</header>
+
+
+<!-- =====================================================
+     GROUP STAGE BUTTON
+===================================================== -->
+
+<div class="section-toggle">
+
+    <button
+        class="toggle-btn"
+        onclick="toggleSection('groupStage','groupArrow')"
+    >
+
+        <span class="icon">🏆</span>
+
+        <span>GROUP STAGE</span>
+
+        <span
+            class="arrow"
+            id="groupArrow"
+        >
+            ▼
+        </span>
+
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     GROUP STAGE
+===================================================== -->
+
+<section
+    id="groupStage"
+    class="collapsible"
+>
+
+<div class="groups">
+
+
+<!-- GROUP A -->
+
+<div class="group">
+
+    <div class="group-title">
+
+        <h2>GROUP A</h2>
+
+        <span>5 TEAMS</span>
+
+    </div>
+
+    <div class="team-list">
+
+        <div class="team qualified">
+
+            <div class="rank">01</div>
+
+            <div class="team-info">
+
+                <div>
+
+                    <div class="team-name">
+                        7DeadlySins Esport
+                    </div>
+
+                    <div class="team-sub">
+                        UPPER BRACKET
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                W
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                PTS
+            </div>
+
+        </div>
+
+
+        <div class="team qualified">
+
+            <div class="rank">02</div>
+
+            <div class="team-info">
+
+
+                <div>
+
+                    <div class="team-name">
+                        BOTUNA
+
+                    </div>
+
+                    <div class="team-sub">
+                        PLAYOFF
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                W
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                PTS
+            </div>
+
+        </div>
+
+
+        <div class="team">
+
+            <div class="rank">03</div>
+
+            <div class="team-info">
+
+
+                <div>
+
+                    <div class="team-name">
+                        Genocide Esport
+                    </div>
+
+                    <div class="team-sub">
+                        GUGUR
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                W
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                PTS
+            </div>
+
+        </div>
+
+
+        <div class="team">
+
+            <div class="rank">04</div>
+
+            <div class="team-info">
+
+                <div>
+
+                    <div class="team-name">
+                        EL J3MB4Y ESPORT
+                    </div>
+
+                    <div class="team-sub">
+                        GUGUR
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                W
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                PTS
+            </div>
+
+        </div>
+
+
+        <div class="team">
+
+            <div class="rank">05</div>
+
+            <div class="team-info">
+
+                <div>
+
+                    <div class="team-name">
+                        PPF (PARA PENCARI FREEBET)
+                    </div>
+
+                    <div class="team-sub">
+                        GUGUR
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                W
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                PTS
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- GROUP B -->
+
+<div class="group">
+
+    <div class="group-title">
+
+        <h2>GROUP B</h2>
+
+        <span>5 TEAMS</span>
+
+    </div>
+
+    <div class="team-list">
+
+        <div class="team qualified">
+
+            <div class="rank">01</div>
+
+            <div class="team-info">
+
+                <div>
+
+                    <div class="team-name">
+                       RIBAK SUDE ESPORT
+                    </div>
+
+                    <div class="team-sub">
+                        UPPER BRACKET 
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                W
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                PTS
+            </div>
+
+        </div>
+
+
+        <div class="team qualified">
+
+            <div class="rank">02</div>
+
+            <div class="team-info">
+
+                <div>
+
+                    <div class="team-name">
+                        N1C3 ESPORT
+                    </div>
+
+                    <div class="team-sub">
+                        PLAYOFF
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                W
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                PTS
+            </div>
+
+        </div>
+
+
+        <div class="team">
+
+            <div class="rank">03</div>
+
+            <div class="team-info">
+
+                <div>
+
+                    <div class="team-name">
+                        PRIA IDAMAN
+                    </div>
+
+                    <div class="team-sub">
+                        GUGUR
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                W
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                PTS
+            </div>
+
+        </div>
+
+
+        <div class="team">
+
+            <div class="rank">04</div>
+
+            <div class="team-info">
+
+                <div>
+
+                    <div class="team-name">
+                       /A ESPORTT
+                    </div>
+
+                    <div class="team-sub">
+                        GUGUR
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                W
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                PTS
+            </div>
+
+        </div>
+
+
+        <div class="team">
+
+            <div class="rank">05</div>
+
+            <div class="team-info">
+
+                <div>
+
+                    <div class="team-name">
+                        ABC ESPORT
+                    </div>
+
+                    <div class="team-sub">
+                        GUGUR
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                W
+            </div>
+
+            <div class="stat">
+                <strong>0</strong>
+                PTS
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PLAYOFF BUTTON
+===================================================== -->
+
+<div class="section-toggle">
+
+    <button
+        class="toggle-btn"
+        onclick="toggleSection('playoffStage','playoffArrow')"
+    >
+
+        <span class="icon">⚔️</span>
+
+        <span>PLAYOFF BRACKET</span>
+
+        <span
+            class="arrow"
+            id="playoffArrow"
+        >
+            ▼
+        </span>
+
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     PLAYOFF
+===================================================== -->
+
+<section
+    id="playoffStage"
+    class="collapsible"
+>
+
+<div class="playoff-content">
+
+<div class="playoff-title">
+
+    <h2>PLAYOFF BRACKET</h2>
+
+    <p>
+        Top 2 teams from each group advance
+    </p>
+
+</div>
+
+
+<div class="bracket">
+
+
+<div class="round">
+
+    <div class="round-title">
+    </div>
+
+    <div class="match">
+
+        <div class="match-title">
+            MATCH 01 UPPER BRACKET BO 5
+        </div>
+
+        <div class="player">
+
+            <span>
+                Group A #1
+            </span>
+
+            <span class="score">
+                —
+            </span>
+
+        </div>
+
+        <div class="player">
+
+            <span>
+                Group B #1
+            </span>
+
+            <span class="score">
+                —
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="match">
+
+        <div class="match-title">
+            MATCH 02 PLAYOFF / LOWER BRACKET BO 5
+        </div>
+
+        <div class="player">
+
+            <span>
+                Group B #2
+            </span>
+
+            <span class="score">
+                —
+            </span>
+
+        </div>
+
+        <div class="player">
+
+            <span>
+                Group A #2
+            </span>
+
+            <span class="score">
+                —
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="round">
+
+    <div class="connector"></div>
+
+    <div class="connector"></div>
+
+</div>
+
+
+<div class="round">
+
+    <div class="round-title">
+        GRAND FINAL
+    </div>
+
+    <div class="match">
+
+        <div class="match-title">
+            SEMIFINAL
+        </div>
+
+        <div class="player">
+
+            <span>
+                LOSER MATCH 1
+            </span>
+
+            <span class="score">
+                —
+            </span>
+
+        </div>
+
+        <div class="player">
+
+            <span>
+                WINNER MATCH 2
+            </span>
+
+            <span class="score">
+                —
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="round">
+
+    <div class="connector"></div>
+
+</div>
+
+
+<div class="final">
+
+    <div class="final-box">
+
+        <div class="trophy">
+            🏆
+        </div>
+
+        <h3>
+            CHAMPION BO 7
+        </h3>
+
+        <div class="champion">
+            WINNER MATCH 01 VS WINNER SEMIFINAL 
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     MATCH SCHEDULE BUTTON
+===================================================== -->
+
+<div class="section-toggle">
+
+    <button
+        class="toggle-btn"
+        onclick="toggleSection('scheduleStage','scheduleArrow')"
+    >
+
+        <span class="icon">📅</span>
+
+        <span>MATCH SCHEDULE</span>
+
+        <span
+            class="arrow"
+            id="scheduleArrow"
+        >
+            ▼
+        </span>
+
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     MATCH SCHEDULE
+===================================================== -->
+
+<section
+    id="scheduleStage"
+    class="collapsible"
+>
+
+<div class="schedule-title">
+
+    <h2>
+        MATCH SCHEDULE
+    </h2>
+
+    <p>
+         • Setiap tim bertemu semua tim dalam grup •
+    </p>
+
+</div>
+
+
+<!-- GROUP A -->
+
+<div class="schedule-group">
+
+    <div class="schedule-group-header">
+
+        <h3>
+            GROUP A
+        </h3>
+
+        <span>
+            10 MATCHES
+        </span>
+
+    </div>
+
+
+    <div class="schedule-round">
+
+        <div class="round-header">
+
+            <div class="round-number">
+                01
+            </div>
+
+            <div>
+
+                <div class="round-name">
+                    ROUND 1
+                </div>
+
+                <div class="round-info">
+                    2 pertandingan
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="schedule-matches">
+
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        20 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            BOTUNA
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A1
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            EL J3MB4Y
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A2
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    A-01
+                </div>
+
+            </div>
+
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        21 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            7DeadlySins Esport
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A3
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                           Genocide Esport
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A4
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    A-02
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="schedule-round">
+
+        <div class="round-header">
+
+            <div class="round-number">
+                02
+            </div>
+
+            <div>
+
+                <div class="round-name">
+                    ROUND 2
+                </div>
+
+                <div class="round-info">
+                    2 pertandingan
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="schedule-matches">
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        22 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            7DeadlySins Espor
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A1
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            BOTUNA
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A3
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    A-03
+                </div>
+
+            </div>
+
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        24 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            Genocide Esport
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A2
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            PPF (PARA PENCARI FREEBET)
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A5
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    A-04
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="schedule-round">
+
+        <div class="round-header">
+
+            <div class="round-number">
+                03
+            </div>
+
+            <div>
+
+                <div class="round-name">
+                    ROUND 3
+                </div>
+
+                <div class="round-info">
+                    2 pertandingan
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="schedule-matches">
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        25 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            EL J3MB4Y ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A4
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            PPF (PARA PENCARI FREEBET)
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A5
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    A-05
+                </div>
+
+            </div>
+
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        26 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            Genocide Esport
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A2
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            BOTUNA
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A3
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    A-06
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="schedule-round">
+
+        <div class="round-header">
+
+            <div class="round-number">
+                04
+            </div>
+
+            <div>
+
+                <div class="round-name">
+                    ROUND 4
+                </div>
+
+                <div class="round-info">
+                    2 pertandingan
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="schedule-matches">
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        28 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            7DeadlySins Espor
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A1
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            EL J3MB4Y ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A4
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    A-07
+                </div>
+
+            </div>
+
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        29 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            BOTUNA
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A3
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            PPF (PARA PENCARI FREEBET)
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A5
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    A-08
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="schedule-round">
+
+        <div class="round-header">
+
+            <div class="round-number">
+                05
+            </div>
+
+            <div>
+
+                <div class="round-name">
+                    ROUND 5
+                </div>
+
+                <div class="round-info">
+                    2 pertandingan
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="schedule-matches">
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        30 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            Genocide Esport
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A2
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            EL J3MB4Y ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A4
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    A-09
+                </div>
+
+            </div>
+
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        01 OCT
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            7DeadlySins Espor
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A1
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            PPF (PARA PENCARI FREEBET)
+                        </span>
+
+                        <span class="schedule-team-code">
+                            A5
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    A-10
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- GROUP B -->
+
+<div class="schedule-group">
+
+    <div class="schedule-group-header">
+
+        <h3>
+            GROUP B
+        </h3>
+
+        <span>
+            10 MATCHES
+        </span>
+
+    </div>
+
+    <!-- B1 -->
+
+    <div class="schedule-round">
+
+        <div class="round-header">
+
+            <div class="round-number">
+                01
+            </div>
+
+            <div>
+
+                <div class="round-name">
+                    ROUND 1
+                </div>
+
+                <div class="round-info">
+                    2 pertandingan
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="schedule-matches">
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        20 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            RIBAK SUDE ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B1
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            N1C3 ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B2
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    B-01
+                </div>
+
+            </div>
+
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        21 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            PRIA IDAMAN
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B3
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            /A ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B4
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    B-02
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- B2 -->
+
+    <div class="schedule-round">
+
+        <div class="round-header">
+
+            <div class="round-number">
+                02
+            </div>
+
+            <div>
+
+                <div class="round-name">
+                    ROUND 2
+                </div>
+
+                <div class="round-info">
+                    2 pertandingan
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="schedule-matches">
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        22 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            RIBAK SUDE ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B1
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            PRIA IDAMAN
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B3
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    B-03
+                </div>
+
+            </div>
+
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        24 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            N1C3 ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B2
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            ABC ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B5
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    B-04
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- B3 -->
+
+    <div class="schedule-round">
+
+        <div class="round-header">
+
+            <div class="round-number">
+                03
+            </div>
+
+            <div>
+
+                <div class="round-name">
+                    ROUND 3
+                </div>
+
+                <div class="round-info">
+                    2 pertandingan
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="schedule-matches">
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        25 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            /A ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B4
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            ABC ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B5
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    B-05
+                </div>
+
+            </div>
+
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        26 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            N1C3 ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B2
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            PRIA IDAMAN
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B3
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    B-06
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- B4 -->
+
+    <div class="schedule-round">
+
+        <div class="round-header">
+
+            <div class="round-number">
+                04
+            </div>
+
+            <div>
+
+                <div class="round-name">
+                    ROUND 4
+                </div>
+
+                <div class="round-info">
+                    2 pertandingan
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="schedule-matches">
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        28 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            RIBAK SUDE ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B1
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            /A ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B4
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    B-07
+                </div>
+
+            </div>
+
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        29 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            PRIA IDAMAN
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B3
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            ABC ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B5
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    B-08
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- B5 -->
+
+    <div class="schedule-round">
+
+        <div class="round-header">
+
+            <div class="round-number">
+                05
+            </div>
+
+            <div>
+
+                <div class="round-name">
+                    ROUND 5
+                </div>
+
+                <div class="round-info">
+                    2 pertandingan
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="schedule-matches">
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        30 SEP
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            N1C3 ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B2
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            /A ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B4
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    B-09
+                </div>
+
+            </div>
+
+
+            <div class="schedule-match">
+
+                <div class="match-date">
+
+                    <span class="day">
+                        01 OCT
+                    </span>
+
+                    <span class="time">
+                        09:30
+                    </span>
+
+                </div>
+
+                <div class="schedule-teams">
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            RIBAK SUDE ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B1
+                        </span>
+
+                    </div>
+
+                    <div class="vs">
+                        VS
+                    </div>
+
+                    <div class="schedule-team">
+
+                        <span class="schedule-team-name">
+                            ABC ESPORT
+                        </span>
+
+                        <span class="schedule-team-code">
+                            B5
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="match-id">
+                    B-10
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     TEAMS & PLAYERS BUTTON
+===================================================== -->
+
+<div class="section-toggle">
+
+    <button
+        class="toggle-btn"
+        onclick="toggleSection('playersStage','playersArrow')"
+    >
+
+        <span class="icon">
+            👥
+        </span>
+
+        <span>
+            TEAMS & PLAYERS
+        </span>
+
+        <span
+            class="arrow"
+            id="playersArrow"
+        >
+            ▼
+        </span>
+
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     TEAMS & 5 PLAYERS
+===================================================== -->
+
+<section
+    id="playersStage"
+    class="collapsible"
+>
+
+<div class="players-title">
+
+    <h2>
+        TEAMS & PLAYERS
+    </h2>
+
+    <p>
+        10 Teams • 5 Players setiap team
+    </p>
+
+</div>
+
+
+<div class="player-teams">
+
+
+<!-- TEAM 01 -->
+
+<div class="player-team">
+
+    <div class="player-team-header">
+
+        <div class="player-team-left">
+
+            <div class="team-big-logo">
+                A1
+            </div>
+
+            <div>
+
+                <div class="player-team-name">
+                    7DeadlySins Esport
+                </div>
+
+                <div class="player-team-region">
+                    GROUP A
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="player-count">
+            5 PLAYERS
+        </div>
+
+    </div>
+
+
+    <div class="player-list">
+
+        <div class="player-card">
+            <div class="player-number">01</div>
+            <div class="player-avatar">P1</div>
+            <div class="player-details">
+                <div class="player-name">Yoga</div>
+                <div class="player-role">Captain</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">02</div>
+            <div class="player-avatar">P2</div>
+            <div class="player-details">
+                <div class="player-name">Ridwan</div>
+                <div class="player-role">Jungler</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">03</div>
+            <div class="player-avatar">P3</div>
+            <div class="player-details">
+                <div class="player-name">Anang</div>
+                <div class="player-role">Gold Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">04</div>
+            <div class="player-avatar">P4</div>
+            <div class="player-details">
+                <div class="player-name">Juan</div>
+                <div class="player-role">EXP Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">05</div>
+            <div class="player-avatar">P5</div>
+            <div class="player-details">
+                <div class="player-name">Gumelar</div>
+                <div class="player-role">Roamer</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TEAM 02 -->
+
+<div class="player-team">
+
+    <div class="player-team-header">
+
+        <div class="player-team-left">
+
+            <div class="team-big-logo">
+                A2
+            </div>
+
+            <div>
+
+                <div class="player-team-name">
+                    BOTUNA
+                </div>
+
+                <div class="player-team-region">
+                    GROUP A
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="player-count">
+            5 PLAYERS
+        </div>
+
+    </div>
+
+    <div class="player-list">
+
+        <div class="player-card">
+            <div class="player-number">01</div>
+            <div class="player-avatar">P1</div>
+            <div class="player-details">
+                <div class="player-name">Rizky pra</div>
+                <div class="player-role">Captain</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">02</div>
+            <div class="player-avatar">P2</div>
+            <div class="player-details">
+                <div class="player-name">Apri</div>
+                <div class="player-role">Jungler</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">03</div>
+            <div class="player-avatar">P3</div>
+            <div class="player-details">
+                <div class="player-name">Kiran</div>
+                <div class="player-role">Gold Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">04</div>
+            <div class="player-avatar">P4</div>
+            <div class="player-details">
+                <div class="player-name">Jonathan</div>
+                <div class="player-role">EXP Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">05</div>
+            <div class="player-avatar">P5</div>
+            <div class="player-details">
+                <div class="player-name">Mulya</div>
+                <div class="player-role">Roamer</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TEAM 03 -->
+
+<div class="player-team">
+
+    <div class="player-team-header">
+
+        <div class="player-team-left">
+
+            <div class="team-big-logo">
+                A3
+            </div>
+
+            <div>
+
+                <div class="player-team-name">
+                    Genocide Esport
+                </div>
+
+                <div class="player-team-region">
+                    GROUP A
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="player-count">
+            5 PLAYERS
+        </div>
+
+    </div>
+
+    <div class="player-list">
+
+        <div class="player-card">
+            <div class="player-number">01</div>
+            <div class="player-avatar">P1</div>
+            <div class="player-details">
+                <div class="player-name">Agung TP</div>
+                <div class="player-role">Captain</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">02</div>
+            <div class="player-avatar">P2</div>
+            <div class="player-details">
+                <div class="player-name">Dermawan</div>
+                <div class="player-role">Jungler</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">03</div>
+            <div class="player-avatar">P3</div>
+            <div class="player-details">
+                <div class="player-name">Etanim</div>
+                <div class="player-role">Gold Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">04</div>
+            <div class="player-avatar">P4</div>
+            <div class="player-details">
+                <div class="player-name">Dandi</div>
+                <div class="player-role">EXP Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">05</div>
+            <div class="player-avatar">P5</div>
+            <div class="player-details">
+                <div class="player-name">Rehan</div>
+                <div class="player-role">Roamer</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TEAM 04 -->
+
+<div class="player-team">
+
+    <div class="player-team-header">
+
+        <div class="player-team-left">
+
+            <div class="team-big-logo">
+                A4
+            </div>
+
+            <div>
+
+                <div class="player-team-name">
+                    EL J3MB4Y ESPORT
+                </div>
+
+                <div class="player-team-region">
+                    GROUP A
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="player-count">
+            5 PLAYERS
+        </div>
+
+    </div>
+
+    <div class="player-list">
+
+        <div class="player-card">
+            <div class="player-number">01</div>
+            <div class="player-avatar">P1</div>
+            <div class="player-details">
+                <div class="player-name">Azis</div>
+                <div class="player-role">Captain</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">02</div>
+            <div class="player-avatar">P2</div>
+            <div class="player-details">
+                <div class="player-name">Ryan</div>
+                <div class="player-role">Jungler</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">03</div>
+            <div class="player-avatar">P3</div>
+            <div class="player-details">
+                <div class="player-name">A fikri</div>
+                <div class="player-role">Gold Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">04</div>
+            <div class="player-avatar">P4</div>
+            <div class="player-details">
+                <div class="player-name">Bagus tp</div>
+                <div class="player-role">EXP Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">05</div>
+            <div class="player-avatar">P5</div>
+            <div class="player-details">
+                <div class="player-name">Ricky</div>
+                <div class="player-role">Roamer</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TEAM 05 -->
+
+<div class="player-team">
+
+    <div class="player-team-header">
+
+        <div class="player-team-left">
+
+            <div class="team-big-logo">
+                A5
+            </div>
+
+            <div>
+
+                <div class="player-team-name">
+                    PPF (PARA PENCARI FREEBET)
+                </div>
+
+                <div class="player-team-region">
+                    GROUP A
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="player-count">
+            5 PLAYERS
+        </div>
+
+    </div>
+
+    <div class="player-list">
+
+        <div class="player-card">
+            <div class="player-number">01</div>
+            <div class="player-avatar">P1</div>
+            <div class="player-details">
+                <div class="player-name">Mico</div>
+                <div class="player-role">Captain</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">02</div>
+            <div class="player-avatar">P2</div>
+            <div class="player-details">
+                <div class="player-name">Panca</div>
+                <div class="player-role">Jungler</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">03</div>
+            <div class="player-avatar">P3</div>
+            <div class="player-details">
+                <div class="player-name">Rizky</div>
+                <div class="player-role">Gold Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">04</div>
+            <div class="player-avatar">P4</div>
+            <div class="player-details">
+                <div class="player-name">Rampart</div>
+                <div class="player-role">EXP Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">05</div>
+            <div class="player-avatar">P5</div>
+            <div class="player-details">
+                <div class="player-name">King jall</div>
+                <div class="player-role">Roamer</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TEAM 06 -->
+
+<div class="player-team">
+
+    <div class="player-team-header">
+
+        <div class="player-team-left">
+
+            <div class="team-big-logo">
+                B1
+            </div>
+
+            <div>
+
+                <div class="player-team-name">
+                    RIBAK SUDE ESPORT
+                </div>
+
+                <div class="player-team-region">
+                    GROUP B
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="player-count">
+            5 PLAYERS
+        </div>
+
+    </div>
+
+    <div class="player-list">
+
+        <div class="player-card">
+            <div class="player-number">01</div>
+            <div class="player-avatar">P1</div>
+            <div class="player-details">
+                <div class="player-name">Silvana</div>
+                <div class="player-role">Captain</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">02</div>
+            <div class="player-avatar">P2</div>
+            <div class="player-details">
+                <div class="player-name">Sawal</div>
+                <div class="player-role">Jungler</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">03</div>
+            <div class="player-avatar">P3</div>
+            <div class="player-details">
+                <div class="player-name">Arwin</div>
+                <div class="player-role">Gold Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">04</div>
+            <div class="player-avatar">P4</div>
+            <div class="player-details">
+                <div class="player-name">Edy</div>
+                <div class="player-role">EXP Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">05</div>
+            <div class="player-avatar">P5</div>
+            <div class="player-details">
+                <div class="player-name">Dion</div>
+                <div class="player-role">Roamer</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TEAM 07 -->
+
+<div class="player-team">
+
+    <div class="player-team-header">
+
+        <div class="player-team-left">
+
+            <div class="team-big-logo">
+                B2
+            </div>
+
+            <div>
+
+                <div class="player-team-name">
+                     N1C3 ESPORT
+                </div>
+
+                <div class="player-team-region">
+                    GROUP B
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="player-count">
+            5 PLAYERS
+        </div>
+
+    </div>
+
+    <div class="player-list">
+
+        <div class="player-card">
+            <div class="player-number">01</div>
+            <div class="player-avatar">P1</div>
+            <div class="player-details">
+                <div class="player-name">Bolen</div>
+                <div class="player-role">Captain</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">02</div>
+            <div class="player-avatar">P2</div>
+            <div class="player-details">
+                <div class="player-name">Raffi</div>
+                <div class="player-role">Jungler</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">03</div>
+            <div class="player-avatar">P3</div>
+            <div class="player-details">
+                <div class="player-name">Putri</div>
+                <div class="player-role">Gold Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">04</div>
+            <div class="player-avatar">P4</div>
+            <div class="player-details">
+                <div class="player-name">Ardi</div>
+                <div class="player-role">EXP Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">05</div>
+            <div class="player-avatar">P5</div>
+            <div class="player-details">
+                <div class="player-name">Andra</div>
+                <div class="player-role">Roamer</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TEAM 08 -->
+
+<div class="player-team">
+
+    <div class="player-team-header">
+
+        <div class="player-team-left">
+
+            <div class="team-big-logo">
+                B3
+            </div>
+
+            <div>
+
+                <div class="player-team-name">
+                    PRIA IDAMAN
+                </div>
+
+                <div class="player-team-region">
+                    GROUP B
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="player-count">
+            5 PLAYERS
+        </div>
+
+    </div>
+
+    <div class="player-list">
+
+        <div class="player-card">
+            <div class="player-number">01</div>
+            <div class="player-avatar">P1</div>
+            <div class="player-details">
+                <div class="player-name">Randi MR</div>
+                <div class="player-role">Captain</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">02</div>
+            <div class="player-avatar">P2</div>
+            <div class="player-details">
+                <div class="player-name">Adelin</div>
+                <div class="player-role">Jungler</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">03</div>
+            <div class="player-avatar">P3</div>
+            <div class="player-details">
+                <div class="player-name">Hengky</div>
+                <div class="player-role">Gold Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">04</div>
+            <div class="player-avatar">P4</div>
+            <div class="player-details">
+                <div class="player-name">Gerry</div>
+                <div class="player-role">EXP Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">05</div>
+            <div class="player-avatar">P5</div>
+            <div class="player-details">
+                <div class="player-name">Tiyas</div>
+                <div class="player-role">Roamer</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TEAM 09 -->
+
+<div class="player-team">
+
+    <div class="player-team-header">
+
+        <div class="player-team-left">
+
+            <div class="team-big-logo">
+                B4
+            </div>
+
+            <div>
+
+                <div class="player-team-name">
+                    /A ESPORTT
+                </div>
+
+                <div class="player-team-region">
+                    GROUP B
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="player-count">
+            5 PLAYERS
+        </div>
+
+    </div>
+
+    <div class="player-list">
+
+        <div class="player-card">
+            <div class="player-number">01</div>
+            <div class="player-avatar">P1</div>
+            <div class="player-details">
+                <div class="player-name">Yope</div>
+                <div class="player-role">Captain</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">02</div>
+            <div class="player-avatar">P2</div>
+            <div class="player-details">
+                <div class="player-name">Kingall</div>
+                <div class="player-role">Jungler</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">03</div>
+            <div class="player-avatar">P3</div>
+            <div class="player-details">
+                <div class="player-name">Saswin</div>
+                <div class="player-role">Gold Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">04</div>
+            <div class="player-avatar">P4</div>
+            <div class="player-details">
+                <div class="player-name">Sandy p</div>
+                <div class="player-role">EXP Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">05</div>
+            <div class="player-avatar">P5</div>
+            <div class="player-details">
+                <div class="player-name">Irfan</div>
+                <div class="player-role">Roamer</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TEAM 10 -->
+
+<div class="player-team">
+
+    <div class="player-team-header">
+
+        <div class="player-team-left">
+
+            <div class="team-big-logo">
+                B5
+            </div>
+
+            <div>
+
+                <div class="player-team-name">
+                    ABC ESPORT
+                </div>
+
+                <div class="player-team-region">
+                    GROUP B
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="player-count">
+            5 PLAYERS
+        </div>
+
+    </div>
+
+    <div class="player-list">
+
+        <div class="player-card">
+            <div class="player-number">01</div>
+            <div class="player-avatar">P1</div>
+            <div class="player-details">
+                <div class="player-name">Ilham</div>
+                <div class="player-role">Captain</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">02</div>
+            <div class="player-avatar">P2</div>
+            <div class="player-details">
+                <div class="player-name">Frans</div>
+                <div class="player-role">Jungler</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">03</div>
+            <div class="player-avatar">P3</div>
+            <div class="player-details">
+                <div class="player-name">Nelson</div>
+                <div class="player-role">Gold Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">04</div>
+            <div class="player-avatar">P4</div>
+            <div class="player-details">
+                <div class="player-name">Hasan</div>
+                <div class="player-role">EXP Lane</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-number">05</div>
+            <div class="player-avatar">P5</div>
+            <div class="player-details">
+                <div class="player-name">Agus ps</div>
+                <div class="player-role">Roamer</div>
+            </div>
+            <div class="player-status">ACTIVE</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     MVP & SAVAGE BUTTON
+===================================================== -->
+
+<div class="section-toggle">
+
+    <button
+        class="toggle-btn"
+        onclick="toggleSection('mvpSavageStage','mvpSavageArrow')"
+    >
+
+        <span class="icon">
+            🏆
+        </span>
+
+        <span>
+            TOP MVP & SAVAGE
+        </span>
+
+        <span
+            class="arrow"
+            id="mvpSavageArrow"
+        >
+            ▼
+        </span>
+
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     MVP & SAVAGE
+===================================================== -->
+
+<section
+    id="mvpSavageStage"
+    class="collapsible"
+>
+
+    <div class="players-title">
+
+        <h2>
+            MVP & SAVAGE
+        </h2>
+
+        <p>
+            Top Player Performance • Season 2
+        </p>
+
+    </div>
+
+
+    <div class="mvp-savage-grid">
+
+
+        <!-- =============================================
+             TOP 5 MVP
+        ============================================== -->
+
+        <div class="award-panel">
+
+    <div class="award-header">
+
+        <div class="award-header-left">
+
+            <div class="award-icon">
+                <img src="https://i.ibb.co/67b6bW4j/mov.jpg" alt="MPV">
+            </div>
+
+                    <div>
+
+                        <h3>
+                            TOP 5 MVP
+                        </h3>
+
+                        <p>
+                            PLAYER OF THE TOURNAMENT
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="award-badge">
+                    TOP 5
+                </div>
+
+            </div>
+
+
+            <div class="mvp-list">
+
+
+                <!-- MVP #1 -->
+
+                <div class="mvp-card">
+
+                    <div class="award-rank">
+                        01
+                    </div>
+
+                    <div class="award-player">
+
+                        <div class="award-player-name">
+                             Belum Ditentukan
+                        </div>
+
+                        <div class="award-player-team">
+                            —
+                        </div>
+
+                    </div>
+
+                    <div class="award-stat">
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <span>
+                            MVP POINT
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MVP #2 -->
+
+                <div class="mvp-card">
+
+                    <div class="award-rank">
+                        02
+                    </div>
+
+                    <div class="award-player">
+
+                        <div class="award-player-name">
+                            Belum Ditentukan
+                        </div>
+
+                        <div class="award-player-team">
+                            —
+                        </div>
+
+                    </div>
+
+                    <div class="award-stat">
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <span>
+                            MVP POINT
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MVP #3 -->
+
+                <div class="mvp-card">
+
+                    <div class="award-rank">
+                        03
+                    </div>
+
+                    <div class="award-player">
+
+                        <div class="award-player-name">
+                            Belum Ditentukan
+                        </div>
+
+                        <div class="award-player-team">
+                            —
+                        </div>
+
+                    </div>
+
+                    <div class="award-stat">
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <span>
+                            MVP POINT
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MVP #4 -->
+
+                <div class="mvp-card">
+
+                    <div class="award-rank">
+                        04
+                    </div>
+
+                    <div class="award-player">
+
+                        <div class="award-player-name">
+                            Belum Ditentukan
+                        </div>
+
+                        <div class="award-player-team">
+                            —
+                        </div>
+
+                    </div>
+
+                    <div class="award-stat">
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <span>
+                            MVP POINT
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MVP #5 -->
+
+                <div class="mvp-card">
+
+                    <div class="award-rank">
+                        05
+                    </div>
+
+                    <div class="award-player">
+
+                        <div class="award-player-name">
+                            Belum Ditentukan
+                        </div>
+
+                        <div class="award-player-team">
+                            —
+                        </div>
+
+                    </div>
+
+                    <div class="award-stat">
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <span>
+                            MVP POINT
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =============================================
+             SAVAGE
+        ============================================== -->
+
+        <div class="award-panel savage-panel">
+
+            <div class="award-header">
+
+                <div class="award-header-left">
+
+                    <div class="award-icon">
+                    <img src="https://i.ibb.co/Rp6btv06/images-2.jpg" alt="Savage">
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            SAVAGE
+                        </h3>
+
+                        <p>
+                            SAVAGE ACHIEVEMENT
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="award-badge">
+                    SEASON 2
+                </div>
+
+            </div>
+
+
+            <div class="savage-list">
+
+
+                <!-- SAVAGE 01 -->
+
+                <div class="savage-card">
+
+                    <div class="award-rank">
+                        01
+                    </div>
+
+                    <div class="award-player">
+
+                        <div class="award-player-name">
+                            Belum Ditentukan
+                        </div>
+
+                        <div class="award-player-team">
+                            —
+                        </div>
+
+                    </div>
+
+                    <div class="savage-count">
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <span>
+                            SAVAGE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SAVAGE 02 -->
+
+                <div class="savage-card">
+
+                    <div class="award-rank">
+                        02
+                    </div>
+
+                    <div class="award-player">
+
+                        <div class="award-player-name">
+                            Belum Ditentukan
+                        </div>
+
+                        <div class="award-player-team">
+                            —
+                        </div>
+
+                    </div>
+
+                    <div class="savage-count">
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <span>
+                            SAVAGE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SAVAGE 03 -->
+
+                <div class="savage-card">
+
+                    <div class="award-rank">
+                        03
+                    </div>
+
+                    <div class="award-player">
+
+                        <div class="award-player-name">
+                            Belum Ditentukan
+                        </div>
+
+                        <div class="award-player-team">
+                            —
+                        </div>
+
+                    </div>
+
+                    <div class="savage-count">
+
+                        <strong>
+                            0
+                        </strong>
+
+                        <span>
+                            SAVAGE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BELUM ADA SAVAGE -->
+
+                <div class="award-empty">
+
+                    <span class="empty-icon">
+                        ⚔️
+                    </span>
+
+                    Kalo ada yang savage boleh ss, biar ditempel di sini
+                   
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SPONSOR BUTTON
+===================================================== -->
+
+<div class="section-toggle">
+
+    <button
+        class="toggle-btn"
+        onclick="toggleSection('sponsorStage','sponsorArrow')"
+    >
+
+        <span class="icon">
+            🤝
+        </span>
+
+        <span>
+            OFFICIAL SPONSOR
+        </span>
+
+        <span
+            class="arrow"
+            id="sponsorArrow"
+        >
+            ▼
+        </span>
+
+    </button>
+
+</div>
+
+<section class="hero-marquee" aria-label="20 foto hero">
+    <div class="hero-track">
+        <div class="hero-set">
+            <div class="hero-photo"><img src="https://i.ibb.co/Xr8Pm58M/image.png" alt="Hero 1" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/3qKC70S/image.png" alt="Hero 2" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/NdHTzmDq/image.png" alt="Hero 3" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/5hNV8fT3/image.png" alt="Hero 4" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/ksV0w4pw/image.png" alt="Hero 5" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/fzdnZD4d/image.png" alt="Hero 6" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Beatrix%20-%20Hero1051.png" alt="Hero 7" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Gloo%20-%20Hero1041.png" alt="Hero 8" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/gLCWyhs8/image.png" alt="Hero 9" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/M52RDGnc/image.png" alt="Hero 10" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/vC4fn5fw/image.png" alt="Hero 11" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/nNCw0cwT/image.png" alt="Hero 12" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/CKm1yf0F/image.png" alt="Hero 13" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/G4RNbfKd/image.png" alt="Hero 14" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/xqbmqzQh/image.png" alt="Hero 15" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/svfnXw9h/image.png" alt="Hero 16" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Yu%20Zhong%20-%20Hero951.png" alt="Hero 17" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Popol%20and%20Kupa%20-%20Hero941.png" alt="Hero 18" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/XfFV6dY8/image.png" alt="Hero 19" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/zVNmmbF3/image.png" alt="Hero 20" loading="lazy"></div>
+        </div>
+
+        <!-- Duplikasi set agar animasi berjalan mulus tanpa jeda -->
+        <div class="hero-set" aria-hidden="true">
+            <div class="hero-photo"><img src="https://i.ibb.co/Xr8Pm58M/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/3qKC70S/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/NdHTzmDq/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/5hNV8fT3/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/ksV0w4pw/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/fzdnZD4d/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Beatrix%20-%20Hero1051.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Gloo%20-%20Hero1041.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/gLCWyhs8/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/M52RDGnc/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/vC4fn5fw/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/nNCw0cwT/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/CKm1yf0F/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/G4RNbfKd/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/xqbmqzQh/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/svfnXw9h/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Yu%20Zhong%20-%20Hero951.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Popol%20and%20Kupa%20-%20Hero941.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/XfFV6dY8/image.png" alt="" loading="lazy"></div>
+            <div class="hero-photo"><img src="https://i.ibb.co/zVNmmbF3/image.png" alt="" loading="lazy"></div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- =====================================================
+     SPONSOR
+===================================================== -->
+
+<section
+    id="sponsorStage"
+    class="collapsible"
+>
+
+<div class="sponsor-content">
+
+    <div class="sponsor-label">
+        OFFICIAL SPONSOR
+    </div>
+
+    <h2>
+        OUR SPONSOR
+    </h2>
+
+    <div class="sponsor-image-box">
+
+        <img
+            src="https://i.postimg.cc/FsrXhf4M/NOS-USA.png"
+            alt="Official Sponsor"
+            class="sponsor-image"
+        >
+
+    </div>
+
+    <div class="sponsor-name">
+        KO MC
+    </div>
+
+    <div class="sponsor-desc">
+        Proudly supporting Srilanka MLBB Season 2
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+<!-- RULES MATCH -->
+<section class="section">
+    <button class="section-title" onclick="toggleSection(this)">
+     
+        <span></span>
+    </button>
+
+    <div class="section-content">
+
+        <div class="rules-box">
+            <h3>⚔️ MATCH RULES</h3>
+
+            <div class="rule-item">
+                <strong>1. Format Pertandingan</strong>
+                <p>
+                    Semua pertandingan menggunakan format Best of 3 (BO3),
+                    kecuali pertandingan yang telah ditentukan menggunakan
+                    format Best of 5 (BO5).
+                </p>
+            </div>
+
+            <div class="rule-item">
+                <strong>2. Jaringan & Room</strong>
+                <p>
+                    Semua tim wajib mengatur jaringannya masing-masing, dan info
+                    ke wasit ingin bermain di mana.
+                </p>
+            </div>
+
+            <div class="rule-item">
+                <strong>3. Keterlambatan</strong>
+                <p>
+                    Tim yang terlambat lebih dari 15 menit tanpa alasan yang
+                    jelas dapat dikenakan sanksi atau dianggap kalah,
+                    berdasarkan keputusan panitia.
+                </p>
+            </div>
+
+            <div class="rule-item">
+                <strong>4. Roster Pemain</strong>
+                <p>
+                    Hanya pemain yang telah terdaftar dalam roster resmi yang
+                    diperbolehkan mengikuti pertandingan.
+                </p>
+            </div>
+
+            <div class="rule-item">
+                <strong>5. Pause</strong>
+                <p>
+                    Maximal Pause 2x, apabila setelah pick, jaringan kuning. Boleh ulang, 
+                    draf tetap.
+                </p>
+            </div>
+
+            <div class="rule-item">
+                <strong>6. Penggunaan Cheat / Bug</strong>
+                <p>
+                    Penggunaan cheat, script, map hack, exploit, bug abuse,
+                    atau aplikasi pihak ketiga yang memberikan keuntungan
+                    tidak diperbolehkan.
+                </p>
+            </div>
+
+            <div class="rule-item">
+                <strong>7. Perilaku Pemain</strong>
+                <p>
+                    Dilarang bermain SABUN, provokasi, akan ada hukuman jika ketahuan
+                    atau tindakan tidak sportif kepada
+                    pemain maupun panitia.
+                </p>
+            </div>
+
+            <div class="rule-item">
+                <strong>8. Bukti Pertandingan</strong>
+                <p>
+                    Setiap tim wajib menyimpan screenshot atau bukti hasil
+                    pertandingan apabila diperlukan oleh panitia.
+                </p>
+            </div>
+
+            <div class="rule-item">
+                <strong>9. Keputusan Panitia</strong>
+                <p>
+                    Keputusan panitia terkait pelanggaran dan sengketa
+                    pertandingan bersifat final setelah dilakukan pemeriksaan
+                    terhadap bukti yang tersedia.
+                </p>
+            </div>
+
+            <div class="rule-item">
+                <strong>10. Sportivitas</strong>
+                <p>
+                    Seluruh peserta wajib menjaga fair play dan menghormati
+                    lawan selama turnamen berlangsung.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+.rules-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.rules-box h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ffd54a;
+    font-size: 24px;
+}
+
+.rule-item {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.rule-item:last-child {
+    border-bottom: none;
+}
+
+.rule-item strong {
+    display: block;
+    color: #ffd54a;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.rule-item p {
+    color: #ddd;
+    line-height: 1.7;
+    font-size: 14px;
+}
+</style>
+<footer>
+
+    SRILANKA MLBB SEASON 2
+    •
+    TOURNAMENT
+
+</footer>
+
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+function toggleSection(sectionId, arrowId) {
+
+    const section =
+        document.getElementById(sectionId);
+
+    const arrow =
+        document.getElementById(arrowId);
+
+    const isOpen =
+        section.classList.toggle("open");
+
+    if (isOpen) {
+
+        arrow.textContent = "▲";
+
+    } else {
+
+        arrow.textContent = "▼";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
