@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -32,116 +31,139 @@ body {
     max-width: 1400px;
     margin: auto;
 }
-/* =========================
-   LOADING SCREEN
-========================= */
-#loader {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
+/* =============================
+   WADAH4D LOADER V3
+   FAST • SMOOTH • MOBILE
+============================= */
+#loader{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#090909;
+    z-index:999999;
+    transition:opacity .35s ease, visibility .35s ease;
 }
 
-#loader.loader-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+.loader-content{
+    text-align:center;
+    animation:fadeIn .5s ease;
 }
 
-.loader-content {
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
+.loader-logo{
+    width:280px;
+    max-width:75vw;
+    user-select:none;
+    pointer-events:none;
+    animation:floatLogo 2.2s ease-in-out infinite;
 }
 
-.loader-logo {
-    display: block;
-    width: 220px;
-    max-width: 80%;
-    height: auto;
-    margin: 0 auto 25px;
+/* BAR */
+.loader-bar{
+    width:230px;
+    height:6px;
+    margin:28px auto 16px;
+    background:#1d1d1d;
+    border-radius:20px;
+    overflow:hidden;
 }
 
-.loader-bar {
-    width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 0 auto 20px;
+.loader-progress{
+    display:block;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg,#f5b400,#ffe082);
+    transform:translateX(-100%);
+    animation:progress .85s ease forwards;
 }
 
-.loader-progress {
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        #00ff88,
-        #00d9ff
-    );
-    border-radius: 10px;
-    transition: width 0.15s ease;
+.loader-text{
+    display:flex;
+    justify-content:center;
+    gap:2px;
+    margin-top:18px;
 }
 
-.loader-text {
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 4px;
+.loader-text span{
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:1px;
+    background:linear-gradient(#fff7d0,#ffc107,#b87800);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.4),
+        0 2px 3px rgba(0,0,0,.35);
+    animation:bounce .9s infinite ease-in-out;
 }
 
-.loader-text span {
-    display: inline-block;
-    animation: loaderBounce 1.2s infinite ease-in-out;
-}
+.loader-text span:nth-child(2){animation-delay:.08s;}
+.loader-text span:nth-child(3){animation-delay:.16s;}
+.loader-text span:nth-child(4){animation-delay:.24s;}
+.loader-text span:nth-child(5){animation-delay:.32s;}
+.loader-text span:nth-child(6){animation-delay:.40s;}
+.loader-text span:nth-child(7){animation-delay:.48s;}
+.loader-text span:nth-child(8){animation-delay:.56s;}
+.loader-text span:nth-child(9){animation-delay:.64s;}
+.loader-text span:nth-child(10){animation-delay:.72s;}
 
-/* Animasi tiap huruf */
-.loader-text span:nth-child(1) { animation-delay: 0s; }
-.loader-text span:nth-child(2) { animation-delay: 0.1s; }
-.loader-text span:nth-child(3) { animation-delay: 0.2s; }
-.loader-text span:nth-child(4) { animation-delay: 0.3s; }
-.loader-text span:nth-child(5) { animation-delay: 0.4s; }
-.loader-text span:nth-child(6) { animation-delay: 0.5s; }
-.loader-text span:nth-child(7) { animation-delay: 0.6s; }
-.loader-text span:nth-child(8) { animation-delay: 0.7s; }
-.loader-text span:nth-child(9) { animation-delay: 0.8s; }
-.loader-text span:nth-child(10) { animation-delay: 0.9s; }
-
-@keyframes loaderBounce {
-    0%, 60%, 100% {
-        transform: translateY(0);
-        opacity: 0.5;
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+        opacity:.7;
     }
-
-    30% {
-        transform: translateY(-8px);
-        opacity: 1;
+    50%{
+        transform:translateY(-4px);
+        opacity:1;
     }
 }
 
-/* Mobile */
-@media (max-width: 480px) {
-    .loader-logo {
-        width: 180px;
-    }
+.hide-loader{
+    opacity:0;
+    visibility:hidden;
+}
 
-    .loader-content {
-        width: 85%;
-    }
-
-    .loader-text {
-        font-size: 15px;
-        letter-spacing: 3px;
+/* ANIMATION */
+@keyframes progress{
+    to{
+        transform:translateX(0);
     }
 }
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes floatLogo{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-5px);
+    }
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .loader-logo{
+        width:220px;
+    }
+    .loader-bar{
+        width:190px;
+    }
+    .loader-text{
+        font-size:14px;
+    }
+}
+
 
 
 /* =====================================================
@@ -1021,7 +1043,7 @@ body {
 
 .schedule-team-code {
 
-    color: #59647a;
+    color: #f5c451;
 
     font-size: 9px;
 }
@@ -2124,6 +2146,30 @@ footer {
 
 <body>
 
+<!-- LOADING SCREEN -->
+<div id="loader">
+    <div class="loader-content">
+        <img alt="WADAH4D" class="loader-logo" src="https://wadah4d01.com//images/logoweb.png" />
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+        <div class="loader-text">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="container">
 
 
@@ -2263,7 +2309,7 @@ footer {
                 <div>
 
                     <div class="team-name">
-                        7DeadlySins
+                        GENOCIDE
 
                     </div>
 
@@ -2276,12 +2322,12 @@ footer {
             </div>
 
             <div class="stat">
-                <strong>0</strong>
+                <strong>1</strong>
                 M
             </div>
 
             <div class="stat">
-                <strong>0</strong>
+                <strong>1</strong>
                 W
             </div>
 
@@ -2290,12 +2336,12 @@ footer {
                 L
             </div>
             <div class="stat">
-                <strong>0-0</strong>
+                <strong>2-0</strong>
                 W/L
             </div>
 
             <div class="stat">
-                <strong>0</strong>
+                <strong>3</strong>
                 PTS
             </div>
 
@@ -2312,7 +2358,7 @@ footer {
                 <div>
 
                     <div class="team-name">
-                        Genocide Esport
+                      PPF (PARA PENCARI FREEBET)  
                     </div>
 
                     <div class="team-sub">
@@ -2359,7 +2405,7 @@ footer {
                 <div>
 
                     <div class="team-name">
-                        PPF (PARA PENCARI FREEBET)
+                        7DeadlySins
                     </div>
 
                     <div class="team-sub">
@@ -2371,7 +2417,7 @@ footer {
             </div>
 
             <div class="stat">
-                <strong>0</strong>
+                <strong>1</strong>
                 M
             </div>
 
@@ -2381,11 +2427,11 @@ footer {
             </div>
 
             <div class="stat">
-                <strong>0</strong>
+                <strong>1</strong>
                 L
             </div>
             <div class="stat">
-                <strong>0-0</strong>
+                <strong>0-2</strong>
                 W/L
             </div>
 
@@ -2519,7 +2565,7 @@ footer {
                 <div>
 
                     <div class="team-name">
-                       ABC ESPORT
+                      PRIA IDAMAN
                     </div>
 
                     <div class="team-sub">
@@ -2531,12 +2577,12 @@ footer {
             </div>
 
             <div class="stat">
-                <strong>0</strong>
+                <strong>1</strong>
                 M
             </div>
 
             <div class="stat">
-                <strong>0</strong>
+                <strong>1</strong>
                 W
             </div>
 
@@ -2545,12 +2591,12 @@ footer {
                 L
             </div>
             <div class="stat">
-                <strong>0-0</strong>
+                <strong>2-0</strong>
                 W/L
             </div>
 
             <div class="stat">
-                <strong>0</strong>
+                <strong>3</strong>
                 PTS
             </div>
 
@@ -2566,7 +2612,7 @@ footer {
                 <div>
 
                     <div class="team-name">
-                        PRIA IDAMAN
+                        ABC ESPORT
                     </div>
 
                     <div class="team-sub">
@@ -2625,7 +2671,7 @@ footer {
             </div>
 
             <div class="stat">
-                <strong>0</strong>
+                <strong>1</strong>
                 M
             </div>
 
@@ -2635,11 +2681,11 @@ footer {
             </div>
 
             <div class="stat">
-                <strong>0</strong>
+                <strong>1</strong>
                 L
             </div>
             <div class="stat">
-                <strong>0-0</strong>
+                <strong>0-2</strong>
                 W/L
             </div>
 
@@ -3083,7 +3129,7 @@ footer {
                         </span>
 
                         <span class="schedule-team-code">
-                            A3
+                            0
                         </span>
 
                     </div>
@@ -3099,7 +3145,7 @@ footer {
                         </span>
 
                         <span class="schedule-team-code">
-                            A4
+                            2
                         </span>
 
                     </div>
@@ -3777,7 +3823,7 @@ footer {
                         </span>
 
                         <span class="schedule-team-code">
-                            B3
+                            2
                         </span>
 
                     </div>
@@ -3793,7 +3839,7 @@ footer {
                         </span>
 
                         <span class="schedule-team-code">
-                            B4
+                            0
                         </span>
 
                     </div>
@@ -5520,11 +5566,11 @@ footer {
                     <div class="award-player">
 
                         <div class="award-player-name">
-                            Belum Ditentukan
+                            Randi
                         </div>
 
                         <div class="award-player-team">
-                            —
+                            PRIA IDAMAN
                         </div>
 
                     </div>
@@ -5532,7 +5578,7 @@ footer {
                     <div class="award-stat">
 
                         <strong>
-                            0
+                            1
                         </strong>
 
                         <span>
@@ -5555,11 +5601,11 @@ footer {
                     <div class="award-player">
 
                         <div class="award-player-name">
-                            Belum Ditentukan
+                            Rehan
                         </div>
 
                         <div class="award-player-team">
-                            —
+                            GENOCIDE
                         </div>
 
                     </div>
@@ -5567,7 +5613,7 @@ footer {
                     <div class="award-stat">
 
                         <strong>
-                            0
+                            1
                         </strong>
 
                         <span>
@@ -5633,11 +5679,11 @@ footer {
                     <div class="award-player">
 
                         <div class="award-player-name">
-                            Belum Ditentukan
+                            Randi
                         </div>
 
                         <div class="award-player-team">
-                            —
+                            PRIA IDAMAN
                         </div>
 
                     </div>
@@ -5645,7 +5691,7 @@ footer {
                     <div class="savage-count">
 
                         <strong>
-                            0
+                            1
                         </strong>
 
                         <span>
@@ -6032,40 +6078,28 @@ footer {
      JAVASCRIPT
 ===================================================== -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+const loader = document.getElementById("loader");
 
-    const loader = document.getElementById("loader");
-    const progress = document.querySelector(".loader-progress");
+function hideLoader() {
+    if (!loader) return;
 
-    if (!loader || !progress) return;
+    loader.classList.add("hide-loader");
 
-    let percent = 0;
+    setTimeout(() => {
+        loader.remove();
+    }, 400);
+}
 
-    const loading = setInterval(function () {
-
-        percent += Math.floor(Math.random() * 8) + 2;
-
-        if (percent >= 100) {
-            percent = 100;
-            progress.style.width = percent + "%";
-
-            clearInterval(loading);
-
-            setTimeout(function () {
-                loader.classList.add("loader-hidden");
-
-                setTimeout(function () {
-                    loader.style.display = "none";
-                }, 700);
-
-            }, 300);
-        } else {
-            progress.style.width = percent + "%";
-        }
-
-    }, 100);
-
+document.addEventListener("DOMContentLoaded", () => {
+    // Delay 800ms agar animasi terlihat smooth
+    setTimeout(hideLoader, 800);
 });
+
+// Backup jika halaman lambat
+window.addEventListener("load", hideLoader);
+
+// Paksa hilang maksimal 3 detik jika ada yang macet
+setTimeout(hideLoader, 3000);
 </script>
 
 <script>
@@ -6094,6 +6128,3 @@ function toggleSection(sectionId, arrowId) {
 }
 
 </script>
-
-</body>
-</html>
