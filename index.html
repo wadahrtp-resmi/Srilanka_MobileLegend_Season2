@@ -1,6130 +1,1674 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Srilanka MLBB Season 2</title>
-
+<meta charset="utf-8"/>
+<title>Daftar Tim — Tournament Mobile Legends SL</title>
 <style>
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-
-    background:
-        radial-gradient(circle at 10% 0%, #1b2b55 0, transparent 32%),
-        radial-gradient(circle at 90% 100%, #401b32 0, transparent 32%),
-        #080b14;
-
-    color: #fff;
-    min-height: 100vh;
-    padding: 35px 20px;
-}
-
-.container {
-    max-width: 1400px;
-    margin: auto;
-}
-/* =============================
-   WADAH4D LOADER V3
-   FAST • SMOOTH • MOBILE
-============================= */
-#loader{
-    position:fixed;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#090909;
-    z-index:999999;
-    transition:opacity .35s ease, visibility .35s ease;
-}
-
-.loader-content{
-    text-align:center;
-    animation:fadeIn .5s ease;
-}
-
-.loader-logo{
-    width:280px;
-    max-width:75vw;
-    user-select:none;
-    pointer-events:none;
-    animation:floatLogo 2.2s ease-in-out infinite;
-}
-
-/* BAR */
-.loader-bar{
-    width:230px;
-    height:6px;
-    margin:28px auto 16px;
-    background:#1d1d1d;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-.loader-progress{
-    display:block;
-    width:100%;
-    height:100%;
-    background:linear-gradient(90deg,#f5b400,#ffe082);
-    transform:translateX(-100%);
-    animation:progress .85s ease forwards;
-}
-
-.loader-text{
-    display:flex;
-    justify-content:center;
-    gap:2px;
-    margin-top:18px;
-}
-
-.loader-text span{
-    font-size:18px;
-    font-weight:800;
-    letter-spacing:1px;
-    background:linear-gradient(#fff7d0,#ffc107,#b87800);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    text-shadow:
-        0 1px 0 rgba(255,255,255,.4),
-        0 2px 3px rgba(0,0,0,.35);
-    animation:bounce .9s infinite ease-in-out;
-}
-
-.loader-text span:nth-child(2){animation-delay:.08s;}
-.loader-text span:nth-child(3){animation-delay:.16s;}
-.loader-text span:nth-child(4){animation-delay:.24s;}
-.loader-text span:nth-child(5){animation-delay:.32s;}
-.loader-text span:nth-child(6){animation-delay:.40s;}
-.loader-text span:nth-child(7){animation-delay:.48s;}
-.loader-text span:nth-child(8){animation-delay:.56s;}
-.loader-text span:nth-child(9){animation-delay:.64s;}
-.loader-text span:nth-child(10){animation-delay:.72s;}
-
-@keyframes bounce{
-    0%,100%{
-        transform:translateY(0);
-        opacity:.7;
-    }
-    50%{
-        transform:translateY(-4px);
-        opacity:1;
-    }
-}
-
-.hide-loader{
-    opacity:0;
-    visibility:hidden;
-}
-
-/* ANIMATION */
-@keyframes progress{
-    to{
-        transform:translateX(0);
-    }
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(8px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes floatLogo{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-5px);
-    }
-}
-
-/* MOBILE */
-@media(max-width:768px){
-    .loader-logo{
-        width:220px;
-    }
-    .loader-bar{
-        width:190px;
-    }
-    .loader-text{
-        font-size:14px;
-    }
-}
-
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.header {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.tag {
-    display: inline-block;
-
-    padding: 7px 16px;
-
-    border: 1px solid #f5c451;
-    border-radius: 30px;
-
-    color: #f5c451;
-
-    font-size: 12px;
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 14px;
-}
-
-.header h1 {
-    font-size: clamp(30px, 5vw, 58px);
-
-    font-weight: 900;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-}
-
-.header h1 span {
-    color: #f5c451;
-}
-
-.header p {
-    margin-top: 9px;
-
-    color: #8993a8;
-
-    font-size: 14px;
-}
-
-
-/* =====================================================
-   BUTTON
-===================================================== */
-
-.section-toggle {
-    display: flex;
-    justify-content: center;
-
-    margin: 25px 0;
-}
-
-.toggle-btn {
-
-    width: 320px;
-
-    padding: 16px 20px;
-
-    border: 1px solid #f5c451;
-    border-radius: 14px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #1c2438,
-            #101522
-        );
-
-    color: #fff;
-
-    font-size: 14px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.30);
-
-    transition: .25s;
-}
-
-.toggle-btn:hover {
-
-    transform: translateY(-3px);
-
-    border-color: #ffe28a;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.40),
-        0 0 30px rgba(245,196,81,.12);
-}
-
-.toggle-btn:active {
-    transform: scale(.98);
-}
-
-.toggle-btn .icon {
-    color: #f5c451;
-    font-size: 18px;
-}
-
-.arrow {
-    color: #f5c451;
-
-    font-size: 12px;
-
-    transition: .3s;
-}
-
-
-/* =====================================================
-   COLLAPSE
-===================================================== */
-
-.collapsible {
-
-    max-height: 0;
-
-    opacity: 0;
-
-    overflow: hidden;
-
-    transition:
-        max-height .7s ease,
-        opacity .35s ease,
-        margin .6s ease;
-}
-
-.collapsible.open {
-
-    max-height: 50000px;
-
-    opacity: 1;
-
-    margin-bottom: 55px;
-}
-
-
-/* =====================================================
-   GROUP
-===================================================== */
-
-.groups {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 25px;
-}
-
-.group {
-
-    background:
-        rgba(15,20,34,.94);
-
-    border: 1px solid #252d42;
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,.30);
-}
-
-.group-title {
-
-    padding: 18px 22px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    background:
-        linear-gradient(
-            90deg,
-            #171e31,
-            #101522
-        );
-
-    border-bottom:
-        1px solid #252d42;
-}
-
-.group-title h2 {
-    font-size: 20px;
-}
-
-.group-title span {
-
-    color: #f5c451;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-}
-
-.team-list {
-    padding: 15px;
-}
-
-.team {
-
-    display: grid;
-
-    grid-template-columns:
-        40px 1fr 45px 45px 45px 55px 60px;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 12px;
-
-    margin-bottom: 8px;
-
-    border-radius: 11px;
-
-    background: #111726;
-
-    border:
-        1px solid transparent;
-
-    transition: .2s;
-}
-
-.team:last-child {
-    margin-bottom: 0;
-}
-
-.team:hover {
-
-    border-color: #f5c451;
-
-    transform:
-        translateX(3px);
-}
-
-.rank {
-
-    color: #667188;
-
-    font-weight: bold;
-
-    text-align: center;
-}
-
-.team-info {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-.logo {
-
-    width: 36px;
-    height: 36px;
-
-    border-radius: 9px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f5c451,
-            #b97917
-        );
-
-    color: #111;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-weight: 900;
-
-    font-size: 11px;
-
-    flex-shrink: 0;
-}
-
-.team-name {
-
-    font-weight: bold;
-
-    font-size: 14px;
-}
-
-.team-sub {
-
-    color: #667188;
-
-    font-size: 10px;
-
-    margin-top: 3px;
-}
-
-.stat {
-
-    text-align: center;
-
-    color: #b8c0d0;
-
-    font-size: 11px;
-}
-
-.stat strong {
-
-    display: block;
-
-    color: #fff;
-
-    font-size: 15px;
-}
-
-.qualified {
-
-    border-color:
-        rgba(245,196,81,.35);
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(245,196,81,.08),
-            #111726
-        );
-}
-
-.qualified .rank {
-    color: #f5c451;
-}
-
-
-/* =====================================================
-   PLAYOFF
-===================================================== */
-
-.playoff-content {
-    padding-top: 10px;
-}
-
-.playoff-title {
-
-    text-align: center;
-
-    margin-bottom: 55px;
-}
-
-.playoff-title h2 {
-
-    font-size: 28px;
-
-    letter-spacing: 2px;
-}
-
-.playoff-title p {
-
-    color: #69748a;
-
-    margin-top: 7px;
-
-    font-size: 13px;
-}
-
-.bracket {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        80px
-        1fr
-        80px
-        1fr;
-
-    align-items: center;
-
-    max-width: 1250px;
-
-    margin: auto;
-}
-
-.round {
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-around;
-
-    height: 470px;
-
-    position: relative;
-
-    gap: 35px;
-}
-
-.round-title {
-
-    position: absolute;
-
-    top: -35px;
-
-    left: 0;
-    right: 0;
-
-    text-align: center;
-
-    color: #69748a;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-}
-
-.match {
-
-    background: #111726;
-
-    border: 1px solid #293249;
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.25);
-
-    transition: .2s;
-}
-
-.match:hover {
-
-    border-color: #f5c451;
-
-    transform:
-        translateY(-2px);
-}
-
-.match-title {
-
-    background: #181f31;
-
-    padding: 8px 12px;
-
-    color: #68738a;
-
-    font-size: 10px;
-
-    text-transform: uppercase;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-}
-
-.player {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 13px;
-
-    border-top:
-        1px solid #252d40;
-}
-
-.player span:first-child {
-
-    color: #d9deea;
-
-    font-size: 13px;
-
-    font-weight: bold;
-}
-
-.score {
-
-    color: #f5c451;
-
-    font-size: 16px;
-
-    font-weight: 900;
-}
-
-.connector {
-
-    height: 2px;
-
-    background: #323b52;
-
-    position: relative;
-}
-
-.connector::after {
-
-    content: "";
-
-    position: absolute;
-
-    right: -1px;
-
-    top: -4px;
-
-    width: 10px;
-
-    height: 10px;
-
-    border-top:
-        2px solid #323b52;
-
-    border-right:
-        2px solid #323b52;
-
-    transform:
-        rotate(45deg);
-}
-
-.final {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.final-box {
-
-    width: 100%;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(245,196,81,.13),
-            #111726
-        );
-
-    border:
-        1px solid #f5c451;
-
-    border-radius: 18px;
-
-    padding: 28px 15px;
-
-    text-align: center;
-
-    box-shadow:
-        0 0 40px rgba(245,196,81,.08);
-}
-
-.trophy {
-
-    font-size: 44px;
-
-    margin-bottom: 10px;
-}
-
-.final-box h3 {
-
-    color: #f5c451;
-
-    font-size: 13px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 18px;
-}
-
-.champion {
-
-    padding: 18px 10px;
-
-    border-radius: 12px;
-
-    background:
-        rgba(245,196,81,.08);
-
-    border:
-        1px dashed #7e6630;
-
-    color: #777f90;
-
-    font-weight: bold;
-}
-
-
-/* =====================================================
-   SCHEDULE
-===================================================== */
-
-.schedule-title {
-
-    text-align: center;
-
-    margin-bottom: 35px;
-}
-
-.schedule-title h2 {
-
-    font-size: 28px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-.schedule-title p {
-
-    color: #69748a;
-
-    font-size: 13px;
-
-    margin-top: 8px;
-}
-
-.schedule-group {
-
-    margin-bottom: 35px;
-
-    background:
-        rgba(15,20,34,.94);
-
-    border:
-        1px solid #252d42;
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,.25);
-}
-
-.schedule-group:last-child {
-    margin-bottom: 0;
-}
-
-.schedule-group-header {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 18px 22px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #171e31,
-            #101522
-        );
-
-    border-bottom:
-        1px solid #252d42;
-}
-
-.schedule-group-header h3 {
-    font-size: 19px;
-}
-
-.schedule-group-header span {
-
-    color: #f5c451;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-}
-
-.schedule-round {
-
-    padding: 20px;
-
-    border-bottom:
-        1px solid #20283a;
-}
-
-.schedule-round:last-child {
-    border-bottom: none;
-}
-
-.round-header {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    margin-bottom: 14px;
-}
-
-.round-number {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 32px;
-    height: 32px;
-
-    border-radius: 9px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f5c451,
-            #b97917
-        );
-
-    color: #111;
-
-    font-size: 11px;
-
-    font-weight: 900;
-}
-
-.round-name {
-
-    font-size: 13px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-}
-
-.round-info {
-
-    color: #667188;
-
-    font-size: 10px;
-
-    margin-top: 3px;
-}
-
-.schedule-matches {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap: 12px;
-}
-
-.schedule-match {
-
-    display: grid;
-
-    grid-template-columns:
-        90px 1fr 55px;
-
-    align-items: center;
-
-    min-height: 88px;
-
-    padding: 13px;
-
-    background: #111726;
-
-    border:
-        1px solid #252e43;
-
-    border-radius: 13px;
-
-    transition: .2s;
-}
-
-.schedule-match:hover {
-
-    border-color: #f5c451;
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.25);
-}
-
-.match-date {
-
-    text-align: center;
-
-    border-right:
-        1px solid #293249;
-
-    padding-right: 12px;
-}
-
-.match-date .day {
-
-    display: block;
-
-    color: #f5c451;
-
-    font-size: 13px;
-
-    font-weight: 900;
-}
-
-.match-date .time {
-
-    display: block;
-
-    color: #69748a;
-
-    font-size: 10px;
-
-    margin-top: 5px;
-}
-
-.schedule-teams {
-
-    padding:
-        0 14px;
-}
-
-.schedule-team {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    padding: 5px 0;
-}
-
-.schedule-team-name {
-
-    color: #d9deea;
-
-    font-size: 12px;
-
-    font-weight: bold;
-}
-
-.schedule-team-code {
-
-    color: #f5c451;
-
-    font-size: 9px;
-}
-
-.vs {
-
-    text-align: center;
-
-    color: #59647a;
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-}
-
-.match-id {
-
-    text-align: center;
-
-    color: #59647a;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    border-left:
-        1px solid #293249;
-
-    padding-left: 10px;
-}
-
-
-/* =====================================================
-   TEAMS & PLAYERS
-===================================================== */
-
-.players-title {
-
-    text-align: center;
-
-    margin-bottom: 35px;
-}
-
-.players-title h2 {
-
-    font-size: 28px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-.players-title p {
-
-    color: #69748a;
-
-    font-size: 13px;
-
-    margin-top: 8px;
-}
-
-
-/* TEAM PLAYER GRID */
-
-.player-teams {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 25px;
-}
-
-.player-team {
-
-    background:
-        rgba(15,20,34,.94);
-
-    border:
-        1px solid #252d42;
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,.25);
-
-    transition: .25s;
-}
-
-.player-team:hover {
-
-    border-color:
-        rgba(245,196,81,.55);
-
-    transform:
-        translateY(-3px);
-}
-
-
-/* TEAM HEADER */
-
-.player-team-header {
-
-    padding: 18px 20px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    background:
-        linear-gradient(
-            90deg,
-            #171e31,
-            #101522
-        );
-
-    border-bottom:
-        1px solid #252d42;
-}
-
-.player-team-left {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-}
-
-.team-big-logo {
-
-    width: 44px;
-    height: 44px;
-
-    border-radius: 11px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f5c451,
-            #b97917
-        );
-
-    color: #111;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 12px;
-
-    font-weight: 900;
-
-    flex-shrink: 0;
-}
-
-.player-team-name {
-
-    font-size: 15px;
-
-    font-weight: 900;
-
-    letter-spacing: .5px;
-}
-
-.player-team-region {
-
-    color: #69748a;
-
-    font-size: 10px;
-
-    margin-top: 4px;
-}
-
-.player-count {
-
-    color: #f5c451;
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    letter-spacing: 1px;
-}
-
-
-/* PLAYER LIST */
-
-.player-list {
-
-    padding: 13px;
-}
-
-.player-card {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 11px 12px;
-
-    margin-bottom: 7px;
-
-    background: #111726;
-
-    border:
-        1px solid transparent;
-
-    border-radius: 10px;
-
-    transition: .2s;
-}
-
-.player-card:last-child {
-    margin-bottom: 0;
-}
-
-.player-card:hover {
-
-    border-color:
-        rgba(245,196,81,.5);
-
-    background:
-        #151c2c;
-
-    transform:
-        translateX(3px);
-}
-
-.player-number {
-
-    width: 27px;
-    height: 27px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 7px;
-
-    background:
-        rgba(245,196,81,.10);
-
-    color: #f5c451;
-
-    font-size: 10px;
-
-    font-weight: 900;
-}
-
-.player-avatar {
-
-    width: 34px;
-    height: 34px;
-
-    border-radius: 9px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #252f46,
-            #151b2b
-        );
-
-    border:
-        1px solid #303b54;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: #9ba5b8;
-
-    font-size: 10px;
-
-    font-weight: 900;
-}
-
-.player-details {
-
-    flex: 1;
-}
-
-.player-name {
-
-    color: #e1e5ee;
-
-    font-size: 12px;
-
-    font-weight: bold;
-}
-
-.player-role {
-
-    color: #59647a;
-
-    font-size: 9px;
-
-    margin-top: 3px;
-
-    text-transform: uppercase;
-
-    letter-spacing: .7px;
-}
-
-.player-status {
-
-    color: #f5c451;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    letter-spacing: .5px;
-}
-
-
-/* =====================================================
-   SPONSOR
-===================================================== */
-
-.sponsor-section {
-
-    margin-top: 25px;
-
-    text-align: center;
-}
-
-.sponsor-content {
-
-    padding: 40px 20px 45px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(245,196,81,.06),
-            rgba(15,20,34,.90)
-        );
-
-    border:
-        1px solid #252d42;
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.30);
-}
-
-.sponsor-label {
-
-    display: inline-block;
-
-    color: #f5c451;
-
-    font-size: 11px;
-
-    font-weight: 900;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 12px;
-}
-
-.sponsor-content h2 {
-
-    font-size: 25px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 25px;
-}
-
-.sponsor-image-box {
-
-    width: 260px;
-
-    margin: auto;
-
-    padding: 8px;
-
-    background: #0d111d;
-
-    border:
-        1px solid #30394d;
-
-    border-radius: 14px;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.30);
-}
-
-.sponsor-image {
-
-    display: block;
-
-    width: 100%;
-
-    max-height: 120px;
-
-    object-fit: contain;
-
-    border-radius: 8px;
-}
-
-.sponsor-name {
-
-    margin-top: 18px;
-
-    color: #f5c451;
-
-    font-size: 15px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-}
-
-.sponsor-desc {
-
-    margin-top: 7px;
-
-    color: #69748a;
-
-    font-size: 11px;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-
-    text-align: center;
-
-    margin-top: 35px;
-
-    color: #4f596d;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-}
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-/* =====================================================
-   MVP & SAVAGE
-===================================================== */
-
-.mvp-savage-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.award-panel {
-    background:
-        rgba(15,20,34,.94);
-
-    border: 1px solid #252d42;
-    border-radius: 18px;
-    overflow: hidden;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,.30);
-}
-
-.award-header {
-    padding: 20px 22px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background:
-        linear-gradient(
-            90deg,
-            #171e31,
-            #101522
-        );
-
-    border-bottom: 1px solid #252d42;
-}
-
-.award-header-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.award-icon {
-   width: 58px;
-    height: 58px;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.award-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 11px;
-
-    font-size: 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f5c451,
-            #b97917
-        );
-
-    box-shadow:
-        0 0 20px rgba(245,196,81,.15);
-}
-
-.savage-panel .award-icon {
-    background:
-        linear-gradient(
-            135deg,
-            #ff5c5c,
-            #a91616
-        );
-
-    box-shadow:
-        0 0 20px rgba(255,70,70,.18);
-}
-
-.award-header h3 {
-    font-size: 16px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-.award-header p {
-    color: #69748a;
-    font-size: 9px;
-    margin-top: 4px;
-}
-
-.award-badge {
-    padding: 6px 9px;
-
-    border-radius: 20px;
-
-    color: #f5c451;
-
-    border: 1px solid rgba(245,196,81,.3);
-
-    font-size: 9px;
-    font-weight: 900;
-
-    letter-spacing: 1px;
-}
-
-.savage-panel .award-badge {
-    color: #ff7777;
-    border-color: rgba(255,80,80,.3);
-}
-
-
-/* MVP ROW */
-
-.mvp-list,
-.savage-list {
-    padding: 14px;
-}
-
-.mvp-card,
-.savage-card {
-
-    display: grid;
-
-    grid-template-columns:
-        42px 1fr auto;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 13px;
-
-    margin-bottom: 8px;
-
-    border-radius: 11px;
-
-    background: #111726;
-
-    border: 1px solid transparent;
-
-    transition: .25s;
-}
-
-.mvp-card:last-child,
-.savage-card:last-child {
-    margin-bottom: 0;
-}
-
-.mvp-card:hover {
-
-    border-color: #f5c451;
-
-    transform:
-        translateX(4px);
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(245,196,81,.08),
-            #111726
-        );
-}
-
-.savage-card:hover {
-
-    border-color: #ff5555;
-
-    transform:
-        translateX(4px);
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(255,70,70,.08),
-            #111726
-        );
-}
-
-
-/* RANK */
-
-.award-rank {
-
-    width: 34px;
-    height: 34px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 9px;
-
-    background:
-        rgba(245,196,81,.10);
-
-    color: #f5c451;
-
-    font-size: 12px;
-
-    font-weight: 900;
-}
-
-.mvp-card:nth-child(1) .award-rank {
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe79a,
-            #d49b20
-        );
-
-    color: #111;
-
-    box-shadow:
-        0 0 15px rgba(245,196,81,.25);
-}
-
-.mvp-card:nth-child(2) .award-rank {
-    color: #d8dce5;
-    background: rgba(210,215,225,.10);
-}
-
-.mvp-card:nth-child(3) .award-rank {
-    color: #d99a62;
-    background: rgba(180,100,50,.10);
-}
-
-
-/* PLAYER */
-
-.award-player {
-    min-width: 0;
-}
-
-.award-player-name {
-
-    color: #e5e8ef;
-
-    font-size: 13px;
-
-    font-weight: 900;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-}
-
-.award-player-team {
-
-    color: #69748a;
-
-    font-size: 9px;
-
-    margin-top: 4px;
-
-    text-transform: uppercase;
-
-    letter-spacing: .7px;
-}
-
-
-/* STAT */
-
-.award-stat {
-
-    text-align: right;
-}
-
-.award-stat strong {
-
-    display: block;
-
-    color: #f5c451;
-
-    font-size: 15px;
-
-    font-weight: 900;
-}
-
-.award-stat span {
-
-    color: #59647a;
-
-    font-size: 8px;
-
-    letter-spacing: .7px;
-}
-
-
-/* SAVAGE */
-
-.savage-count {
-
-    min-width: 58px;
-
-    padding: 7px 8px;
-
-    border-radius: 9px;
-
-    text-align: center;
-
-    background:
-        rgba(255,60,60,.08);
-
-    border:
-        1px solid rgba(255,60,60,.18);
-}
-
-.savage-count strong {
-
-    display: block;
-
-    color: #ff6868;
-
-    font-size: 17px;
-
-    font-weight: 900;
-}
-
-.savage-count span {
-
-    color: #8d5960;
-
-    font-size: 8px;
-
-    letter-spacing: 1px;
-}
-
-
-/* EMPTY */
-
-.award-empty {
-
-    padding: 35px 20px;
-
-    text-align: center;
-
-    color: #59647a;
-
-    font-size: 11px;
-
-    border: 1px dashed #293249;
-
-    border-radius: 12px;
-}
-
-.award-empty .empty-icon {
-
-    display: block;
-
-    font-size: 30px;
-
-    margin-bottom: 10px;
-
-    opacity: .6;
-}
-
-
-/* MOBILE */
-
-@media(max-width: 900px) {
-
-    .mvp-savage-grid {
-        grid-template-columns: 1fr;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-}
-
-@media(max-width: 600px) {
-
-    .award-header {
-        padding: 16px;
+    :root {
+      --background: #4daede;
+      --header: #4daede;
+      --card: #4daede;
+      --card-hover: #4daede;
+      --border: #233c68;
+      --blue: #ffd76a;
+      --cyan: #ffd76a;
+      --text: #ffffff;
+      --muted: #fff2bf;
+      --yellow: #ffd166;
     }
 
-    .mvp-list,
-    .savage-list {
-        padding: 10px;
+    html {
+      scroll-behavior: smooth;
     }
-
-    .mvp-card,
-    .savage-card {
-        padding: 11px;
-    }
-
-    .award-player-name {
-        font-size: 12px;
-    }
-
-}
-
-@media(max-width: 900px) {
-
-    .groups {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .player-teams {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .bracket {
-
-        display: block;
-    }
-
-    .round {
-
-        height: auto;
-
-        gap: 18px;
-
-        margin-bottom: 50px;
-    }
-
-    .round-title {
-
-        position: static;
-
-        margin-bottom: 8px;
-    }
-
-    .connector {
-        display: none;
-    }
-
-    .final {
-        margin-top: 10px;
-    }
-
-    .schedule-matches {
-
-        grid-template-columns:
-            1fr;
-    }
-}
-
-
-@media(max-width: 600px) {
 
     body {
-
-        padding:
-            20px 12px;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(42, 117, 255, 0.12), transparent 32%),
+        var(--background);
     }
 
-    .toggle-btn {
-
-        width: 100%;
+    button,
+    a {
+      font-family: inherit;
     }
 
-    .team {
-
-        grid-template-columns:
-            30px 1fr 34px 34px 34px 42px 42px;
+    /* HEADER */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      min-height: 88px;
+      background: rgba(77,174,222, 0.97);
+      border-bottom: 1px solid var(--border);
     }
 
-    .team-info {
-        gap: 8px;
+    .header-container {
+      width: min(1200px, calc(100% - 32px));
+      min-height: 88px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
     .logo {
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      text-decoration: none;
+      color: #4daede;
+      font-size: 18px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #59bde7, #ffd76a);
+      box-shadow: 0 0 24px rgba(53, 185, 255, 0.22);
+    }
 
-        width: 31px;
-        height: 31px;
+    .brand {
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .brand-subtitle {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .menu-button {
+      width: 48px;
+      height: 48px;
+      margin-left: auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      color: white;
+      background: #4daede;
+      cursor: pointer;
+      font-size: 27px;
+    }
+
+    .menu-button:hover {
+      background: #4daede;
+    }
+
+    .navigation {
+      position: absolute;
+      top: 76px;
+      right: max(16px, calc((100% - 1200px) / 2));
+      width: 230px;
+      padding: 10px;
+      display: none;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #4daede;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .navigation.show {
+      display: block;
+    }
+
+    .navigation a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .navigation a:hover,
+    .navigation a.active {
+      color: white;
+      background: #4daede;
+    }
+
+    /* JUDUL */
+    .hero {
+      min-height: 285px;
+      padding: 64px 20px 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid #ffffff;
+      border-radius: 999px;
+      color: var(--cyan);
+      background: #4daede;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      margin-top: 20px;
+      font-size: clamp(31px, 5vw, 48px);
+      line-height: 1.1;
+    }
+
+    .hero p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ISI TIM */
+    .content {
+      width: min(1200px, calc(100% - 28px));
+      margin: auto;
+      padding: 42px 0 55px;
+    }
+
+    .filter-container {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .filter-button {
+      padding: 11px 17px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      background: #4daede;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .filter-button:hover,
+    .filter-button.active {
+      color: #4daede;
+      border-color: var(--cyan);
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+    }
+
+    .groups-container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .group-card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(145deg, #4daede, #4daede);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
+    }
+
+    .group-title {
+      margin-bottom: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .group-title h2 {
+      color: var(--cyan);
+      font-size: 22px;
+    }
+
+    .group-count {
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .team-list {
+      display: grid;
+      gap: 11px;
+    }
+
+    .team-button {
+      width: 100%;
+      padding: 13px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      border: 1px solid rgba(53, 185, 255, 0.18);
+      border-radius: 14px;
+      color: white;
+      background: rgba(77,174,222,0.75);
+      cursor: pointer;
+      text-align: left;
+      transition: 0.18s ease;
+    }
+
+    .team-button:hover {
+      transform: translateY(-2px);
+      border-color: var(--blue);
+      background: var(--card-hover);
+    }
+
+    .team-logo {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: #4daede;
+      background: linear-gradient(135deg, var(--yellow), #fff0a8);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .team-information {
+      min-width: 0;
+      flex: 1;
     }
 
     .team-name {
-        font-size: 13px;
+      font-size: 15px;
+      font-weight: 900;
     }
 
-    .schedule-match {
-
-        grid-template-columns:
-            70px 1fr 42px;
+    .team-description {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
     }
 
-    .schedule-teams {
-        padding: 0 8px;
+    .team-arrow {
+      color: var(--cyan);
+      font-size: 20px;
+      font-weight: 900;
     }
 
-    .schedule-team-name {
+    /* POPUP PLAYER */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      padding: 20px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(77,174,222,0.78);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-box {
+      width: min(520px, 100%);
+      max-height: 88vh;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: #4daede;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+    }
+
+    .modal-header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      padding: 19px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      border-bottom: 1px solid var(--border);
+      background: #4daede;
+    }
+
+    .modal-team-logo {
+      width: 51px;
+      height: 51px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: #4daede;
+      background: linear-gradient(135deg, var(--yellow), #fff0a8);
+      font-weight: 900;
+    }
+
+    .modal-title {
+      flex: 1;
+    }
+
+    .modal-title h2 {
+      font-size: 20px;
+    }
+
+    .modal-title p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .close-button {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      color: white;
+      background: #4daede;
+      cursor: pointer;
+      font-size: 21px;
+    }
+
+    .player-container {
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .player-row {
+      padding: 13px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid rgba(53, 185, 255, 0.18);
+      border-radius: 13px;
+      background: #4daede;
+    }
+
+    .player-number {
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: #4daede;
+      background: var(--cyan);
+      font-weight: 900;
+    }
+
+    .player-name {
+      font-weight: 900;
+    }
+
+    .player-role {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 26px 15px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      background: #4daede;
+    }
+
+    .footer span {
+      display: inline-block;
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 760px) {
+      .header-container {
+        width: calc(100% - 20px);
+      }
+
+      .brand-title {
+        font-size: 12px;
+      }
+
+      .brand-subtitle {
         font-size: 11px;
-    }
+      }
 
-    .schedule-group-header {
+      .hero {
+        min-height: 260px;
+        padding-top: 45px;
+      }
+
+      .groups-container {
+        grid-template-columns: 1fr;
+      }
+
+      .group-card {
         padding: 16px;
+      }
     }
-
-    .schedule-round {
-        padding: 14px;
-    }
-
-    .sponsor-content {
-        padding:
-            30px 12px 35px;
-    }
-
-    .sponsor-content h2 {
-        font-size: 21px;
-    }
-
-    .sponsor-image-box {
-        width: 220px;
-    }
-
-    .player-team-header {
-        padding: 15px;
-    }
-
-    .player-list {
-        padding: 10px;
-    }
-
-    .player-card {
-        padding: 10px;
-    }
-
+  </style>
+<style id="logo-fix">
+.logo {
+  width: 58px !important;
+  height: 58px !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+  overflow: hidden !important;
+  border: 1px solid #f0c553 !important;
+  border-radius: 15px !important;
+  background: #4daede !important;
+  box-shadow: 0 0 18px rgba(53, 185, 255, 0.28) !important;
+  text-decoration: none !important;
 }
 
-
-/* =====================================================
-   HERO PHOTO MARQUEE
-===================================================== */
-
-.hero-marquee {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-bottom: 35px;
-    overflow: hidden;
-    position: relative;
-    padding: 6px 0;
-    background: rgba(0,0,0,.18);
-    border-top: 1px solid rgba(245,196,81,.15);
-    border-bottom: 1px solid rgba(245,196,81,.15);
+.logo img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center 45% !important;
+  transform: scale(1.45) !important;
+  transform-origin: center !important;
+  border-radius: 0 !important;
+}
+</style>
+<style id="global-layout-fix">
+:root {
+  --global-max-width: 1200px;
+  --global-border: #f0c553;
+  --global-background: #4daede;
+  --global-muted: #fff2bf;
 }
 
-.hero-track {
-    display: flex;
-    width: max-content;
-    animation: heroScroll 55s linear infinite;
-    will-change: transform;
+html {
+  width: 100%;
+  min-width: 320px;
+  -webkit-text-size-adjust: 100%;
 }
 
-.hero-set {
-    display: flex;
-    gap: 14px;
-    padding-right: 14px;
-    flex-shrink: 0;
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 !important;
+  overflow-x: hidden;
+  font-size: 16px;
 }
 
-.hero-photo {
-    width: 190px;
-    height: 110px;
-    flex: 0 0 190px;
-    overflow: hidden;
-    border-radius: 14px;
-    border: 1px solid #30394d;
-    background: #111726;
-    box-shadow: 0 8px 25px rgba(0,0,0,.35);
+/* HEADER SEMUA HALAMAN */
+.header,
+.site-header {
+  width: 100% !important;
+  min-height: 88px !important;
+  height: auto !important;
+  padding: 0 !important;
 }
 
-.hero-photo img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transition: transform .35s ease;
+.header-container,
+.header > .container,
+.site-header > .container,
+.site-header .header-container {
+  width: min(var(--global-max-width), calc(100% - 32px)) !important;
+  min-height: 88px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
 }
 
-.hero-photo:hover img {
-    transform: scale(1.08);
+/* LOGO SEMUA HALAMAN */
+.logo,
+.brand-logo,
+.brand-mark {
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
+  min-height: 58px !important;
+  padding: 0 !important;
+  display: block !important;
+  overflow: hidden !important;
+  border: 1px solid var(--global-border) !important;
+  border-radius: 15px !important;
+  background: #4daede !important;
+  box-shadow: 0 0 18px rgba(53, 185, 255, 0.25) !important;
+  text-decoration: none !important;
 }
 
-.hero-marquee:hover .hero-track {
-    animation-play-state: paused;
+.logo img,
+.brand-logo img,
+.brand-mark img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center 45% !important;
+  transform: scale(1.45) !important;
+  transform-origin: center !important;
+  border-radius: 0 !important;
 }
 
-@keyframes heroScroll {
-    from {
-        transform: translateX(0);
+/* NAMA TURNAMEN */
+.brand {
+  min-width: 0 !important;
+}
+
+.brand-title {
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.25 !important;
+  font-weight: 900 !important;
+}
+
+.brand-subtitle {
+  margin-top: 6px !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  color: var(--global-muted) !important;
+}
+
+/* TOMBOL MENU */
+.menu-button {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  margin-left: auto !important;
+  padding: 0 !important;
+  border-radius: 15px !important;
+}
+
+/* HERO / JUDUL HALAMAN */
+.hero {
+  width: 100% !important;
+  min-height: 260px !important;
+  padding: 48px 20px 40px !important;
+}
+
+.hero h1 {
+  margin-top: 18px !important;
+  font-size: clamp(32px, 5vw, 48px) !important;
+  line-height: 1.1 !important;
+}
+
+.hero p {
+  max-width: 720px !important;
+  margin: 14px auto 0 !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+
+/* HERO BERUPA BANNER DI BERANDA */
+.hero:has(.hero-banner-wrap) {
+  min-height: 0 !important;
+  padding: 14px 0 24px !important;
+}
+
+.hero-banner-wrap {
+  width: min(var(--global-max-width), calc(100% - 24px)) !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+  border: 1px solid var(--global-border) !important;
+  border-radius: 18px !important;
+}
+
+.hero-banner {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: cover !important;
+}
+
+/* LEBAR ISI HALAMAN */
+.content,
+main.content {
+  width: min(var(--global-max-width), calc(100% - 28px)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: 40px !important;
+  padding-bottom: 60px !important;
+}
+
+/* PLAYOFF TETAP BISA DIGESER */
+.bracket-wrapper {
+  max-width: 1500px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* FOOTER */
+.footer {
+  width: 100% !important;
+  min-height: 76px !important;
+  padding: 25px 15px !important;
+}
+
+/* TAMPILAN HP */
+@media (max-width: 760px) {
+  .header-container,
+  .header > .container,
+  .site-header > .container,
+  .site-header .header-container {
+    width: calc(100% - 20px) !important;
+    min-height: 78px !important;
+    gap: 11px !important;
+  }
+
+  .header,
+  .site-header {
+    min-height: 78px !important;
+  }
+
+  .logo,
+  .brand-logo,
+  .brand-mark {
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+    min-height: 52px !important;
+  }
+
+  .brand-title {
+    font-size: 12px !important;
+  }
+
+  .brand-subtitle {
+    font-size: 11px !important;
+  }
+
+  .menu-button {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+  }
+
+  .hero {
+    min-height: 235px !important;
+    padding: 42px 15px 34px !important;
+  }
+
+  .hero:has(.hero-banner-wrap) {
+    min-height: 0 !important;
+    padding: 10px 0 18px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(29px, 9vw, 39px) !important;
+  }
+
+  .hero p {
+    font-size: 14px !important;
+  }
+
+  .content,
+  main.content {
+    width: calc(100% - 16px) !important;
+    padding-top: 30px !important;
+  }
+
+  .hero-banner-wrap {
+    width: calc(100% - 14px) !important;
+    border-radius: 13px !important;
+  }
+}
+</style>
+<link href="header-universal.css" rel="stylesheet"/>
+<link href="page-hero-beauty.css" rel="stylesheet"/>
+<link href="footer-universal.css" rel="stylesheet"/>
+<link href="team-gallery.css" rel="stylesheet"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta content="#4daede" name="theme-color"/>
+<link href="logo-sl.webp" rel="icon" type="image/webp"/>
+<link href="logo-sl.webp" rel="shortcut icon" type="image/webp"/>
+<link href="logo-sl.webp" rel="apple-touch-icon"/>
+<link href="mobile-universal.css" rel="stylesheet"/>
+<link href="header-responsive-fix.css" rel="stylesheet"/>
+<link href="hamburger-always.css" rel="stylesheet"/>
+<link href="team-logo-safe.css" rel="stylesheet"/>
+<link href="theme-season2-premium.css" rel="stylesheet"/>
+<link href="header-title-fix.css" rel="stylesheet">
+<link href="responsive-final.css" rel="stylesheet">
+<link href="responsive-stable-final.css" rel="stylesheet">
+<!-- TIM-HERO-PENDEK-START -->
+<style>
+@media (max-width: 760px) {
+    html body section.hero {
+        width: 100% !important;
+        min-height: 125px !important;
+        height: auto !important;
+        padding: 18px 10px 16px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
-    to {
-        transform: translateX(-50%);
+
+    html body section.hero .hero-badge {
+        padding: 7px 13px !important;
+        font-size: 9px !important;
+        line-height: 1 !important;
+    }
+
+    html body section.hero h1 {
+        margin: 11px 0 0 !important;
+        font-size: 26px !important;
+        line-height: 1.05 !important;
+        white-space: nowrap !important;
     }
 }
+</style>
+<!-- TIM-HERO-PENDEK-END -->
+<!-- HERO-TULISAN-JELAS-V4-START -->
+<style>
+/* Kotak judul halaman */
+html body section.hero {
+    position: relative !important;
+    overflow: hidden !important;
+    border-bottom: 1px solid rgba(21,155,211,.30) !important;
+    background:
+        radial-gradient(circle at 50% 10%, rgba(255,255,255,.90), transparent 47%),
+        linear-gradient(135deg, #f7fdff 0%, #e0f5ff 52%, #cbeeff 100%) !important;
+}
 
+/* Pastikan isi berada di atas efek latar */
+html body section.hero > div {
+    position: relative !important;
+    z-index: 3 !important;
+    max-width: 100% !important;
+}
+
+/* Label kecil: DAFTAR PESERTA, FASE GRUP, dan lainnya */
+html body section.hero .hero-badge {
+    position: relative !important;
+    z-index: 3 !important;
+    color: #ffffff !important;
+    border: 1px solid #ffd45c !important;
+    background: linear-gradient(135deg, #0875af, #25afe0) !important;
+    box-shadow:
+        0 5px 13px rgba(4,85,132,.22),
+        inset 0 1px 0 rgba(255,255,255,.30) !important;
+    font-weight: 1000 !important;
+    text-shadow: 0 1px 2px rgba(0,35,75,.45) !important;
+}
+
+/* Judul utama */
+html body section.hero h1 {
+    position: relative !important;
+    z-index: 3 !important;
+    max-width: 100% !important;
+    color: #07365d !important;
+    font-weight: 1000 !important;
+    letter-spacing: .7px !important;
+    text-align: center !important;
+    text-wrap: balance !important;
+    overflow-wrap: normal !important;
+    -webkit-text-stroke: .4px rgba(3,43,83,.25) !important;
+    text-shadow:
+        0 2px 0 #ffffff,
+        0 4px 9px rgba(5,64,105,.20),
+        0 0 15px rgba(79,199,237,.18) !important;
+}
+
+/* Garis emas-biru di bawah judul */
+html body section.hero h1::after {
+    content: "" !important;
+    width: 130px !important;
+    height: 3px !important;
+    margin: 12px auto 0 !important;
+    display: block !important;
+    border-radius: 999px !important;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #20addc,
+        #ffd45c,
+        #20addc,
+        transparent
+    ) !important;
+    box-shadow: 0 0 9px rgba(32,173,220,.38) !important;
+}
+
+/* Deskripsi halaman */
+html body section.hero p {
+    position: relative !important;
+    z-index: 3 !important;
+    width: auto !important;
+    max-width: 760px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    color: #174966 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    text-shadow: 0 1px 0 rgba(255,255,255,.90) !important;
+}
+
+/* Hilangkan efek yang mengaburkan tulisan */
+html body section.hero h1,
+html body section.hero p,
+html body section.hero .hero-badge {
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
+}
+
+/* Tampilan ponsel */
 @media (max-width: 600px) {
-    .hero-track {
-        animation-duration: 42s;
+    html body section.hero .hero-badge {
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 7px 13px !important;
+        font-size: 9px !important;
+        line-height: 1 !important;
     }
 
-    .hero-set {
-        gap: 9px;
-        padding-right: 9px;
+    html body section.hero h1 {
+        max-width: 100% !important;
+        padding: 0 4px !important;
+        font-size: 27px !important;
+        line-height: 1.08 !important;
+        letter-spacing: .2px !important;
+        white-space: normal !important;
     }
 
-    .hero-photo {
-        width: 130px;
-        height: 78px;
-        flex-basis: 130px;
-        border-radius: 10px;
+    html body section.hero h1::after {
+        width: 80px !important;
+        height: 2px !important;
+        margin-top: 8px !important;
+    }
+
+    html body section.hero p {
+        max-width: 340px !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 0 7px !important;
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+        font-weight: 800 !important;
+    }
+}
+</style>
+<!-- HERO-TULISAN-JELAS-V4-END -->
+<script src="/api/bootstrap.js"></script><script src="/safe-html.js"></script>
+</head>
+<body>
+<!-- HEADER -->
+<header class="header sl-site-header">
+<div class="header-container sl-site-header-inner">
+<a class="logo sl-site-logo" href="index.html" title="Kembali ke Beranda">
+<img alt="Logo SL" src="logo-sl.webp"/>
+</a>
+<div class="brand sl-site-brand">
+<div class="brand-title sl-site-title">
+        TOURNAMENT MOBILE LEGENDS SL
+      </div>
+<div class="brand-subtitle sl-site-subtitle">
+        Season 2
+      </div>
+</div>
+<button aria-label="Buka menu" class="menu-button sl-menu-button" id="menuButton" type="button">
+      ☰
+    </button>
+<nav class="navigation sl-site-nav" id="navigation">
+<a href="index.html">BERANDA</a> <a class="active" href="tim.html">TIM</a> <a href="jadwal.html">JADWAL</a> <a href="klasemen.html">KLASEMEN</a> <a href="skor.html">SKOR</a> <a href="mvp.html">MVP</a> <a href="savage.html">SAVAGE</a> <a href="playoff.html">PLAYOFF</a> <a href="rules.html">RULES TURNAMEN</a>        <a href="prizepool.html">PRIZEPOOL</a>
+</nav>
+</div>
+</header>
+<!-- JUDUL -->
+<section class="hero">
+<div>
+<div class="hero-badge">DAFTAR PESERTA</div>
+<h1>20 TIM PARTISIPASI</h1>
+</div>
+</section>
+<!-- DAFTAR TIM -->
+<main class="content">
+
+<div class="groups-container" id="groupsContainer"></div>
+</main>
+<!-- FOOTER -->
+<footer class="sl-global-footer sl-universal-footer">
+<div class="sl-global-footer-inner">
+<span>TOURNAMENT MOBILE LEGENDS SL</span>
+<span class="sl-footer-separator">—</span>
+<span>SEASON 2</span>
+</div>
+</footer>
+<!-- POPUP DAFTAR PLAYER -->
+
+<!-- Sistem tim lama disimpan di backup asli; halaman memakai team-gallery.js saja. -->
+<script src="tournament-config.js"></script>
+<script src="team-gallery.js"></script>
+<script src="hamburger-always.js"></script>
+<!-- SL-UNIVERSAL-FOOTER-START -->
+<style>
+/* Footer SL seragam pada seluruh halaman */
+footer.sl-universal-footer,
+.sl-universal-footer {
+    position: relative !important;
+    z-index: 20 !important;
+    width: 100% !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 8px clamp(14px, 7vw, 120px) !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    color: #ffffff !important;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(0, 217, 255, .28),
+            transparent 56%
+        ),
+        linear-gradient(
+            180deg,
+            #07549b 0%,
+            #053a7a 48%,
+            #03285e 100%
+        ) !important;
+
+    border-top: 2px solid #ffd037 !important;
+    border-bottom: 2px solid #ffd037 !important;
+
+    box-shadow:
+        inset 0 7px 14px rgba(50, 207, 255, .16),
+        inset 0 -5px 11px rgba(0, 20, 67, .30),
+        0 -4px 13px rgba(0, 174, 239, .18) !important;
+}
+
+/* Cahaya biru di tengah footer */
+footer.sl-universal-footer::before,
+.sl-universal-footer::before {
+    content: "" !important;
+    position: absolute !important;
+    z-index: 0 !important;
+    left: 24% !important;
+    right: 24% !important;
+    bottom: -12px !important;
+    height: 23px !important;
+    border-radius: 50% !important;
+
+    background: rgba(0, 222, 255, .65) !important;
+    filter: blur(13px) !important;
+    pointer-events: none !important;
+}
+
+/* Garis kilau halus */
+footer.sl-universal-footer::after,
+.sl-universal-footer::after {
+    content: "" !important;
+    position: absolute !important;
+    z-index: 1 !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 42% !important;
+    height: 1px !important;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.82),
+        transparent
+    ) !important;
+
+    animation: slFooterShine 4.2s linear infinite;
+    pointer-events: none !important;
+}
+
+/* Kotak tulisan footer */
+footer.sl-universal-footer > *,
+.sl-universal-footer > * {
+    position: relative !important;
+    z-index: 4 !important;
+}
+
+/* Seluruh tulisan footer */
+footer.sl-universal-footer,
+footer.sl-universal-footer *,
+.sl-universal-footer,
+.sl-universal-footer * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* Elemen yang berisi tulisan turnamen */
+footer.sl-universal-footer .sl-footer-text-universal,
+.sl-universal-footer .sl-footer-text-universal {
+    width: min(100%, 1200px) !important;
+    min-height: 31px !important;
+    margin: 0 auto !important;
+    padding: 5px 18px !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    color: #ffffff !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: clamp(12px, 1.15vw, 17px) !important;
+    font-weight: 900 !important;
+    line-height: 1.25 !important;
+    letter-spacing: 1px !important;
+    text-align: center !important;
+    white-space: normal !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(9, 86, 166, .94),
+            rgba(2, 34, 88, .98)
+        ) !important;
+
+    border: 1px solid #ffd037 !important;
+    outline: 1px solid rgba(42, 214, 255, .60) !important;
+    outline-offset: -4px !important;
+    border-radius: 999px !important;
+
+    text-shadow:
+        0 2px 2px rgba(0,0,0,.92),
+        0 0 7px rgba(54,218,255,.66) !important;
+
+    box-shadow:
+        0 0 7px rgba(255,205,45,.20),
+        0 0 14px rgba(0,210,255,.25),
+        inset 0 2px 7px rgba(79,225,255,.17) !important;
+}
+
+footer.sl-universal-footer .sl-footer-text-universal *,
+.sl-universal-footer .sl-footer-text-universal * {
+    color: #ffffff !important;
+    font-weight: 900 !important;
+    opacity: 1 !important;
+    text-shadow:
+        0 2px 2px rgba(0,0,0,.92),
+        0 0 7px rgba(54,218,255,.66) !important;
+}
+
+@keyframes slFooterShine {
+    from {
+        transform: translateX(-130%);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .65;
+    }
+
+    65% {
+        opacity: .35;
+    }
+
+    to {
+        transform: translateX(340%);
+        opacity: 0;
+    }
+}
+
+/* Footer pada tampilan ponsel */
+@media (max-width: 600px) {
+    footer.sl-universal-footer,
+    .sl-universal-footer {
+        min-height: 45px !important;
+        padding: 7px 9px !important;
+    }
+
+    footer.sl-universal-footer .sl-footer-text-universal,
+    .sl-universal-footer .sl-footer-text-universal {
+        width: 100% !important;
+        min-height: 29px !important;
+        padding: 5px 8px !important;
+        font-size: 9px !important;
+        letter-spacing: .4px !important;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-track {
-        animation: none;
+    footer.sl-universal-footer::after,
+    .sl-universal-footer::after {
+        animation: none !important;
     }
 }
-
 </style>
-</head>
-
-
-<body>
-
-<!-- LOADING SCREEN -->
-<div id="loader">
-    <div class="loader-content">
-        <img alt="WADAH4D" class="loader-logo" src="https://wadah4d01.com//images/logoweb.png" />
-        <div class="loader-bar">
-            <div class="loader-progress"></div>
-        </div>
-        <div class="loader-text">
-            <span>L</span>
-            <span>O</span>
-            <span>A</span>
-            <span>D</span>
-            <span>I</span>
-            <span>N</span>
-            <span>G</span>
-            <span>.</span>
-            <span>.</span>
-            <span>.</span>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="container">
-
-
-
-
-
-<!-- =====================================================
-     HERO PHOTO MARQUEE - 20 FOTO, BERGERAK KANAN -> KIRI
-===================================================== --><!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header class="header">
-
-    <div class="tag">
-        MOBILE LEGENDS : BANG BANG
-    </div>
-
-    <h1>
-       SRILANKA MLBB <span>TOURNAMENT</span>
-    </h1>
-
-    <p>
-        Srilanka MLBB Season 2 • Tournament
-    </p>
-
-</header>
-
-
-<!-- =====================================================
-     GROUP STAGE BUTTON
-===================================================== -->
-
-<div class="section-toggle">
-
-    <button
-        class="toggle-btn"
-        onclick="toggleSection('groupStage','groupArrow')"
-    >
-
-        <span class="icon">🏆</span>
-
-        <span>GROUP STAGE</span>
-
-        <span
-            class="arrow"
-            id="groupArrow"
-        >
-            ▼
-        </span>
-
-    </button>
-
-</div>
-
-
-<!-- =====================================================
-     GROUP STAGE
-===================================================== -->
-
-<section
-    id="groupStage"
-    class="collapsible"
->
-
-<div class="groups">
-
-
-<!-- GROUP A -->
-
-<div class="group">
-
-    <div class="group-title">
-
-        <h2>GROUP A</h2>
-
-        <span>5 TEAMS</span>
-
-    </div>
-
-    <div class="team-list">
-
-        <div class="team qualified">
-
-            <div class="rank">01</div>
-
-            <div class="team-info">
-
-                <div>
-
-                    <div class="team-name">
-                        EL J3MB4Y
-                    </div>
-
-                    <div class="team-sub">
-                        UPPER BRACKET
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                M
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                W
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                L
-            </div>
-            <div class="stat">
-                <strong>2-0</strong>
-                W/L
-            </div>
-
-            <div class="stat">
-                <strong>3</strong>
-                PTS
-            </div>
-
-        </div>
-
-
-        <div class="team qualified">
-
-            <div class="rank">02</div>
-
-            <div class="team-info">
-
-
-                <div>
-
-                    <div class="team-name">
-                        GENOCIDE
-
-                    </div>
-
-                    <div class="team-sub">
-                        PLAYOFF
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                M
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                W
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                L
-            </div>
-            <div class="stat">
-                <strong>2-0</strong>
-                W/L
-            </div>
-
-            <div class="stat">
-                <strong>3</strong>
-                PTS
-            </div>
-
-        </div>
-
-
-        <div class="team">
-
-            <div class="rank">03</div>
-
-            <div class="team-info">
-
-
-                <div>
-
-                    <div class="team-name">
-                      PPF (PARA PENCARI FREEBET)  
-                    </div>
-
-                    <div class="team-sub">
-                        GUGUR
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                M
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                W
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                L
-            </div>
-            <div class="stat">
-                <strong>0-0</strong>
-                W/L
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                PTS
-            </div>
-
-        </div>
-
-
-        <div class="team">
-
-            <div class="rank">04</div>
-
-            <div class="team-info">
-
-                <div>
-
-                    <div class="team-name">
-                        7DeadlySins
-                    </div>
-
-                    <div class="team-sub">
-                        GUGUR
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                M
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                W
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                L
-            </div>
-            <div class="stat">
-                <strong>0-2</strong>
-                W/L
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                PTS
-            </div>
-
-        </div>
-
-
-        <div class="team">
-
-            <div class="rank">05</div>
-
-            <div class="team-info">
-
-                <div>
-
-                    <div class="team-name">
-                        BOTUNA
-                    </div>
-
-                    <div class="team-sub">
-                        GUGUR
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                M
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                W
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                L
-            </div>
-            <div class="stat">
-                <strong>0-2</strong>
-                W/L
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                PTS
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- GROUP B -->
-
-<div class="group">
-
-    <div class="group-title">
-
-        <h2>GROUP B</h2>
-
-        <span>5 TEAMS</span>
-
-    </div>
-
-    <div class="team-list">
-
-        <div class="team qualified">
-
-            <div class="rank">01</div>
-
-            <div class="team-info">
-
-                <div>
-
-                    <div class="team-name">
-                       RIBAK SUDE ESPORT
-                    </div>
-
-                    <div class="team-sub">
-                        UPPER BRACKET 
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                M
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                W
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                L
-            </div>
-
-            <div class="stat">
-                <strong>2-0</strong>
-                W/L
-            </div>
-
-            <div class="stat">
-                <strong>3</strong>
-                PTS
-            </div>
-
-        </div>
-
-
-        <div class="team qualified">
-
-            <div class="rank">02</div>
-
-            <div class="team-info">
-
-                <div>
-
-                    <div class="team-name">
-                      PRIA IDAMAN
-                    </div>
-
-                    <div class="team-sub">
-                        PLAYOFF
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                M
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                W
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                L
-            </div>
-            <div class="stat">
-                <strong>2-0</strong>
-                W/L
-            </div>
-
-            <div class="stat">
-                <strong>3</strong>
-                PTS
-            </div>
-
-        </div>
-
-
-        <div class="team">
-
-            <div class="rank">03</div>
-
-            <div class="team-info">
-
-                <div>
-
-                    <div class="team-name">
-                        ABC ESPORT
-                    </div>
-
-                    <div class="team-sub">
-                        GUGUR
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                M
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                W
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                L
-            </div>
-            <div class="stat">
-                <strong>0-0</strong>
-                W/L
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                PTS
-            </div>
-
-        </div>
-
-
-        <div class="team">
-
-            <div class="rank">04</div>
-
-            <div class="team-info">
-
-                <div>
-
-                    <div class="team-name">
-                       /A ESPORTT
-                    </div>
-
-                    <div class="team-sub">
-                        GUGUR
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                M
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                W
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                L
-            </div>
-            <div class="stat">
-                <strong>0-2</strong>
-                W/L
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                PTS
-            </div>
-
-        </div>
-
-
-        <div class="team">
-
-            <div class="rank">05</div>
-
-            <div class="team-info">
-
-                <div>
-
-                    <div class="team-name">
-                        N1C3 ESPORT
-                    </div>
-
-                    <div class="team-sub">
-                        GUGUR
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                M
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                W
-            </div>
-
-            <div class="stat">
-                <strong>1</strong>
-                L
-            </div>
-            <div class="stat">
-                <strong>0-2</strong>
-                W/L
-            </div>
-
-            <div class="stat">
-                <strong>0</strong>
-                PTS
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     PLAYOFF BUTTON
-===================================================== -->
-
-<div class="section-toggle">
-
-    <button
-        class="toggle-btn"
-        onclick="toggleSection('playoffStage','playoffArrow')"
-    >
-
-        <span class="icon">⚔️</span>
-
-        <span>PLAYOFF BRACKET</span>
-
-        <span
-            class="arrow"
-            id="playoffArrow"
-        >
-            ▼
-        </span>
-
-    </button>
-
-</div>
-
-
-<!-- =====================================================
-     PLAYOFF
-===================================================== -->
-
-<section
-    id="playoffStage"
-    class="collapsible"
->
-
-<div class="playoff-content">
-
-<div class="playoff-title">
-
-    <h2>PLAYOFF BRACKET</h2>
-
-    <p>
-        Top 2 teams from each group advance
-    </p>
-
-</div>
-
-
-<div class="bracket">
-
-
-<div class="round">
-
-    <div class="round-title">
-    </div>
-
-    <div class="match">
-
-        <div class="match-title">
-            MATCH 01 UPPER BRACKET BO 5
-        </div>
-
-        <div class="player">
-
-            <span>
-                Group A #1
-            </span>
-
-            <span class="score">
-                —
-            </span>
-
-        </div>
-
-        <div class="player">
-
-            <span>
-                Group B #1
-            </span>
-
-            <span class="score">
-                —
-            </span>
-
-        </div>
-
-    </div>
-
-
-    <div class="match">
-
-        <div class="match-title">
-            MATCH 02 PLAYOFF / LOWER BRACKET BO 5
-        </div>
-
-        <div class="player">
-
-            <span>
-                Group B #2
-            </span>
-
-            <span class="score">
-                —
-            </span>
-
-        </div>
-
-        <div class="player">
-
-            <span>
-                Group A #2
-            </span>
-
-            <span class="score">
-                —
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="round">
-
-    <div class="connector"></div>
-
-    <div class="connector"></div>
-
-</div>
-
-
-<div class="round">
-
-    <div class="round-title">
-        GRAND FINAL
-    </div>
-
-    <div class="match">
-
-        <div class="match-title">
-            SEMIFINAL
-        </div>
-
-        <div class="player">
-
-            <span>
-                LOSER MATCH 1
-            </span>
-
-            <span class="score">
-                —
-            </span>
-
-        </div>
-
-        <div class="player">
-
-            <span>
-                WINNER MATCH 2
-            </span>
-
-            <span class="score">
-                —
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="round">
-
-    <div class="connector"></div>
-
-</div>
-
-
-<div class="final">
-
-    <div class="final-box">
-
-        <div class="trophy">
-            🏆
-        </div>
-
-        <h3>
-            CHAMPION BO 7
-        </h3>
-
-        <div class="champion">
-            WINNER MATCH 01 VS WINNER SEMIFINAL 
-        </div>
-
-    </div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     MATCH SCHEDULE BUTTON
-===================================================== -->
-
-<div class="section-toggle">
-
-    <button
-        class="toggle-btn"
-        onclick="toggleSection('scheduleStage','scheduleArrow')"
-    >
-
-        <span class="icon">📅</span>
-
-        <span>MATCH SCHEDULE</span>
-
-        <span
-            class="arrow"
-            id="scheduleArrow"
-        >
-            ▼
-        </span>
-
-    </button>
-
-</div>
-
-
-<!-- =====================================================
-     MATCH SCHEDULE
-===================================================== -->
-
-<section
-    id="scheduleStage"
-    class="collapsible"
->
-
-<div class="schedule-title">
-
-    <h2>
-        MATCH SCHEDULE
-    </h2>
-
-    <p>
-         • Setiap tim bertemu semua tim dalam grup •
-    </p>
-
-</div>
-
-
-<!-- GROUP A -->
-
-<div class="schedule-group">
-
-    <div class="schedule-group-header">
-
-        <h3>
-            GROUP A
-        </h3>
-
-        <span>
-            10 MATCHES
-        </span>
-
-    </div>
-
-
-    <div class="schedule-round">
-
-        <div class="round-header">
-
-            <div class="round-number">
-                01
-            </div>
-
-            <div>
-
-                <div class="round-name">
-                    ROUND 1
-                </div>
-
-                <div class="round-info">
-                    2 pertandingan
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="schedule-matches">
-
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        20 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            BOTUNA
-                        </span>
-
-                        <span class="schedule-team-code">
-                            0
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            EL J3MB4Y
-                        </span>
-
-                        <span class="schedule-team-code">
-                            2
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    A-01
-                </div>
-
-            </div>
-
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        21 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            7DeadlySins Esport
-                        </span>
-
-                        <span class="schedule-team-code">
-                            0
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                           Genocide Esport
-                        </span>
-
-                        <span class="schedule-team-code">
-                            2
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    A-02
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="schedule-round">
-
-        <div class="round-header">
-
-            <div class="round-number">
-                02
-            </div>
-
-            <div>
-
-                <div class="round-name">
-                    ROUND 2
-                </div>
-
-                <div class="round-info">
-                    2 pertandingan
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="schedule-matches">
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        22 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            7DeadlySins Espor
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A1
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            BOTUNA
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A3
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    A-03
-                </div>
-
-            </div>
-
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        24 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            Genocide Esport
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A2
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            PPF (PARA PENCARI FREEBET)
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A5
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    A-04
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="schedule-round">
-
-        <div class="round-header">
-
-            <div class="round-number">
-                03
-            </div>
-
-            <div>
-
-                <div class="round-name">
-                    ROUND 3
-                </div>
-
-                <div class="round-info">
-                    2 pertandingan
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="schedule-matches">
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        25 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            EL J3MB4Y ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A4
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            PPF (PARA PENCARI FREEBET)
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A5
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    A-05
-                </div>
-
-            </div>
-
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        26 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            Genocide Esport
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A2
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            BOTUNA
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A3
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    A-06
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="schedule-round">
-
-        <div class="round-header">
-
-            <div class="round-number">
-                04
-            </div>
-
-            <div>
-
-                <div class="round-name">
-                    ROUND 4
-                </div>
-
-                <div class="round-info">
-                    2 pertandingan
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="schedule-matches">
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        28 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            7DeadlySins Espor
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A1
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            EL J3MB4Y ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A4
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    A-07
-                </div>
-
-            </div>
-
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        29 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            BOTUNA
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A3
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            PPF (PARA PENCARI FREEBET)
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A5
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    A-08
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="schedule-round">
-
-        <div class="round-header">
-
-            <div class="round-number">
-                05
-            </div>
-
-            <div>
-
-                <div class="round-name">
-                    ROUND 5
-                </div>
-
-                <div class="round-info">
-                    2 pertandingan
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="schedule-matches">
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        30 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            Genocide Esport
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A2
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            EL J3MB4Y ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A4
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    A-09
-                </div>
-
-            </div>
-
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        01 OCT
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            7DeadlySins Espor
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A1
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            PPF (PARA PENCARI FREEBET)
-                        </span>
-
-                        <span class="schedule-team-code">
-                            A5
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    A-10
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- GROUP B -->
-
-<div class="schedule-group">
-
-    <div class="schedule-group-header">
-
-        <h3>
-            GROUP B
-        </h3>
-
-        <span>
-            10 MATCHES
-        </span>
-
-    </div>
-
-    <!-- B1 -->
-
-    <div class="schedule-round">
-
-        <div class="round-header">
-
-            <div class="round-number">
-                01
-            </div>
-
-            <div>
-
-                <div class="round-name">
-                    ROUND 1
-                </div>
-
-                <div class="round-info">
-                    2 pertandingan
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="schedule-matches">
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        20 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            RIBAK SUDE ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            2
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            N1C3 ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            0
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    B-01
-                </div>
-
-            </div>
-
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        21 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            PRIA IDAMAN
-                        </span>
-
-                        <span class="schedule-team-code">
-                            2
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            /A ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            0
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    B-02
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- B2 -->
-
-    <div class="schedule-round">
-
-        <div class="round-header">
-
-            <div class="round-number">
-                02
-            </div>
-
-            <div>
-
-                <div class="round-name">
-                    ROUND 2
-                </div>
-
-                <div class="round-info">
-                    2 pertandingan
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="schedule-matches">
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        22 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            RIBAK SUDE ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B1
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            PRIA IDAMAN
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B3
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    B-03
-                </div>
-
-            </div>
-
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        24 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            N1C3 ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B2
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            ABC ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B5
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    B-04
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- B3 -->
-
-    <div class="schedule-round">
-
-        <div class="round-header">
-
-            <div class="round-number">
-                03
-            </div>
-
-            <div>
-
-                <div class="round-name">
-                    ROUND 3
-                </div>
-
-                <div class="round-info">
-                    2 pertandingan
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="schedule-matches">
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        25 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            /A ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B4
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            ABC ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B5
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    B-05
-                </div>
-
-            </div>
-
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        26 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            N1C3 ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B2
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            PRIA IDAMAN
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B3
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    B-06
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- B4 -->
-
-    <div class="schedule-round">
-
-        <div class="round-header">
-
-            <div class="round-number">
-                04
-            </div>
-
-            <div>
-
-                <div class="round-name">
-                    ROUND 4
-                </div>
-
-                <div class="round-info">
-                    2 pertandingan
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="schedule-matches">
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        28 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            RIBAK SUDE ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B1
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            /A ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B4
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    B-07
-                </div>
-
-            </div>
-
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        29 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            PRIA IDAMAN
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B3
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            ABC ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B5
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    B-08
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- B5 -->
-
-    <div class="schedule-round">
-
-        <div class="round-header">
-
-            <div class="round-number">
-                05
-            </div>
-
-            <div>
-
-                <div class="round-name">
-                    ROUND 5
-                </div>
-
-                <div class="round-info">
-                    2 pertandingan
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="schedule-matches">
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        30 SEP
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            N1C3 ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B2
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            /A ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B4
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    B-09
-                </div>
-
-            </div>
-
-
-            <div class="schedule-match">
-
-                <div class="match-date">
-
-                    <span class="day">
-                        01 OCT
-                    </span>
-
-                    <span class="time">
-                        09:30
-                    </span>
-
-                </div>
-
-                <div class="schedule-teams">
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            RIBAK SUDE ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B1
-                        </span>
-
-                    </div>
-
-                    <div class="vs">
-                        VS
-                    </div>
-
-                    <div class="schedule-team">
-
-                        <span class="schedule-team-name">
-                            ABC ESPORT
-                        </span>
-
-                        <span class="schedule-team-code">
-                            B5
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="match-id">
-                    B-10
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     TEAMS & PLAYERS BUTTON
-===================================================== -->
-
-<div class="section-toggle">
-
-    <button
-        class="toggle-btn"
-        onclick="toggleSection('playersStage','playersArrow')"
-    >
-
-        <span class="icon">
-            👥
-        </span>
-
-        <span>
-            TEAMS & PLAYERS
-        </span>
-
-        <span
-            class="arrow"
-            id="playersArrow"
-        >
-            ▼
-        </span>
-
-    </button>
-
-</div>
-
-
-<!-- =====================================================
-     TEAMS & 5 PLAYERS
-===================================================== -->
-
-<section
-    id="playersStage"
-    class="collapsible"
->
-
-<div class="players-title">
-
-    <h2>
-        TEAMS & PLAYERS
-    </h2>
-
-    <p>
-        10 Teams • 5 Players setiap team
-    </p>
-
-</div>
-
-
-<div class="player-teams">
-
-
-<!-- TEAM 01 -->
-
-<div class="player-team">
-
-    <div class="player-team-header">
-
-        <div class="player-team-left">
-
-            <div class="team-big-logo">
-                A1
-            </div>
-
-            <div>
-
-                <div class="player-team-name">
-                    7DeadlySins Esport
-                </div>
-
-                <div class="player-team-region">
-                    GROUP A
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="player-count">
-            5 PLAYERS
-        </div>
-
-    </div>
-
-
-    <div class="player-list">
-
-        <div class="player-card">
-            <div class="player-number">01</div>
-            <div class="player-avatar">P1</div>
-            <div class="player-details">
-                <div class="player-name">Yoga</div>
-                <div class="player-role">Captain</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">02</div>
-            <div class="player-avatar">P2</div>
-            <div class="player-details">
-                <div class="player-name">Ridwan</div>
-                <div class="player-role">Jungler</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">03</div>
-            <div class="player-avatar">P3</div>
-            <div class="player-details">
-                <div class="player-name">Anang</div>
-                <div class="player-role">Gold Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">04</div>
-            <div class="player-avatar">P4</div>
-            <div class="player-details">
-                <div class="player-name">Juan</div>
-                <div class="player-role">EXP Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">05</div>
-            <div class="player-avatar">P5</div>
-            <div class="player-details">
-                <div class="player-name">Gumelar</div>
-                <div class="player-role">Roamer</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- TEAM 02 -->
-
-<div class="player-team">
-
-    <div class="player-team-header">
-
-        <div class="player-team-left">
-
-            <div class="team-big-logo">
-                A2
-            </div>
-
-            <div>
-
-                <div class="player-team-name">
-                    BOTUNA
-                </div>
-
-                <div class="player-team-region">
-                    GROUP A
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="player-count">
-            5 PLAYERS
-        </div>
-
-    </div>
-
-    <div class="player-list">
-
-        <div class="player-card">
-            <div class="player-number">01</div>
-            <div class="player-avatar">P1</div>
-            <div class="player-details">
-                <div class="player-name">Rizky pra</div>
-                <div class="player-role">Captain</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">02</div>
-            <div class="player-avatar">P2</div>
-            <div class="player-details">
-                <div class="player-name">Apri</div>
-                <div class="player-role">Jungler</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">03</div>
-            <div class="player-avatar">P3</div>
-            <div class="player-details">
-                <div class="player-name">Kiran</div>
-                <div class="player-role">Gold Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">04</div>
-            <div class="player-avatar">P4</div>
-            <div class="player-details">
-                <div class="player-name">Jonathan</div>
-                <div class="player-role">EXP Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">05</div>
-            <div class="player-avatar">P5</div>
-            <div class="player-details">
-                <div class="player-name">Mulya</div>
-                <div class="player-role">Roamer</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- TEAM 03 -->
-
-<div class="player-team">
-
-    <div class="player-team-header">
-
-        <div class="player-team-left">
-
-            <div class="team-big-logo">
-                A3
-            </div>
-
-            <div>
-
-                <div class="player-team-name">
-                    Genocide Esport
-                </div>
-
-                <div class="player-team-region">
-                    GROUP A
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="player-count">
-            5 PLAYERS
-        </div>
-
-    </div>
-
-    <div class="player-list">
-
-        <div class="player-card">
-            <div class="player-number">01</div>
-            <div class="player-avatar">P1</div>
-            <div class="player-details">
-                <div class="player-name">Agung TP</div>
-                <div class="player-role">Captain</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">02</div>
-            <div class="player-avatar">P2</div>
-            <div class="player-details">
-                <div class="player-name">Dermawan</div>
-                <div class="player-role">Jungler</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">03</div>
-            <div class="player-avatar">P3</div>
-            <div class="player-details">
-                <div class="player-name">Etanim</div>
-                <div class="player-role">Gold Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">04</div>
-            <div class="player-avatar">P4</div>
-            <div class="player-details">
-                <div class="player-name">Dandi</div>
-                <div class="player-role">EXP Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">05</div>
-            <div class="player-avatar">P5</div>
-            <div class="player-details">
-                <div class="player-name">Rehan</div>
-                <div class="player-role">Roamer</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- TEAM 04 -->
-
-<div class="player-team">
-
-    <div class="player-team-header">
-
-        <div class="player-team-left">
-
-            <div class="team-big-logo">
-                A4
-            </div>
-
-            <div>
-
-                <div class="player-team-name">
-                    EL J3MB4Y ESPORT
-                </div>
-
-                <div class="player-team-region">
-                    GROUP A
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="player-count">
-            5 PLAYERS
-        </div>
-
-    </div>
-
-    <div class="player-list">
-
-        <div class="player-card">
-            <div class="player-number">01</div>
-            <div class="player-avatar">P1</div>
-            <div class="player-details">
-                <div class="player-name">Azis</div>
-                <div class="player-role">Captain</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">02</div>
-            <div class="player-avatar">P2</div>
-            <div class="player-details">
-                <div class="player-name">Ryan</div>
-                <div class="player-role">Jungler</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">03</div>
-            <div class="player-avatar">P3</div>
-            <div class="player-details">
-                <div class="player-name">A fikri</div>
-                <div class="player-role">Gold Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">04</div>
-            <div class="player-avatar">P4</div>
-            <div class="player-details">
-                <div class="player-name">Bagus tp</div>
-                <div class="player-role">EXP Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">05</div>
-            <div class="player-avatar">P5</div>
-            <div class="player-details">
-                <div class="player-name">Ricky</div>
-                <div class="player-role">Roamer</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- TEAM 05 -->
-
-<div class="player-team">
-
-    <div class="player-team-header">
-
-        <div class="player-team-left">
-
-            <div class="team-big-logo">
-                A5
-            </div>
-
-            <div>
-
-                <div class="player-team-name">
-                    PPF (PARA PENCARI FREEBET)
-                </div>
-
-                <div class="player-team-region">
-                    GROUP A
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="player-count">
-            5 PLAYERS
-        </div>
-
-    </div>
-
-    <div class="player-list">
-
-        <div class="player-card">
-            <div class="player-number">01</div>
-            <div class="player-avatar">P1</div>
-            <div class="player-details">
-                <div class="player-name">Mico</div>
-                <div class="player-role">Captain</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">02</div>
-            <div class="player-avatar">P2</div>
-            <div class="player-details">
-                <div class="player-name">Panca</div>
-                <div class="player-role">Jungler</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">03</div>
-            <div class="player-avatar">P3</div>
-            <div class="player-details">
-                <div class="player-name">Rizky</div>
-                <div class="player-role">Gold Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">04</div>
-            <div class="player-avatar">P4</div>
-            <div class="player-details">
-                <div class="player-name">Rampart</div>
-                <div class="player-role">EXP Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">05</div>
-            <div class="player-avatar">P5</div>
-            <div class="player-details">
-                <div class="player-name">King jall</div>
-                <div class="player-role">Roamer</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- TEAM 06 -->
-
-<div class="player-team">
-
-    <div class="player-team-header">
-
-        <div class="player-team-left">
-
-            <div class="team-big-logo">
-                B1
-            </div>
-
-            <div>
-
-                <div class="player-team-name">
-                    RIBAK SUDE ESPORT
-                </div>
-
-                <div class="player-team-region">
-                    GROUP B
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="player-count">
-            5 PLAYERS
-        </div>
-
-    </div>
-
-    <div class="player-list">
-
-        <div class="player-card">
-            <div class="player-number">01</div>
-            <div class="player-avatar">P1</div>
-            <div class="player-details">
-                <div class="player-name">Silvana</div>
-                <div class="player-role">Captain</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">02</div>
-            <div class="player-avatar">P2</div>
-            <div class="player-details">
-                <div class="player-name">Sawal</div>
-                <div class="player-role">Jungler</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">03</div>
-            <div class="player-avatar">P3</div>
-            <div class="player-details">
-                <div class="player-name">Arwin</div>
-                <div class="player-role">Gold Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">04</div>
-            <div class="player-avatar">P4</div>
-            <div class="player-details">
-                <div class="player-name">Edy</div>
-                <div class="player-role">EXP Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">05</div>
-            <div class="player-avatar">P5</div>
-            <div class="player-details">
-                <div class="player-name">Dion</div>
-                <div class="player-role">Roamer</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- TEAM 07 -->
-
-<div class="player-team">
-
-    <div class="player-team-header">
-
-        <div class="player-team-left">
-
-            <div class="team-big-logo">
-                B2
-            </div>
-
-            <div>
-
-                <div class="player-team-name">
-                     N1C3 ESPORT
-                </div>
-
-                <div class="player-team-region">
-                    GROUP B
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="player-count">
-            5 PLAYERS
-        </div>
-
-    </div>
-
-    <div class="player-list">
-
-        <div class="player-card">
-            <div class="player-number">01</div>
-            <div class="player-avatar">P1</div>
-            <div class="player-details">
-                <div class="player-name">Bolen</div>
-                <div class="player-role">Captain</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">02</div>
-            <div class="player-avatar">P2</div>
-            <div class="player-details">
-                <div class="player-name">Raffi</div>
-                <div class="player-role">Jungler</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">03</div>
-            <div class="player-avatar">P3</div>
-            <div class="player-details">
-                <div class="player-name">Putri</div>
-                <div class="player-role">Gold Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">04</div>
-            <div class="player-avatar">P4</div>
-            <div class="player-details">
-                <div class="player-name">Ardi</div>
-                <div class="player-role">EXP Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">05</div>
-            <div class="player-avatar">P5</div>
-            <div class="player-details">
-                <div class="player-name">Andra</div>
-                <div class="player-role">Roamer</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- TEAM 08 -->
-
-<div class="player-team">
-
-    <div class="player-team-header">
-
-        <div class="player-team-left">
-
-            <div class="team-big-logo">
-                B3
-            </div>
-
-            <div>
-
-                <div class="player-team-name">
-                    PRIA IDAMAN
-                </div>
-
-                <div class="player-team-region">
-                    GROUP B
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="player-count">
-            5 PLAYERS
-        </div>
-
-    </div>
-
-    <div class="player-list">
-
-        <div class="player-card">
-            <div class="player-number">01</div>
-            <div class="player-avatar">P1</div>
-            <div class="player-details">
-                <div class="player-name">Randi MR</div>
-                <div class="player-role">Captain</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">02</div>
-            <div class="player-avatar">P2</div>
-            <div class="player-details">
-                <div class="player-name">Adelin</div>
-                <div class="player-role">Jungler</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">03</div>
-            <div class="player-avatar">P3</div>
-            <div class="player-details">
-                <div class="player-name">Hengky</div>
-                <div class="player-role">Gold Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">04</div>
-            <div class="player-avatar">P4</div>
-            <div class="player-details">
-                <div class="player-name">Gerry</div>
-                <div class="player-role">EXP Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">05</div>
-            <div class="player-avatar">P5</div>
-            <div class="player-details">
-                <div class="player-name">Tiyas</div>
-                <div class="player-role">Roamer</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- TEAM 09 -->
-
-<div class="player-team">
-
-    <div class="player-team-header">
-
-        <div class="player-team-left">
-
-            <div class="team-big-logo">
-                B4
-            </div>
-
-            <div>
-
-                <div class="player-team-name">
-                    /A ESPORTT
-                </div>
-
-                <div class="player-team-region">
-                    GROUP B
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="player-count">
-            5 PLAYERS
-        </div>
-
-    </div>
-
-    <div class="player-list">
-
-        <div class="player-card">
-            <div class="player-number">01</div>
-            <div class="player-avatar">P1</div>
-            <div class="player-details">
-                <div class="player-name">Yope</div>
-                <div class="player-role">Captain</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">02</div>
-            <div class="player-avatar">P2</div>
-            <div class="player-details">
-                <div class="player-name">Kingall</div>
-                <div class="player-role">Jungler</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">03</div>
-            <div class="player-avatar">P3</div>
-            <div class="player-details">
-                <div class="player-name">Saswin</div>
-                <div class="player-role">Gold Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">04</div>
-            <div class="player-avatar">P4</div>
-            <div class="player-details">
-                <div class="player-name">Sandy p</div>
-                <div class="player-role">EXP Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">05</div>
-            <div class="player-avatar">P5</div>
-            <div class="player-details">
-                <div class="player-name">Irfan</div>
-                <div class="player-role">Roamer</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- TEAM 10 -->
-
-<div class="player-team">
-
-    <div class="player-team-header">
-
-        <div class="player-team-left">
-
-            <div class="team-big-logo">
-                B5
-            </div>
-
-            <div>
-
-                <div class="player-team-name">
-                    ABC ESPORT
-                </div>
-
-                <div class="player-team-region">
-                    GROUP B
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="player-count">
-            5 PLAYERS
-        </div>
-
-    </div>
-
-    <div class="player-list">
-
-        <div class="player-card">
-            <div class="player-number">01</div>
-            <div class="player-avatar">P1</div>
-            <div class="player-details">
-                <div class="player-name">Ilham</div>
-                <div class="player-role">Captain</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">02</div>
-            <div class="player-avatar">P2</div>
-            <div class="player-details">
-                <div class="player-name">Frans</div>
-                <div class="player-role">Jungler</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">03</div>
-            <div class="player-avatar">P3</div>
-            <div class="player-details">
-                <div class="player-name">Nelson</div>
-                <div class="player-role">Gold Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">04</div>
-            <div class="player-avatar">P4</div>
-            <div class="player-details">
-                <div class="player-name">Hasan</div>
-                <div class="player-role">EXP Lane</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-        <div class="player-card">
-            <div class="player-number">05</div>
-            <div class="player-avatar">P5</div>
-            <div class="player-details">
-                <div class="player-name">Agus ps</div>
-                <div class="player-role">Roamer</div>
-            </div>
-            <div class="player-status">ACTIVE</div>
-        </div>
-
-    </div>
-
-</div>
-
-
-</div>
-
-</section>
-
-<!-- =====================================================
-     MVP & SAVAGE BUTTON
-===================================================== -->
-
-<div class="section-toggle">
-
-    <button
-        class="toggle-btn"
-        onclick="toggleSection('mvpSavageStage','mvpSavageArrow')"
-    >
-
-        <span class="icon">
-            🏆
-        </span>
-
-        <span>
-            TOP MVP & SAVAGE
-        </span>
-
-        <span
-            class="arrow"
-            id="mvpSavageArrow"
-        >
-            ▼
-        </span>
-
-    </button>
-
-</div>
-
-
-<!-- =====================================================
-     MVP & SAVAGE
-===================================================== -->
-
-<section
-    id="mvpSavageStage"
-    class="collapsible"
->
-
-    <div class="players-title">
-
-        <h2>
-            MVP & SAVAGE
-        </h2>
-
-        <p>
-            Top Player Performance • Season 2
-        </p>
-
-    </div>
-
-
-    <div class="mvp-savage-grid">
-
-
-        <!-- =============================================
-             TOP 5 MVP
-        ============================================== -->
-
-        <div class="award-panel">
-
-    <div class="award-header">
-
-        <div class="award-header-left">
-
-            <div class="award-icon">
-                <img src="https://i.postimg.cc/kGDyzbjS/mov-removebg-preview.png" alt="MPV">
-            </div>
-
-                    <div>
-
-                        <h3>
-                            TOP 5 MVP
-                        </h3>
-
-                        <p>
-                            PLAYER OF THE TOURNAMENT
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="award-badge">
-                    TOP 5
-                </div>
-
-            </div>
-
-
-            <div class="mvp-list">
-
-
-                <!-- MVP #1 -->
-
-                <div class="mvp-card">
-
-                    <div class="award-rank">
-                        01
-                    </div>
-
-                    <div class="award-player">
-
-                        <div class="award-player-name">
-                             Azis
-                        </div>
-
-                        <div class="award-player-team">
-                           EL J3MB4Y 
-                        </div>
-
-                    </div>
-
-                    <div class="award-stat">
-
-                        <strong>
-                            2
-                        </strong>
-
-                        <span>
-                            MVP POINT
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- MVP #2 -->
-
-                <div class="mvp-card">
-
-                    <div class="award-rank">
-                        02
-                    </div>
-
-                    <div class="award-player">
-
-                        <div class="award-player-name">
-                            Edy
-                        </div>
-
-                        <div class="award-player-team">
-                            RIBAK SUDE 
-                        </div>
-
-                    </div>
-
-                    <div class="award-stat">
-
-                        <strong>
-                            1
-                        </strong>
-
-                        <span>
-                            MVP POINT
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- MVP #3 -->
-
-                <div class="mvp-card">
-
-                    <div class="award-rank">
-                        03
-                    </div>
-
-                    <div class="award-player">
-
-                        <div class="award-player-name">
-                            Arwin
-                        </div>
-
-                        <div class="award-player-team">
-                            RIBAK SUDE
-                        </div>
-
-                    </div>
-
-                    <div class="award-stat">
-
-                        <strong>
-                            1
-                        </strong>
-
-                        <span>
-                            MVP POINT
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- MVP #4 -->
-
-                <div class="mvp-card">
-
-                    <div class="award-rank">
-                        04
-                    </div>
-
-                    <div class="award-player">
-
-                        <div class="award-player-name">
-                            Randi
-                        </div>
-
-                        <div class="award-player-team">
-                            PRIA IDAMAN
-                        </div>
-
-                    </div>
-
-                    <div class="award-stat">
-
-                        <strong>
-                            1
-                        </strong>
-
-                        <span>
-                            MVP POINT
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- MVP #5 -->
-
-                <div class="mvp-card">
-
-                    <div class="award-rank">
-                        05
-                    </div>
-
-                    <div class="award-player">
-
-                        <div class="award-player-name">
-                            Rehan
-                        </div>
-
-                        <div class="award-player-team">
-                            GENOCIDE
-                        </div>
-
-                    </div>
-
-                    <div class="award-stat">
-
-                        <strong>
-                            1
-                        </strong>
-
-                        <span>
-                            MVP POINT
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =============================================
-             SAVAGE
-        ============================================== -->
-
-        <div class="award-panel savage-panel">
-
-            <div class="award-header">
-
-                <div class="award-header-left">
-
-                    <div class="award-icon">
-                    <img src="https://i.ibb.co/Rp6btv06/images-2.jpg" alt="Savage">
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            SAVAGE
-                        </h3>
-
-                        <p>
-                            SAVAGE ACHIEVEMENT
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <div class="award-badge">
-                    SEASON 2
-                </div>
-
-            </div>
-
-
-            <div class="savage-list">
-
-
-                <!-- SAVAGE 01 -->
-
-                <div class="savage-card">
-
-                    <div class="award-rank">
-                        01
-                    </div>
-
-                    <div class="award-player">
-
-                        <div class="award-player-name">
-                            Randi
-                        </div>
-
-                        <div class="award-player-team">
-                            PRIA IDAMAN
-                        </div>
-
-                    </div>
-
-                    <div class="savage-count">
-
-                        <strong>
-                            1
-                        </strong>
-
-                        <span>
-                            SAVAGE
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- SAVAGE 02 -->
-
-                <div class="savage-card">
-
-                    <div class="award-rank">
-                        02
-                    </div>
-
-                    <div class="award-player">
-
-                        <div class="award-player-name">
-                            Belum Ditentukan
-                        </div>
-
-                        <div class="award-player-team">
-                            —
-                        </div>
-
-                    </div>
-
-                    <div class="savage-count">
-
-                        <strong>
-                            0
-                        </strong>
-
-                        <span>
-                            SAVAGE
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- SAVAGE 03 -->
-
-                <div class="savage-card">
-
-                    <div class="award-rank">
-                        03
-                    </div>
-
-                    <div class="award-player">
-
-                        <div class="award-player-name">
-                            Belum Ditentukan
-                        </div>
-
-                        <div class="award-player-team">
-                            —
-                        </div>
-
-                    </div>
-
-                    <div class="savage-count">
-
-                        <strong>
-                            0
-                        </strong>
-
-                        <span>
-                            SAVAGE
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <!-- BELUM ADA SAVAGE -->
-
-                <div class="award-empty">
-
-                    <span class="empty-icon">
-                        ⚔️
-                    </span>
-
-                    Kalo ada yang savage boleh ss, biar ditempel di sini
-                   
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SPONSOR BUTTON
-===================================================== -->
-
-<div class="section-toggle">
-
-    <button
-        class="toggle-btn"
-        onclick="toggleSection('sponsorStage','sponsorArrow')"
-    >
-
-        <span class="icon">
-            🤝
-        </span>
-
-        <span>
-            OFFICIAL SPONSOR
-        </span>
-
-        <span
-            class="arrow"
-            id="sponsorArrow"
-        >
-            ▼
-        </span>
-
-    </button>
-
-</div>
-
-<section class="hero-marquee" aria-label="20 foto hero">
-    <div class="hero-track">
-        <div class="hero-set">
-            <div class="hero-photo"><img src="https://i.ibb.co/Xr8Pm58M/image.png" alt="Hero 1" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/3qKC70S/image.png" alt="Hero 2" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/NdHTzmDq/image.png" alt="Hero 3" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/5hNV8fT3/image.png" alt="Hero 4" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/ksV0w4pw/image.png" alt="Hero 5" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/fzdnZD4d/image.png" alt="Hero 6" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Beatrix%20-%20Hero1051.png" alt="Hero 7" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Gloo%20-%20Hero1041.png" alt="Hero 8" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/gLCWyhs8/image.png" alt="Hero 9" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/M52RDGnc/image.png" alt="Hero 10" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/vC4fn5fw/image.png" alt="Hero 11" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/nNCw0cwT/image.png" alt="Hero 12" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/CKm1yf0F/image.png" alt="Hero 13" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/G4RNbfKd/image.png" alt="Hero 14" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/xqbmqzQh/image.png" alt="Hero 15" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/svfnXw9h/image.png" alt="Hero 16" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Yu%20Zhong%20-%20Hero951.png" alt="Hero 17" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Popol%20and%20Kupa%20-%20Hero941.png" alt="Hero 18" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/XfFV6dY8/image.png" alt="Hero 19" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/zVNmmbF3/image.png" alt="Hero 20" loading="lazy"></div>
-        </div>
-
-        <!-- Duplikasi set agar animasi berjalan mulus tanpa jeda -->
-        <div class="hero-set" aria-hidden="true">
-            <div class="hero-photo"><img src="https://i.ibb.co/Xr8Pm58M/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/3qKC70S/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/NdHTzmDq/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/5hNV8fT3/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/ksV0w4pw/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/fzdnZD4d/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Beatrix%20-%20Hero1051.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Gloo%20-%20Hero1041.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/gLCWyhs8/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/M52RDGnc/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/vC4fn5fw/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/nNCw0cwT/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/CKm1yf0F/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/G4RNbfKd/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/xqbmqzQh/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/svfnXw9h/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Yu%20Zhong%20-%20Hero951.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://github.com/Lara3924/Lara_Image/raw/main/Popol%20and%20Kupa%20-%20Hero941.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/XfFV6dY8/image.png" alt="" loading="lazy"></div>
-            <div class="hero-photo"><img src="https://i.ibb.co/zVNmmbF3/image.png" alt="" loading="lazy"></div>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- =====================================================
-     SPONSOR
-===================================================== -->
-
-<section
-    id="sponsorStage"
-    class="collapsible"
->
-
-<div class="sponsor-content">
-
-    <div class="sponsor-label">
-        OFFICIAL SPONSOR
-    </div>
-
-    <h2>
-        OUR SPONSOR
-    </h2>
-
-    <div class="sponsor-image-box">
-
-        <img
-            src="https://i.postimg.cc/FsrXhf4M/NOS-USA.png"
-            alt="Official Sponsor"
-            class="sponsor-image"
-        >
-
-    </div>
-
-    <div class="sponsor-name">
-        KO MC
-    </div>
-
-    <div class="sponsor-desc">
-        Proudly supporting Srilanka MLBB Season 2
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-<!-- RULES MATCH -->
-<section class="section">
-    <button class="section-title" onclick="toggleSection(this)">
-     
-        <span></span>
-    </button>
-
-    <div class="section-content">
-
-        <div class="rules-box">
-            <h3>⚔️ MATCH RULES</h3>
-
-            <div class="rule-item">
-                <strong>1. Format Pertandingan</strong>
-                <p>
-                    Semua pertandingan menggunakan format Best of 3 (BO3),
-                    kecuali pertandingan yang telah ditentukan menggunakan
-                    format Best of 5 (BO5).
-                </p>
-            </div>
-
-            <div class="rule-item">
-                <strong>2. Jaringan & Room</strong>
-                <p>
-                    Semua tim wajib mengatur jaringannya masing-masing, dan info
-                    ke wasit ingin bermain di mana.
-                </p>
-            </div>
-
-            <div class="rule-item">
-                <strong>3. Keterlambatan</strong>
-                <p>
-                    Tim yang terlambat lebih dari 15 menit tanpa alasan yang
-                    jelas dapat dikenakan sanksi atau dianggap kalah,
-                    berdasarkan keputusan panitia.
-                </p>
-            </div>
-
-            <div class="rule-item">
-                <strong>4. Roster Pemain</strong>
-                <p>
-                    Hanya pemain yang telah terdaftar dalam roster resmi yang
-                    diperbolehkan mengikuti pertandingan.
-                </p>
-            </div>
-
-            <div class="rule-item">
-                <strong>5. Pause</strong>
-                <p>
-                    Maximal Pause 2x, apabila setelah pick, jaringan kuning. Boleh ulang, 
-                    draf tetap.
-                </p>
-            </div>
-
-            <div class="rule-item">
-                <strong>6. Penggunaan Cheat / Bug</strong>
-                <p>
-                    Penggunaan cheat, script, map hack, exploit, bug abuse,
-                    atau aplikasi pihak ketiga yang memberikan keuntungan
-                    tidak diperbolehkan.
-                </p>
-            </div>
-
-            <div class="rule-item">
-                <strong>7. Perilaku Pemain</strong>
-                <p>
-                    Dilarang bermain SABUN, provokasi, akan ada hukuman jika ketahuan
-                    atau tindakan tidak sportif kepada
-                    pemain maupun panitia.
-                </p>
-            </div>
-
-            <div class="rule-item">
-                <strong>8. Bukti Pertandingan</strong>
-                <p>
-                    Setiap tim wajib menyimpan screenshot atau bukti hasil
-                    pertandingan apabila diperlukan oleh panitia.
-                </p>
-            </div>
-
-            <div class="rule-item">
-                <strong>9. Keputusan Panitia</strong>
-                <p>
-                    Keputusan panitia terkait pelanggaran dan sengketa
-                    pertandingan bersifat final setelah dilakukan pemeriksaan
-                    terhadap bukti yang tersedia.
-                </p>
-            </div>
-
-            <div class="rule-item">
-                <strong>10. Sportivitas</strong>
-                <p>
-                    Seluruh peserta wajib menjaga fair play dan menghormati
-                    lawan selama turnamen berlangsung.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<style>
-.rules-box {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 15px;
-    padding: 25px;
-}
-
-.rules-box h3 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #ffd54a;
-    font-size: 24px;
-}
-
-.rule-item {
-    padding: 18px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.rule-item:last-child {
-    border-bottom: none;
-}
-
-.rule-item strong {
-    display: block;
-    color: #ffd54a;
-    font-size: 17px;
-    margin-bottom: 8px;
-}
-
-.rule-item p {
-    color: #ddd;
-    line-height: 1.7;
-    font-size: 14px;
-}
-</style>
-<footer>
-
-    SRILANKA MLBB SEASON 2
-    •
-    TOURNAMENT
-
-</footer>
-
-
-</div>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-<script>
-const loader = document.getElementById("loader");
-
-function hideLoader() {
-    if (!loader) return;
-
-    loader.classList.add("hide-loader");
-
-    setTimeout(() => {
-        loader.remove();
-    }, 400);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    // Delay 800ms agar animasi terlihat smooth
-    setTimeout(hideLoader, 800);
-});
-
-// Backup jika halaman lambat
-window.addEventListener("load", hideLoader);
-
-// Paksa hilang maksimal 3 detik jika ada yang macet
-setTimeout(hideLoader, 3000);
-</script>
 
 <script>
+(function () {
+    function rapikanFooterUniversal() {
+        const footer =
+            document.querySelector("footer.sl-universal-footer") ||
+            document.querySelector("footer");
 
-function toggleSection(sectionId, arrowId) {
+        if (!footer) return;
 
-    const section =
-        document.getElementById(sectionId);
+        footer.classList.add("sl-universal-footer");
 
-    const arrow =
-        document.getElementById(arrowId);
+        /*
+         * Cari elemen terkecil yang berisi teks footer.
+         * Jangan memilih induk besar bila ada anak yang lebih tepat.
+         */
+        const candidates = Array.from(
+            footer.querySelectorAll("div, p, span, strong")
+        ).filter(function (element) {
+            const text =
+                (element.textContent || "")
+                    .replace(/\s+/g, " ")
+                    .trim()
+                    .toUpperCase();
 
-    const isOpen =
-        section.classList.toggle("open");
+            return (
+                text.includes("TOURNAMENT MOBILE LEGENDS") &&
+                text.includes("SEASON 2")
+            );
+        });
 
-    if (isOpen) {
+        let textElement = null;
 
-        arrow.textContent = "▲";
+        candidates.forEach(function (element) {
+            const hasMatchingChild =
+                Array.from(element.children).some(function (child) {
+                    const childText =
+                        (child.textContent || "")
+                            .replace(/\s+/g, " ")
+                            .trim()
+                            .toUpperCase();
 
+                    return (
+                        childText.includes("TOURNAMENT MOBILE LEGENDS") &&
+                        childText.includes("SEASON 2")
+                    );
+                });
+
+            if (!hasMatchingChild && !textElement) {
+                textElement = element;
+            }
+        });
+
+        if (!textElement) {
+            textElement =
+                candidates[candidates.length - 1] ||
+                footer.firstElementChild ||
+                footer;
+        }
+
+        textElement.classList.add(
+            "sl-footer-text-universal"
+        );
+
+        textElement.style.setProperty(
+            "color",
+            "#ffffff",
+            "important"
+        );
+
+        textElement.style.setProperty(
+            "opacity",
+            "1",
+            "important"
+        );
+
+        textElement.querySelectorAll("*")
+            .forEach(function (child) {
+                child.style.setProperty(
+                    "color",
+                    "#ffffff",
+                    "important"
+                );
+
+                child.style.setProperty(
+                    "opacity",
+                    "1",
+                    "important"
+                );
+            });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            rapikanFooterUniversal
+        );
     } else {
-
-        arrow.textContent = "▼";
-
+        rapikanFooterUniversal();
     }
+})();
+</script>
+<!-- SL-UNIVERSAL-FOOTER-END -->
+<!-- SL-SEAMLESS-MOBILE-START -->
+<style>
+/* ==========================================================
+   HILANGKAN SCROLL KE KANAN
+   ========================================================== */
 
+html {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    overscroll-behavior-x: none !important;
 }
 
+body {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow-x: hidden !important;
+    overscroll-behavior-x: none !important;
+}
+
+/* Jangan izinkan gambar dan SVG melebihi layar */
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+/* ==========================================================
+   AREA EFEK HARUS PAS SELEBAR LAYAR
+   ========================================================== */
+
+#slPremiumFinal {
+    left: 50% !important;
+    right: auto !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    transform: translateX(-50%) !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+/*
+ * Hilangkan kemungkinan garis vertikal dari SVG
+ * yang keluar dari batas layar.
+ */
+#slPremiumFinal .sl-premium-svg {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+/* ==========================================================
+   FOOTER MENYATU DENGAN EFEK
+   ========================================================== */
+
+footer.sl-premium-footer-final,
+footer.sl-universal-footer,
+.sl-premium-footer-final,
+.sl-universal-footer {
+    position: relative !important;
+    left: 50% !important;
+    right: auto !important;
+
+    width: 100vw !important;
+    max-width: 100vw !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    transform: translateX(-50%) !important;
+
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+
+    border-left: none !important;
+    border-right: none !important;
+
+    /*
+     * Warna awal sama dengan warna bagian bawah efek,
+     * sehingga tidak terlihat seperti dua bagian.
+     */
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(0, 216, 255, .30),
+            transparent 50%
+        ),
+        linear-gradient(
+            180deg,
+            #06336f 0%,
+            #052d68 45%,
+            #031e4e 100%
+        ) !important;
+}
+
+/* Hilangkan celah satu piksel antara efek dan footer */
+#slPremiumFinal + footer,
+#slPremiumFinal ~ footer.sl-premium-footer-final,
+#slPremiumFinal ~ footer.sl-universal-footer {
+    margin-top: -2px !important;
+}
+
+/* ==========================================================
+   SAMBUNGAN GRADASI ATAS DAN BAWAH
+   ========================================================== */
+
+#slPremiumFinal .sl-top-blend {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+
+    background: linear-gradient(
+        180deg,
+        #edfaff 0%,
+        rgba(237,250,255,.96) 7%,
+        rgba(220,246,255,.80) 24%,
+        rgba(172,230,250,.48) 49%,
+        rgba(92,201,239,.18) 76%,
+        transparent 100%
+    ) !important;
+}
+
+/* Lapisan penyambung ke footer */
+#slPremiumFinal .sl-bottom-blend {
+    position: absolute;
+    z-index: 18;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 32px;
+    pointer-events: none;
+
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(5,70,135,.20) 34%,
+        rgba(5,52,112,.68) 72%,
+        #06336f 100%
+    );
+}
+
+/* ==========================================================
+   KHUSUS TAMPILAN HP — DIBUAT LEBIH RINGAN
+   ========================================================== */
+
+@media (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        touch-action: pan-y !important;
+    }
+
+    /*
+     * Hindari wrapper halaman menjadi lebih lebar
+     * daripada layar ponsel.
+     */
+    body > *,
+    main,
+    section,
+    header,
+    footer,
+    .container,
+    .wrapper,
+    .page,
+    .page-wrapper,
+    .main-wrapper {
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+    }
+
+    #slPremiumFinal {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        min-height: 165px !important;
+        height: 165px !important;
+        contain: layout paint !important;
+    }
+
+    /*
+     * SVG tetap terlihat, tetapi filter berat
+     * dikurangi pada HP.
+     */
+    #slPremiumFinal .sl-premium-svg {
+        filter: none !important;
+        shape-rendering: optimizeSpeed;
+    }
+
+    #slPremiumFinal .sl-particles-front {
+        display: none !important;
+    }
+
+    #slPremiumFinal .sl-ring-rays,
+    #slPremiumFinal .sl-energy-ring-two {
+        display: none !important;
+    }
+
+    #slPremiumFinal .sl-logo-shine {
+        display: none !important;
+    }
+
+    #slPremiumFinal .sl-logo-wrap,
+    #slPremiumFinal .sl-logo-halo,
+    #slPremiumFinal .sl-energy-ring-one,
+    #slPremiumFinal .sl-original-logo-final,
+    #slPremiumFinal .sl-glass-stage,
+    #slPremiumFinal .sl-stage-gold-light,
+    footer.sl-premium-footer-final::after,
+    footer.sl-universal-footer::after {
+        animation: none !important;
+    }
+
+    #slPremiumFinal .sl-logo-halo {
+        filter: none !important;
+        opacity: .82 !important;
+    }
+
+    #slPremiumFinal .sl-energy-ring-one {
+        box-shadow:
+            0 0 5px rgba(115,236,255,.55) !important;
+    }
+
+    #slPremiumFinal .sl-original-logo-final {
+        filter:
+            drop-shadow(0 0 4px rgba(255,255,255,.82))
+            drop-shadow(0 5px 7px rgba(0,29,80,.46)) !important;
+    }
+
+    #slPremiumFinal .sl-glass-stage::before,
+    #slPremiumFinal .sl-glass-stage::after {
+        box-shadow: none !important;
+    }
+
+    #slPremiumFinal .sl-stage-gold-light {
+        filter: blur(2px) !important;
+    }
+
+    /*
+     * Footer pas di layar dan tidak menciptakan
+     * area scroll horizontal.
+     */
+    footer.sl-premium-footer-final,
+    footer.sl-universal-footer,
+    .sl-premium-footer-final,
+    .sl-universal-footer {
+        left: 50% !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        transform: translateX(-50%) !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+
+        overflow: hidden !important;
+    }
+
+    .sl-footer-glass-final,
+    .sl-footer-text-universal {
+        width: calc(100vw - 18px) !important;
+        max-width: calc(100vw - 18px) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Matikan animasi jika perangkat meminta pengurangan gerakan */
+@media (prefers-reduced-motion: reduce) {
+    #slPremiumFinal *,
+    footer *,
+    .sl-premium-footer-final *,
+    .sl-universal-footer * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+
+<script>
+(function () {
+    function pasangSeamlessMobile() {
+        const premium =
+            document.getElementById("slPremiumFinal");
+
+        if (premium) {
+            /*
+             * Tambahkan penyambung gradasi bawah.
+             */
+            let bottomBlend =
+                premium.querySelector(".sl-bottom-blend");
+
+            if (!bottomBlend) {
+                bottomBlend =
+                    document.createElement("div");
+
+                bottomBlend.className =
+                    "sl-bottom-blend";
+
+                premium.appendChild(bottomBlend);
+            }
+
+            /*
+             * Hapus elemen SVG animate pada ponsel.
+             * Ini membuat scrolling jauh lebih ringan.
+             */
+            const isMobile =
+                window.matchMedia(
+                    "(max-width: 768px)"
+                ).matches;
+
+            if (isMobile) {
+                premium.querySelectorAll(
+                    "animate, animateTransform, animateMotion"
+                ).forEach(function (animation) {
+                    animation.remove();
+                });
+            }
+        }
+
+        /*
+         * Cegah elemen halaman melebar keluar layar.
+         * Hanya perbaiki elemen yang benar-benar overflow.
+         */
+        if (
+            window.matchMedia(
+                "(max-width: 768px)"
+            ).matches
+        ) {
+            document.querySelectorAll("body *")
+                .forEach(function (element) {
+                    if (
+                        element.id === "slPremiumFinal" ||
+                        element.closest("#slPremiumFinal")
+                    ) {
+                        return;
+                    }
+
+                    const rect =
+                        element.getBoundingClientRect();
+
+                    if (
+                        rect.width >
+                        document.documentElement.clientWidth + 3
+                    ) {
+                        element.style.setProperty(
+                            "max-width",
+                            "100%",
+                            "important"
+                        );
+
+                        element.style.setProperty(
+                            "box-sizing",
+                            "border-box",
+                            "important"
+                        );
+                    }
+                });
+        }
+
+        /*
+         * Pastikan posisi horizontal selalu kembali ke kiri.
+         */
+        if (window.scrollX !== 0) {
+            window.scrollTo({
+                left: 0,
+                top: window.scrollY,
+                behavior: "instant"
+            });
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            pasangSeamlessMobile
+        );
+    } else {
+        pasangSeamlessMobile();
+    }
+
+    window.addEventListener(
+        "load",
+        pasangSeamlessMobile
+    );
+
+    window.addEventListener(
+        "resize",
+        pasangSeamlessMobile
+    );
+})();
 </script>
+<!-- SL-SEAMLESS-MOBILE-END -->
+<script src="/panel-public-settings.js"></script>
+</body>
+</html>
