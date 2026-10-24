@@ -1,1674 +1,1618 @@
 <!DOCTYPE html>
-
 <html lang="id">
 <head>
-<meta charset="utf-8"/>
-<title>Daftar Tim — Tournament Mobile Legends SL</title>
-<style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#071426">
+<link rel="shortcut icon" href="https://i.ibb.co/d4XWdjRR/Screenshot-15-removebg-preview.png">
+<title>JP Harian — WADAH4D</title>
+  <!-- LOADING SCREEN -->
+<div id="loader">
+    <div class="loader-content">
 
-    :root {
-      --background: #4daede;
-      --header: #4daede;
-      --card: #4daede;
-      --card-hover: #4daede;
-      --border: #233c68;
-      --blue: #ffd76a;
-      --cyan: #ffd76a;
-      --text: #ffffff;
-      --muted: #fff2bf;
-      --yellow: #ffd166;
-    }
+        <img src="https://wadahpordinih.com/images/logoweb.png"
+             class="loader-logo"
+             alt="WADAH4D">
 
-    html {
-      scroll-behavior: smooth;
-    }
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
 
-    body {
-      min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(42, 117, 255, 0.12), transparent 32%),
-        var(--background);
-    }
+     <div class="loader-text">
+    <span>L</span>
+    <span>O</span>
+    <span>A</span>
+    <span>D</span>
+    <span>I</span>
+    <span>N</span>
+    <span>G</span>
+    <span>.</span>
+    <span>.</span>
+    <span>.</span>
+</div>
 
-    button,
-    a {
-      font-family: inherit;
-    }
+    </div>
+</div>
+  <style>
+/*=============================
+     WADAH4D LOADER V3
+     FAST • SMOOTH • MOBILE
+==============================*/
 
-    /* HEADER */
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      min-height: 88px;
-      background: rgba(77,174,222, 0.97);
-      border-bottom: 1px solid var(--border);
-    }
+#loader{
 
-    .header-container {
-      width: min(1200px, calc(100% - 32px));
-      min-height: 88px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+    position:fixed;
+    inset:0;
 
-    .logo {
-      width: 50px;
-      height: 50px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      border-radius: 15px;
-      text-decoration: none;
-      color: #4daede;
-      font-size: 18px;
-      font-weight: 900;
-      background: linear-gradient(135deg, #59bde7, #ffd76a);
-      box-shadow: 0 0 24px rgba(53, 185, 255, 0.22);
-    }
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    .brand {
-      min-width: 0;
-    }
+    background:#071426;
 
-    .brand-title {
-      font-size: 14px;
-      font-weight: 900;
-      line-height: 1.2;
-    }
+    z-index:999999;
 
-    .brand-subtitle {
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 12px;
-    }
+    transition:
+    opacity .35s ease,
+    visibility .35s ease;
 
-    .menu-button {
-      width: 48px;
-      height: 48px;
-      margin-left: auto;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      color: white;
-      background: #4daede;
-      cursor: pointer;
-      font-size: 27px;
-    }
-
-    .menu-button:hover {
-      background: #4daede;
-    }
-
-    .navigation {
-      position: absolute;
-      top: 76px;
-      right: max(16px, calc((100% - 1200px) / 2));
-      width: 230px;
-      padding: 10px;
-      display: none;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #4daede;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-    }
-
-    .navigation.show {
-      display: block;
-    }
-
-    .navigation a {
-      display: block;
-      padding: 12px 14px;
-      border-radius: 10px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .navigation a:hover,
-    .navigation a.active {
-      color: white;
-      background: #4daede;
-    }
-
-    /* JUDUL */
-    .hero {
-      min-height: 285px;
-      padding: 64px 20px 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 10px 18px;
-      border: 1px solid #ffffff;
-      border-radius: 999px;
-      color: var(--cyan);
-      background: #4daede;
-      font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 0.5px;
-    }
-
-    .hero h1 {
-      margin-top: 20px;
-      font-size: clamp(31px, 5vw, 48px);
-      line-height: 1.1;
-    }
-
-    .hero p {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    /* ISI TIM */
-    .content {
-      width: min(1200px, calc(100% - 28px));
-      margin: auto;
-      padding: 42px 0 55px;
-    }
-
-    .filter-container {
-      margin-bottom: 25px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .filter-button {
-      padding: 11px 17px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--muted);
-      background: #4daede;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    .filter-button:hover,
-    .filter-button.active {
-      color: #4daede;
-      border-color: var(--cyan);
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-    }
-
-    .groups-container {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .group-card {
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      background: linear-gradient(145deg, #4daede, #4daede);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
-    }
-
-    .group-title {
-      margin-bottom: 17px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .group-title h2 {
-      color: var(--cyan);
-      font-size: 22px;
-    }
-
-    .group-count {
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .team-list {
-      display: grid;
-      gap: 11px;
-    }
-
-    .team-button {
-      width: 100%;
-      padding: 13px;
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      border: 1px solid rgba(53, 185, 255, 0.18);
-      border-radius: 14px;
-      color: white;
-      background: rgba(77,174,222,0.75);
-      cursor: pointer;
-      text-align: left;
-      transition: 0.18s ease;
-    }
-
-    .team-button:hover {
-      transform: translateY(-2px);
-      border-color: var(--blue);
-      background: var(--card-hover);
-    }
-
-    .team-logo {
-      width: 46px;
-      height: 46px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      color: #4daede;
-      background: linear-gradient(135deg, var(--yellow), #fff0a8);
-      font-size: 14px;
-      font-weight: 900;
-    }
-
-    .team-information {
-      min-width: 0;
-      flex: 1;
-    }
-
-    .team-name {
-      font-size: 15px;
-      font-weight: 900;
-    }
-
-    .team-description {
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .team-arrow {
-      color: var(--cyan);
-      font-size: 20px;
-      font-weight: 900;
-    }
-
-    /* POPUP PLAYER */
-    .modal {
-      position: fixed;
-      inset: 0;
-      z-index: 999;
-      padding: 20px;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      background: rgba(77,174,222,0.78);
-      backdrop-filter: blur(5px);
-    }
-
-    .modal.show {
-      display: flex;
-    }
-
-    .modal-box {
-      width: min(520px, 100%);
-      max-height: 88vh;
-      overflow-y: auto;
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      background: #4daede;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
-    }
-
-    .modal-header {
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      padding: 19px;
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      border-bottom: 1px solid var(--border);
-      background: #4daede;
-    }
-
-    .modal-team-logo {
-      width: 51px;
-      height: 51px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      color: #4daede;
-      background: linear-gradient(135deg, var(--yellow), #fff0a8);
-      font-weight: 900;
-    }
-
-    .modal-title {
-      flex: 1;
-    }
-
-    .modal-title h2 {
-      font-size: 20px;
-    }
-
-    .modal-title p {
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .close-button {
-      width: 40px;
-      height: 40px;
-      flex-shrink: 0;
-      border: 1px solid var(--border);
-      border-radius: 11px;
-      color: white;
-      background: #4daede;
-      cursor: pointer;
-      font-size: 21px;
-    }
-
-    .player-container {
-      padding: 18px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .player-row {
-      padding: 13px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border: 1px solid rgba(53, 185, 255, 0.18);
-      border-radius: 13px;
-      background: #4daede;
-    }
-
-    .player-number {
-      width: 34px;
-      height: 34px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      color: #4daede;
-      background: var(--cyan);
-      font-weight: 900;
-    }
-
-    .player-name {
-      font-weight: 900;
-    }
-
-    .player-role {
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* FOOTER */
-    .footer {
-      padding: 26px 15px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      background: #4daede;
-    }
-
-    .footer span {
-      display: inline-block;
-      padding: 8px 13px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--cyan);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    @media (max-width: 760px) {
-      .header-container {
-        width: calc(100% - 20px);
-      }
-
-      .brand-title {
-        font-size: 12px;
-      }
-
-      .brand-subtitle {
-        font-size: 11px;
-      }
-
-      .hero {
-        min-height: 260px;
-        padding-top: 45px;
-      }
-
-      .groups-container {
-        grid-template-columns: 1fr;
-      }
-
-      .group-card {
-        padding: 16px;
-      }
-    }
-  </style>
-<style id="logo-fix">
-.logo {
-  width: 58px !important;
-  height: 58px !important;
-  padding: 0 !important;
-  flex-shrink: 0 !important;
-  display: block !important;
-  overflow: hidden !important;
-  border: 1px solid #f0c553 !important;
-  border-radius: 15px !important;
-  background: #4daede !important;
-  box-shadow: 0 0 18px rgba(53, 185, 255, 0.28) !important;
-  text-decoration: none !important;
 }
 
-.logo img {
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
-  object-fit: cover !important;
-  object-position: center 45% !important;
-  transform: scale(1.45) !important;
-  transform-origin: center !important;
-  border-radius: 0 !important;
-}
-</style>
-<style id="global-layout-fix">
-:root {
-  --global-max-width: 1200px;
-  --global-border: #f0c553;
-  --global-background: #4daede;
-  --global-muted: #fff2bf;
+.loader-box{
+
+    text-align:center;
+
+    animation:fadeIn .5s ease;
+
 }
 
-html {
-  width: 100%;
-  min-width: 320px;
-  -webkit-text-size-adjust: 100%;
+.loader-logo{
+
+    width:280px;
+    max-width:75vw;
+
+    user-select:none;
+    pointer-events:none;
+
+    animation:floatLogo 2.2s ease-in-out infinite;
+
 }
 
-body {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0 !important;
-  overflow-x: hidden;
-  font-size: 16px;
+/* BAR */
+
+.loader-bar{
+
+    width:230px;
+    height:6px;
+
+    margin:28px auto 16px;
+
+    background:#172b46;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
 }
 
-/* HEADER SEMUA HALAMAN */
-.header,
-.site-header {
-  width: 100% !important;
-  min-height: 88px !important;
-  height: auto !important;
-  padding: 0 !important;
+.loader-progress{
+
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(90deg,#55c7ff,#a8e8ff);
+
+    transform:translateX(-100%);
+
+    animation:progress .85s ease forwards;
+
 }
 
-.header-container,
-.header > .container,
-.site-header > .container,
-.site-header .header-container {
-  width: min(var(--global-max-width), calc(100% - 32px)) !important;
-  min-height: 88px !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 14px !important;
+.loader-text{
+    display:flex;
+    justify-content:center;
+    gap:2px;
+    margin-top:18px;
 }
 
-/* LOGO SEMUA HALAMAN */
-.logo,
-.brand-logo,
-.brand-mark {
-  width: 58px !important;
-  height: 58px !important;
-  min-width: 58px !important;
-  min-height: 58px !important;
-  padding: 0 !important;
-  display: block !important;
-  overflow: hidden !important;
-  border: 1px solid var(--global-border) !important;
-  border-radius: 15px !important;
-  background: #4daede !important;
-  box-shadow: 0 0 18px rgba(53, 185, 255, 0.25) !important;
-  text-decoration: none !important;
-}
+.loader-text span{
 
-.logo img,
-.brand-logo img,
-.brand-mark img {
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
-  object-fit: cover !important;
-  object-position: center 45% !important;
-  transform: scale(1.45) !important;
-  transform-origin: center !important;
-  border-radius: 0 !important;
-}
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:1px;
 
-/* NAMA TURNAMEN */
-.brand {
-  min-width: 0 !important;
-}
+    background:linear-gradient(#e8f8ff,#55c7ff,#1677d2);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 
-.brand-title {
-  margin: 0 !important;
-  font-size: 14px !important;
-  line-height: 1.25 !important;
-  font-weight: 900 !important;
-}
-
-.brand-subtitle {
-  margin-top: 6px !important;
-  font-size: 12px !important;
-  line-height: 1.2 !important;
-  color: var(--global-muted) !important;
-}
-
-/* TOMBOL MENU */
-.menu-button {
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
-  min-height: 48px !important;
-  margin-left: auto !important;
-  padding: 0 !important;
-  border-radius: 15px !important;
-}
-
-/* HERO / JUDUL HALAMAN */
-.hero {
-  width: 100% !important;
-  min-height: 260px !important;
-  padding: 48px 20px 40px !important;
-}
-
-.hero h1 {
-  margin-top: 18px !important;
-  font-size: clamp(32px, 5vw, 48px) !important;
-  line-height: 1.1 !important;
-}
-
-.hero p {
-  max-width: 720px !important;
-  margin: 14px auto 0 !important;
-  font-size: 16px !important;
-  line-height: 1.6 !important;
-}
-
-/* HERO BERUPA BANNER DI BERANDA */
-.hero:has(.hero-banner-wrap) {
-  min-height: 0 !important;
-  padding: 14px 0 24px !important;
-}
-
-.hero-banner-wrap {
-  width: min(var(--global-max-width), calc(100% - 24px)) !important;
-  margin: 0 auto !important;
-  overflow: hidden !important;
-  border: 1px solid var(--global-border) !important;
-  border-radius: 18px !important;
-}
-
-.hero-banner {
-  width: 100% !important;
-  height: auto !important;
-  display: block !important;
-  object-fit: cover !important;
-}
-
-/* LEBAR ISI HALAMAN */
-.content,
-main.content {
-  width: min(var(--global-max-width), calc(100% - 28px)) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-top: 40px !important;
-  padding-bottom: 60px !important;
-}
-
-/* PLAYOFF TETAP BISA DIGESER */
-.bracket-wrapper {
-  max-width: 1500px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* FOOTER */
-.footer {
-  width: 100% !important;
-  min-height: 76px !important;
-  padding: 25px 15px !important;
-}
-
-/* TAMPILAN HP */
-@media (max-width: 760px) {
-  .header-container,
-  .header > .container,
-  .site-header > .container,
-  .site-header .header-container {
-    width: calc(100% - 20px) !important;
-    min-height: 78px !important;
-    gap: 11px !important;
-  }
-
-  .header,
-  .site-header {
-    min-height: 78px !important;
-  }
-
-  .logo,
-  .brand-logo,
-  .brand-mark {
-    width: 52px !important;
-    height: 52px !important;
-    min-width: 52px !important;
-    min-height: 52px !important;
-  }
-
-  .brand-title {
-    font-size: 12px !important;
-  }
-
-  .brand-subtitle {
-    font-size: 11px !important;
-  }
-
-  .menu-button {
-    width: 46px !important;
-    height: 46px !important;
-    min-width: 46px !important;
-  }
-
-  .hero {
-    min-height: 235px !important;
-    padding: 42px 15px 34px !important;
-  }
-
-  .hero:has(.hero-banner-wrap) {
-    min-height: 0 !important;
-    padding: 10px 0 18px !important;
-  }
-
-  .hero h1 {
-    font-size: clamp(29px, 9vw, 39px) !important;
-  }
-
-  .hero p {
-    font-size: 14px !important;
-  }
-
-  .content,
-  main.content {
-    width: calc(100% - 16px) !important;
-    padding-top: 30px !important;
-  }
-
-  .hero-banner-wrap {
-    width: calc(100% - 14px) !important;
-    border-radius: 13px !important;
-  }
-}
-</style>
-<link href="header-universal.css" rel="stylesheet"/>
-<link href="page-hero-beauty.css" rel="stylesheet"/>
-<link href="footer-universal.css" rel="stylesheet"/>
-<link href="team-gallery.css" rel="stylesheet"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta content="#4daede" name="theme-color"/>
-<link href="logo-sl.webp" rel="icon" type="image/webp"/>
-<link href="logo-sl.webp" rel="shortcut icon" type="image/webp"/>
-<link href="logo-sl.webp" rel="apple-touch-icon"/>
-<link href="mobile-universal.css" rel="stylesheet"/>
-<link href="header-responsive-fix.css" rel="stylesheet"/>
-<link href="hamburger-always.css" rel="stylesheet"/>
-<link href="team-logo-safe.css" rel="stylesheet"/>
-<link href="theme-season2-premium.css" rel="stylesheet"/>
-<link href="header-title-fix.css" rel="stylesheet">
-<link href="responsive-final.css" rel="stylesheet">
-<link href="responsive-stable-final.css" rel="stylesheet">
-<!-- TIM-HERO-PENDEK-START -->
-<style>
-@media (max-width: 760px) {
-    html body section.hero {
-        width: 100% !important;
-        min-height: 125px !important;
-        height: auto !important;
-        padding: 18px 10px 16px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-
-    html body section.hero .hero-badge {
-        padding: 7px 13px !important;
-        font-size: 9px !important;
-        line-height: 1 !important;
-    }
-
-    html body section.hero h1 {
-        margin: 11px 0 0 !important;
-        font-size: 26px !important;
-        line-height: 1.05 !important;
-        white-space: nowrap !important;
-    }
-}
-</style>
-<!-- TIM-HERO-PENDEK-END -->
-<!-- HERO-TULISAN-JELAS-V4-START -->
-<style>
-/* Kotak judul halaman */
-html body section.hero {
-    position: relative !important;
-    overflow: hidden !important;
-    border-bottom: 1px solid rgba(21,155,211,.30) !important;
-    background:
-        radial-gradient(circle at 50% 10%, rgba(255,255,255,.90), transparent 47%),
-        linear-gradient(135deg, #f7fdff 0%, #e0f5ff 52%, #cbeeff 100%) !important;
-}
-
-/* Pastikan isi berada di atas efek latar */
-html body section.hero > div {
-    position: relative !important;
-    z-index: 3 !important;
-    max-width: 100% !important;
-}
-
-/* Label kecil: DAFTAR PESERTA, FASE GRUP, dan lainnya */
-html body section.hero .hero-badge {
-    position: relative !important;
-    z-index: 3 !important;
-    color: #ffffff !important;
-    border: 1px solid #ffd45c !important;
-    background: linear-gradient(135deg, #0875af, #25afe0) !important;
-    box-shadow:
-        0 5px 13px rgba(4,85,132,.22),
-        inset 0 1px 0 rgba(255,255,255,.30) !important;
-    font-weight: 1000 !important;
-    text-shadow: 0 1px 2px rgba(0,35,75,.45) !important;
-}
-
-/* Judul utama */
-html body section.hero h1 {
-    position: relative !important;
-    z-index: 3 !important;
-    max-width: 100% !important;
-    color: #07365d !important;
-    font-weight: 1000 !important;
-    letter-spacing: .7px !important;
-    text-align: center !important;
-    text-wrap: balance !important;
-    overflow-wrap: normal !important;
-    -webkit-text-stroke: .4px rgba(3,43,83,.25) !important;
     text-shadow:
-        0 2px 0 #ffffff,
-        0 4px 9px rgba(5,64,105,.20),
-        0 0 15px rgba(79,199,237,.18) !important;
+        0 1px 0 rgba(255,255,255,.4),
+        0 2px 3px rgba(0,0,0,.35);
+
+    animation:bounce .9s infinite ease-in-out;
 }
 
-/* Garis emas-biru di bawah judul */
-html body section.hero h1::after {
-    content: "" !important;
-    width: 130px !important;
-    height: 3px !important;
-    margin: 12px auto 0 !important;
-    display: block !important;
-    border-radius: 999px !important;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #20addc,
-        #ffd45c,
-        #20addc,
-        transparent
-    ) !important;
-    box-shadow: 0 0 9px rgba(32,173,220,.38) !important;
+.loader-text span:nth-child(2){animation-delay:.08s;}
+.loader-text span:nth-child(3){animation-delay:.16s;}
+.loader-text span:nth-child(4){animation-delay:.24s;}
+.loader-text span:nth-child(5){animation-delay:.32s;}
+.loader-text span:nth-child(6){animation-delay:.40s;}
+.loader-text span:nth-child(7){animation-delay:.48s;}
+.loader-text span:nth-child(8){animation-delay:.56s;}
+.loader-text span:nth-child(9){animation-delay:.64s;}
+.loader-text span:nth-child(10){animation-delay:.72s;}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+        opacity:.7;
+    }
+
+    50%{
+        transform:translateY(-4px);
+        opacity:1;
+    }
+
 }
 
-/* Deskripsi halaman */
-html body section.hero p {
-    position: relative !important;
-    z-index: 3 !important;
-    width: auto !important;
-    max-width: 760px !important;
-    min-height: 0 !important;
-    height: auto !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    color: #174966 !important;
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-    font-weight: 800 !important;
-    text-align: center !important;
-    text-shadow: 0 1px 0 rgba(255,255,255,.90) !important;
+.hide-loader{
+
+    opacity:0;
+    visibility:hidden;
+
 }
 
-/* Hilangkan efek yang mengaburkan tulisan */
-html body section.hero h1,
-html body section.hero p,
-html body section.hero .hero-badge {
-    opacity: 1 !important;
-    visibility: visible !important;
-    filter: none !important;
+/*=============================
+          ANIMATION
+==============================*/
+
+@keyframes progress{
+
+    to{
+
+        transform:translateX(0);
+
+    }
+
 }
 
-/* Tampilan ponsel */
-@media (max-width: 600px) {
-    html body section.hero .hero-badge {
-        min-height: 0 !important;
-        height: auto !important;
-        padding: 7px 13px !important;
-        font-size: 9px !important;
-        line-height: 1 !important;
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(8px);
+
     }
 
-    html body section.hero h1 {
-        max-width: 100% !important;
-        padding: 0 4px !important;
-        font-size: 27px !important;
-        line-height: 1.08 !important;
-        letter-spacing: .2px !important;
-        white-space: normal !important;
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
     }
 
-    html body section.hero h1::after {
-        width: 80px !important;
-        height: 2px !important;
-        margin-top: 8px !important;
+}
+
+@keyframes floatLogo{
+
+    0%,100%{
+
+        transform:translateY(0);
+
     }
 
-    html body section.hero p {
-        max-width: 340px !important;
-        min-height: 0 !important;
-        height: auto !important;
-        padding: 0 7px !important;
-        font-size: 10px !important;
-        line-height: 1.4 !important;
-        font-weight: 800 !important;
+    50%{
+
+        transform:translateY(-5px);
+
     }
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.loader-logo{
+
+    width:220px;
+
+}
+
+.loader-bar{
+
+    width:190px;
+
+}
+
+.loader-text{
+
+    font-size:14px;
+
+}
+
+    } 
+  </style>
+ <script>
+const loader = document.getElementById("loader");
+
+function hideLoader() {
+
+    if (!loader) return;
+
+    loader.classList.add("hide-loader");
+
+    setTimeout(() => {
+        loader.remove();
+    }, 5000);
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Delay 800ms agar animasi terlihat smooth
+    setTimeout(hideLoader, 5000);
+
+});
+
+// Backup jika halaman lambat
+window.addEventListener("load", hideLoader);
+
+// Paksa hilang maksimal 3 detik jika ada yang macet
+setTimeout(hideLoader, 5000);
+  </script>
+  <style>
+/* =========================================
+   BOTTOM NAV — ORANGE 3D
+   VISUAL ONLY
+========================================= */
+
+.bottom{
+    background:transparent;
+}
+
+.bottom-inner{
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102b4b 0%,
+            #0b1d35 45%,
+            #071426 100%
+        );
+
+    border:1px solid rgba(66,186,255,.35);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.65),
+        0 0 20px rgba(66,186,255,.10),
+        inset 0 1px 0 rgba(255,180,90,.12),
+        inset 0 -3px 6px rgba(0,0,0,.75);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    overflow:hidden;
+}
+
+
+/* =========================================
+   BLUE LIGHT LINE
+========================================= */
+
+.bottom-inner::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:10%;
+    right:10%;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #0b069c,
+            #ef5cff,
+            #42baff,
+            transparent
+        );
+
+    opacity:.8;
+
+    box-shadow:
+        0 0 10px rgba(66,186,255,.55);
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.bottom a{
+    position:relative;
+
+    color:#9b8c82;
+
+    font-weight:600;
+
+    text-shadow:
+        0 1px 2px rgba(0,0,0,.8);
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+/* =========================================
+   ICON 3D
+========================================= */
+
+.bottom a span{
+
+    color:#a99a90;
+
+    background:
+        linear-gradient(
+            145deg,
+            #15365b,
+            #0a1b31
+        );
+
+    border:1px solid rgba(255,132,48,.18);
+
+    box-shadow:
+        inset 0 1px 1px rgba(168,232,255,.10),
+        inset 0 -3px 5px rgba(0,0,0,.70),
+        0 3px 6px rgba(0,0,0,.40);
+
+    transition:
+        all .3s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =========================================
+   ACTIVE ORANGE
+========================================= */
+
+.bottom a.active{
+    color:#55c7ff;
+
+    text-shadow:
+        0 0 10px rgba(66,186,255,.30);
+}
+
+.bottom a.active span{
+
+    color:#a8e8ff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #164a7a,
+            #0d2b4b
+        );
+
+    border-color:
+        rgba(66,186,255,.65);
+
+    box-shadow:
+
+        0 4px 12px rgba(0,0,0,.55),
+
+        inset 0 1px 2px rgba(168,232,255,.25),
+        inset 0 -3px 5px rgba(0,0,0,.65),
+
+        0 0 16px rgba(66,186,255,.20);
+
+    text-shadow:
+        0 0 9px rgba(168,232,255,.55);
+}
+
+
+/* =========================================
+   ACTIVE INDICATOR
+========================================= */
+
+.bottom a.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:4px;
+    left:50%;
+
+    width:20px;
+    height:2px;
+
+    transform:translateX(-50%);
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #42baff,
+            #a8e8ff,
+            #42baff,
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(255,113,29,.8);
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.bottom a:hover{
+    color:#72d5ff;
+}
+
+.bottom a:hover span{
+
+    color:#a8e8ff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #164a7a,
+            #0b1d35
+        );
+
+    border-color:
+        rgba(66,186,255,.40);
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.45),
+        inset 0 1px 2px rgba(168,232,255,.15),
+        inset 0 -3px 5px rgba(0,0,0,.60),
+        0 0 12px rgba(66,186,255,.14);
+}
+
+
+/* =========================================
+   TOUCH
+========================================= */
+
+.bottom a:active{
+    transform:translateY(1px);
+}
+
+.bottom a:active span{
+
+    transform:scale(.95);
+
+    box-shadow:
+        inset 0 2px 5px rgba(0,0,0,.8);
+}
+:root{
+  --bg:#08090b;
+  --surface:#111316;
+  --surface2:#17191d;
+  --line:#272a2f;
+  --gold:#55c7ff;
+  --gold2:#a8e8ff;
+  --text:#f5f5f5;
+  --muted:#858991;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  padding-bottom:78px;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;
+  background:radial-gradient(circle at 50% -10%,#1677d2 0,transparent 38%);
+}
+.top{
+  position:sticky;top:0;z-index:30;
+  background:
+    linear-gradient(rgba(8,9,11,.92),rgba(8,9,11,.92)),
+    url("https://wadahpordinih.com/images/logoweb.png");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+.topbar{
+  height:64px;display:flex;align-items:center;justify-content:space-between;
+  padding:8px 15px;max-width:600px;margin:auto;
+}
+.logo{display:block;height:43px;max-width:170px}
+.logo img{height:100%;width:auto;display:block;object-fit:contain}
+.icon-btn{
+  width:38px;height:38px;border:1px solid var(--line);border-radius:10px;
+  background:var(--surface);color:#ddd;font-size:17px;
+}
+.hero{
+  max-width:600px;margin:auto;padding:27px 15px 20px;
+}
+.hero-box{
+  border:1px solid #1e4d7a;border-radius:17px;padding:25px 20px;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(66,186,255,.16),transparent 30%),
+    linear-gradient(145deg,#102b4b,#101216 65%);
+  overflow:hidden;position:relative;
+}
+.hero-box:after{
+  content:"";position:absolute;width:130px;height:130px;border-radius:50%;
+  right:-50px;bottom:-70px;border:1px solid #2d6da6;opacity:.5;
+}
+/* OUTLINE JALAN SETIAP SISI */
+.hero-box{
+  position:relative;
+}
+
+/* garis utama */
+.hero-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border:2px solid #248fe0;
+  border-radius:17px;
+  pointer-events:none;
+  z-index:99;
+}
+
+/* cahaya yang berjalan */
+.hero-box::after{
+  content:"";
+  position:absolute;
+
+  width:45px;
+  height:2px;
+
+  background:#55c7ff;
+
+  box-shadow:0 0 5px #55c7ff;
+
+  top:0;
+  left:0;
+
+  border-radius:10px;
+
+  pointer-events:none;
+  z-index:100;
+
+  animation:kelilingBox 4s linear infinite;
+}
+
+@keyframes kelilingBox{
+
+  /* ATAS */
+  0%{
+    top:0;
+    left:0;
+    width:45px;
+    height:2px;
+  }
+
+  24%{
+    top:0;
+    left:calc(100% - 45px);
+    width:45px;
+    height:2px;
+  }
+
+  /* KANAN */
+  25%{
+    top:0;
+    left:calc(100% - 2px);
+    width:2px;
+    height:45px;
+  }
+
+  49%{
+    top:calc(100% - 45px);
+    left:calc(100% - 2px);
+    width:2px;
+    height:45px;
+  }
+
+  /* BAWAH */
+  50%{
+    top:calc(100% - 2px);
+    left:calc(100% - 45px);
+    width:45px;
+    height:2px;
+  }
+
+  74%{
+    top:calc(100% - 2px);
+    left:0;
+    width:45px;
+    height:2px;
+  }
+
+  /* KIRI */
+  75%{
+    top:calc(100% - 45px);
+    left:0;
+    width:2px;
+    height:45px;
+  }
+
+  99%{
+    top:0;
+    left:0;
+    width:2px;
+    height:45px;
+  }
+
+  /* KEMBALI KE ATAS */
+  100%{
+    top:0;
+    left:0;
+    width:45px;
+    height:2px;
+  }
+}
+.eyebrow{font-size:10px;color:var(--gold);letter-spacing:2.5px;font-weight:700}
+h1{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:31px;
+  line-height:1.05;
+  margin:9px 0 8px;
+  letter-spacing:-1px;
+  font-weight:900 !important;
+  -webkit-text-stroke:0.6px currentColor;
+}
+.hero p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.55;
+  max-width:410px;
+  font-weight:900 !important;
+  -webkit-text-stroke:0.4px currentColor;
+}
+.stats{display:flex;gap:8px;margin-top:18px}
+.stat{flex:1;background:#0b1b30;border:1px solid var(--line);border-radius:10px;padding:10px}
+.stat b{display:block;font-size:15px;color:var(--gold2)}.stat span{font-size:9px;color:var(--muted)}
+.section{max-width:600px;margin:auto;padding:0 15px 22px}
+.title-row{display:flex;align-items:center;justify-content:space-between;margin:3px 0 12px}
+.title-row h2{font-size:16px;margin:0}.title-row small{color:var(--muted);font-size:10px}
+.providers{
+  display:flex;gap:8px;overflow-x:auto;padding:2px 1px 8px;
+  scrollbar-width:none;
+}
+.providers::-webkit-scrollbar{display:none}
+.provider{
+  flex:0 0 auto;background:var(--surface);color:#aaa;
+  border:1px solid var(--line);border-radius:20px;padding:9px 13px;
+  font-size:10px;white-space:nowrap;
+}
+.provider.active{background:var(--gold);border-color:var(--gold);color:#111;font-weight:800}
+.search{
+  display:flex;align-items:center;gap:8px;background:var(--surface);
+  border:1px solid var(--line);border-radius:11px;padding:10px 12px;margin-bottom:15px;
+}
+.search span{color:#777}.search input{
+  width:100%;background:none;border:0;outline:0;color:#fff;font-size:12px;
+}
+.search input::placeholder{color:#666}
+.grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  overflow:hidden;min-width:0;
+}
+.photo{
+  aspect-ratio:1.22/1;background:#14263d;display:flex;align-items:center;
+  justify-content:center;color:#696d74;font-size:9px;letter-spacing:1px;
+  overflow:hidden;cursor:pointer;position:relative;
+}
+.photo:after{
+  content:"VIEW";position:absolute;right:7px;bottom:7px;
+  background:rgba(0,0,0,.72);color:#fff;border:1px solid #555;
+  border-radius:5px;padding:4px 6px;font-size:7px;
+}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.info{padding:10px}
+.provider-name{
+  color:var(--gold);font-size:8px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.8px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.game{
+  font-size:11px;font-weight:700;margin-top:5px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.amount{font-size:12px;color:var(--gold2);font-weight:800;margin-top:9px}
+.date{font-size:8px;color:#71747b;margin-top:5px}
+.empty{display:none;text-align:center;color:var(--muted);padding:30px;font-size:12px}
+.bottom{
+  position:fixed;bottom:0;left:0;right:0;height:68px;z-index:40;
+  background:rgba(12,13,16,.97);border-top:1px solid var(--line);
+  display:flex;justify-content:center;
+}
+.bottom-inner{width:100%;max-width:600px;display:flex}
+.bottom a{
+  flex:1;text-decoration:none;color:#777;text-align:center;font-size:9px;
+  padding-top:12px;
+}
+.bottom a span{display:block;font-size:19px;margin-bottom:4px}
+.bottom a.active{color:var(--gold)}
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  background:#000;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+.lightbox.show{display:flex}
+.lightbox img{max-width:100%;max-height:88vh;border-radius:10px}
+.close{
+  position:absolute;right:17px;top:14px;width:38px;height:38px;
+  border-radius:50%;background:#191a1e;border:1px solid #444;color:#fff;
+  font-size:25px;line-height:34px;text-align:center;
+}
+@media(min-width:601px){
+  body{background:#050608}
+  .top,.bottom{max-width:600px;margin:auto}
+  .top{border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  .bottom{left:50%;right:auto;transform:translateX(-50%);width:600px}
 }
 </style>
-<!-- HERO-TULISAN-JELAS-V4-END -->
-<script src="/api/bootstrap.js"></script><script src="/safe-html.js"></script>
+<style>
+
+.bottom-gif{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.bottom-gif img{
+    width: 100%;
+    display: block;
+}
+/* =================================
+   FOOTER BANNER
+================================= */
+
+.footer-banner{
+    width:100%;
+    max-width:600px;
+
+    margin:20px auto 20px;
+
+    padding:0 12px;
+}
+
+.footer-banner a{
+    display:block;
+}
+
+.footer-banner img{
+    display:block;
+
+    width:100%;
+    height:auto;
+
+    border-radius:15px;
+
+    border:1px solid rgba(66,186,255,.25);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.40),
+        0 0 18px rgba(66,186,255,.06);
+
+    transition:.3s ease;
+}
+
+.footer-banner img:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.50),
+        0 0 22px rgba(66,186,255,.12);
+}
+.hero-box{
+    position:relative;
+    overflow:hidden;
+    background:#0d0e10;
+}
+
+/* GAMBAR BACKGROUND KECIL + BURAM */
+.hero-background{
+    position:absolute;
+
+    width:70%;
+    height:70%;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%, -50%);
+
+    object-fit:contain;
+
+    filter:blur(5px);
+
+    opacity:.45;
+
+    z-index:0;
+}
+
+
+/* EFEK GELAP DI SEKITAR GAMBAR */
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0,0,0,.15) 0%,
+            rgba(0,0,0,.55) 65%,
+            rgba(0,0,0,.85) 100%
+        );
+
+    z-index:1;
+}
+
+
+/* ISI HERO TETAP DI DEPAN */
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+</style>
+<link rel="me" href="https://www.blogger.com/profile/04180086182029086600" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+
+<style id="blue-theme-overrides">
+:root {
+  color-scheme: dark;
+  --bg: #071426;
+  --surface: #0d2038;
+  --surface2: #132b49;
+  --line: #24476b;
+  --gold: #55c7ff;
+  --gold2: #a8e8ff;
+  --text: #eef8ff;
+  --muted: #9bb5cc;
+}
+html, body { background-color: #071426; color: #eef8ff; }
+body:before {
+  background: radial-gradient(circle at 50% -10%, rgba(38,145,230,.28) 0, transparent 42%);
+}
+#loader { background: #071426; }
+.loader-bar { background: #183452; }
+.loader-progress {
+  background: linear-gradient(90deg, #1688df, #a8e8ff);
+}
+.loader-text span {
+  background: linear-gradient(#effbff, #55c7ff, #1677d2);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.bottom-inner {
+  background: linear-gradient(145deg, #15365b 0%, #0b203a 48%, #071426 100%);
+  border-color: rgba(85,199,255,.42);
+  box-shadow: 0 12px 30px rgba(0,0,0,.55), 0 0 20px rgba(66,186,255,.12),
+    inset 0 1px 0 rgba(168,232,255,.12), inset 0 -3px 6px rgba(0,0,0,.65);
+}
+.bottom-inner:before {
+  background: linear-gradient(90deg, transparent, #1677d2, #55c7ff, #a8e8ff, transparent);
+  box-shadow: 0 0 10px rgba(66,186,255,.55);
+}
+.bottom a, .bottom a span { color: #a9c6df; }
+.bottom a span {
+  background: linear-gradient(145deg, #20466d, #0b1d35);
+  border-color: rgba(85,199,255,.24);
+  box-shadow: inset 0 1px 1px rgba(168,232,255,.10), inset 0 -3px 5px rgba(0,0,0,.6), 0 3px 6px rgba(0,0,0,.35);
+}
+.bottom a.active, .bottom a:hover { color: #72d5ff; }
+.bottom a.active span, .bottom a:hover span {
+  color: #c4f1ff;
+  background: linear-gradient(145deg, #1c5b91, #0d2b4b);
+  border-color: rgba(85,199,255,.68);
+  box-shadow: 0 4px 12px rgba(0,0,0,.45), inset 0 1px 2px rgba(168,232,255,.2),
+    inset 0 -3px 5px rgba(0,0,0,.55), 0 0 16px rgba(66,186,255,.2);
+}
+.bottom a.active:after {
+  background: linear-gradient(90deg, transparent, #55c7ff, #a8e8ff, #55c7ff, transparent);
+  box-shadow: 0 0 8px rgba(66,186,255,.8);
+}
+.top {
+  background: linear-gradient(rgba(7,20,38,.94), rgba(7,20,38,.94)), url("https://wadahpordinih.com/images/logoweb.png");
+  border-bottom-color: var(--line);
+}
+.icon-btn, .stat, .search, .provider, .card, .close {
+  background-color: var(--surface);
+  border-color: var(--line);
+}
+.hero-box {
+  border-color: #245b8d;
+  background: radial-gradient(circle at 85% 15%, rgba(66,186,255,.17), transparent 32%),
+    linear-gradient(145deg, #102b4b, #0b1b30 68%);
+}
+.hero-box:before { border-color: #248fe0; }
+.hero-box:after { background: #55c7ff; box-shadow: 0 0 7px #55c7ff; }
+.eyebrow, .provider-name { color: #55c7ff; }
+.stat b, .amount { color: #a8e8ff; }
+.provider.active {
+  background: #258fe0;
+  border-color: #55c7ff;
+  color: #061426;
+}
+.photo { background: #14263d; }
+.photo:after { border-color: #3976a8; }
+.lightbox { background: #030b16; }
+.footer-banner img { border-color: rgba(85,199,255,.3); }
+@media (min-width:601px) {
+  body { background: #050f1d; }
+}
+</style>
+
 </head>
 <body>
-<!-- HEADER -->
-<header class="header sl-site-header">
-<div class="header-container sl-site-header-inner">
-<a class="logo sl-site-logo" href="index.html" title="Kembali ke Beranda">
-<img alt="Logo SL" src="logo-sl.webp"/>
+
+<header class="top">
+  <div class="topbar">
+    <a class="logo" href="https://wadah4d02.com/" target="_blank" rel="noopener noreferrer">
+  <img src="https://wadahpordinih.com/images/logoweb.png" alt="WADAH4D">
 </a>
-<div class="brand sl-site-brand">
-<div class="brand-title sl-site-title">
-        TOURNAMENT MOBILE LEGENDS SL
-      </div>
-<div class="brand-subtitle sl-site-subtitle">
-        Season 2
-      </div>
-</div>
-<button aria-label="Buka menu" class="menu-button sl-menu-button" id="menuButton" type="button">
-      ☰
-    </button>
-<nav class="navigation sl-site-nav" id="navigation">
-<a href="index.html">BERANDA</a> <a class="active" href="tim.html">TIM</a> <a href="jadwal.html">JADWAL</a> <a href="klasemen.html">KLASEMEN</a> <a href="skor.html">SKOR</a> <a href="mvp.html">MVP</a> <a href="savage.html">SAVAGE</a> <a href="playoff.html">PLAYOFF</a> <a href="rules.html">RULES TURNAMEN</a>        <a href="prizepool.html">PRIZEPOOL</a>
-</nav>
-</div>
+    <button class="icon-btn" onclick="document.getElementById('searchInput').focus()">⌕</button>
+  </div>
 </header>
-<!-- JUDUL -->
+
 <section class="hero">
-<div>
-<div class="hero-badge">DAFTAR PESERTA</div>
-<h1>20 TIM PARTISIPASI</h1>
-</div>
+  <div class="hero-box">
+
+    <!-- BACKGROUND GAMBAR -->
+    <img
+      class="hero-background"
+      src="https://i.postimg.cc/d1R1zrWH/logo-WADAH4D.png"
+      alt="">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="eyebrow">WADAH4D • WIN ARCHIVE</div>
+      <h1>JP HARIAN</h1>
+      <p>GAME GACOR DAN EASY MAXWIN WADAH4D.!</p>
+      <div class="stats">
+        <div class="stat"><b id="total">0</b><span>TOTAL KEMENANGAN </span>
+        </div>
+        <div class="stat"><b>6</b><span>PROVIDER</span>
+        </div>
+        <div class="stat"><b>LIVE</b><span>UPDATE</span>
+        </div>
+      </div><br>
+      <div class="bottom-gif"><img src="https://i.postimg.cc/mrYdMD9r/gifkz.gif" alt="GIF">
+      </div>
+    </div>
+
+  </div>
 </section>
-<!-- DAFTAR TIM -->
-<main class="content">
 
-<div class="groups-container" id="groupsContainer"></div>
-</main>
-<!-- FOOTER -->
-<footer class="sl-global-footer sl-universal-footer">
-<div class="sl-global-footer-inner">
-<span>TOURNAMENT MOBILE LEGENDS SL</span>
-<span class="sl-footer-separator">—</span>
-<span>SEASON 2</span>
+<section class="section" id="provider">
+  <div class="title-row">
+    <h2>Provider</h2><small>Geser untuk memilih</small>
+  </div>
+  <div class="providers">
+    <button class="provider active" data-provider="all">Semua</button>
+    <button class="provider" data-provider="pragmatic">Pragmatic Play</button>
+    <button class="provider" data-provider="pg">PG Soft</button>
+    <button class="provider" data-provider="habanero">Habanero</button>
+    <button class="provider" data-provider="nolimit">Nolimit City</button>
+    <button class="provider" data-provider="spade">Spadegaming</button>
+  </div>
+</section>
+
+<section class="section" id="album">
+  <div class="title-row">
+    <h2>SLOT EASY MAXWIN HARI INI</h2><small id="result">Terbaru</small>
+  </div>
+
+  <div class="search">
+    <span>⌕</span>
+    <input id="searchInput" type="search" placeholder="Cari game atau provider...">
+  </div>
+
+  <div class="grid" id="gallery"></div>
+  <div class="empty" id="empty">Album tidak ditemukan.</div>
+</section>
+
+<nav class="bottom">
+  <div class="bottom-inner">
+    <a class="active" href="#"><span>⌂</span>Beranda</a>
+<a href="https://ertepe.luvtoberi.com/5g.html?rtp=WADAH4D" target="_blank" rel="noopener noreferrer"><span>▦</span>RTP</a>
+<a href="https://wadah4d02.com/" target="_blank" rel="noopener noreferrer"><span>▣</span>LOGIN</a>
+    <a href="https://wadah4d02.com/" target="_blank" rel="noopener noreferrer"><span>⋯</span>LINK ALTERNATIF</a>
+  </div>
+</nav>wa
+
+<div class="lightbox" id="lightbox">
+  <button class="close" id="close">×</button>
+  <img id="lightboxImg" src="" alt="Bukti kemenangan">
 </div>
-</footer>
-<!-- POPUP DAFTAR PLAYER -->
+<footer>
+  <!-- FOOTER BANNER -->
+<section class="footer-banner">
+    <a href="https://wadah4d02.com/"
+       target="_blank"
+       rel="noopener noreferrer">
+        <img src="https://img.viva88athenae.com/pop/mobile-fgs.jpg" alt="WADAH4D">
+    </a>
+</section>
+  </footer>
+  <!-- Jumpscare Overlay -->
+<div id="jumpscare">
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjSuuJqpibWPXrWYyiskpwy6rnx9FCYcQjtxJ0_PHU7KqXIdm_XcyDLUpbJzT509HCNOrcSKHzQiWnBOftivsF4_YU7pgbC4YRvSdyHIGQsq4g50VFwPyufegHLR9-CGceGwIhyhF3h8QYwpjvbRnQgDH6Euw6AYs7P54tZT5cU5f7XvqqcjJAENS8fXEY3" alt="Scary">
+</div>
 
-<!-- Sistem tim lama disimpan di backup asli; halaman memakai team-gallery.js saja. -->
-<script src="tournament-config.js"></script>
-<script src="team-gallery.js"></script>
-<script src="hamburger-always.js"></script>
-<!-- SL-UNIVERSAL-FOOTER-START -->
+<audio id="scream" preload="auto">
+    <source src="https://www.image2url.com/r2/default/audio/1782604585584-bb7c87b9-0a85-4068-8367-30cbeed0a8e0.mp3">
+</audio>
+
 <style>
-/* Footer SL seragam pada seluruh halaman */
-footer.sl-universal-footer,
-.sl-universal-footer {
-    position: relative !important;
-    z-index: 20 !important;
-    width: 100% !important;
-    min-height: 50px !important;
-    margin: 0 !important;
-    padding: 8px clamp(14px, 7vw, 120px) !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    color: #ffffff !important;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 0%,
-            rgba(0, 217, 255, .28),
-            transparent 56%
-        ),
-        linear-gradient(
-            180deg,
-            #07549b 0%,
-            #053a7a 48%,
-            #03285e 100%
-        ) !important;
-
-    border-top: 2px solid #ffd037 !important;
-    border-bottom: 2px solid #ffd037 !important;
-
-    box-shadow:
-        inset 0 7px 14px rgba(50, 207, 255, .16),
-        inset 0 -5px 11px rgba(0, 20, 67, .30),
-        0 -4px 13px rgba(0, 174, 239, .18) !important;
+#jumpscare{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999999999;
+    animation:flash .08s infinite;
 }
 
-/* Cahaya biru di tengah footer */
-footer.sl-universal-footer::before,
-.sl-universal-footer::before {
-    content: "" !important;
-    position: absolute !important;
-    z-index: 0 !important;
-    left: 24% !important;
-    right: 24% !important;
-    bottom: -12px !important;
-    height: 23px !important;
-    border-radius: 50% !important;
-
-    background: rgba(0, 222, 255, .65) !important;
-    filter: blur(13px) !important;
-    pointer-events: none !important;
+#jumpscare img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-/* Garis kilau halus */
-footer.sl-universal-footer::after,
-.sl-universal-footer::after {
-    content: "" !important;
-    position: absolute !important;
-    z-index: 1 !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 42% !important;
-    height: 1px !important;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.82),
-        transparent
-    ) !important;
-
-    animation: slFooterShine 4.2s linear infinite;
-    pointer-events: none !important;
-}
-
-/* Kotak tulisan footer */
-footer.sl-universal-footer > *,
-.sl-universal-footer > * {
-    position: relative !important;
-    z-index: 4 !important;
-}
-
-/* Seluruh tulisan footer */
-footer.sl-universal-footer,
-footer.sl-universal-footer *,
-.sl-universal-footer,
-.sl-universal-footer * {
-    color: #ffffff !important;
-    opacity: 1 !important;
-}
-
-/* Elemen yang berisi tulisan turnamen */
-footer.sl-universal-footer .sl-footer-text-universal,
-.sl-universal-footer .sl-footer-text-universal {
-    width: min(100%, 1200px) !important;
-    min-height: 31px !important;
-    margin: 0 auto !important;
-    padding: 5px 18px !important;
-    box-sizing: border-box !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    color: #ffffff !important;
-    font-family: Arial, Helvetica, sans-serif !important;
-    font-size: clamp(12px, 1.15vw, 17px) !important;
-    font-weight: 900 !important;
-    line-height: 1.25 !important;
-    letter-spacing: 1px !important;
-    text-align: center !important;
-    white-space: normal !important;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(9, 86, 166, .94),
-            rgba(2, 34, 88, .98)
-        ) !important;
-
-    border: 1px solid #ffd037 !important;
-    outline: 1px solid rgba(42, 214, 255, .60) !important;
-    outline-offset: -4px !important;
-    border-radius: 999px !important;
-
-    text-shadow:
-        0 2px 2px rgba(0,0,0,.92),
-        0 0 7px rgba(54,218,255,.66) !important;
-
-    box-shadow:
-        0 0 7px rgba(255,205,45,.20),
-        0 0 14px rgba(0,210,255,.25),
-        inset 0 2px 7px rgba(79,225,255,.17) !important;
-}
-
-footer.sl-universal-footer .sl-footer-text-universal *,
-.sl-universal-footer .sl-footer-text-universal * {
-    color: #ffffff !important;
-    font-weight: 900 !important;
-    opacity: 1 !important;
-    text-shadow:
-        0 2px 2px rgba(0,0,0,.92),
-        0 0 7px rgba(54,218,255,.66) !important;
-}
-
-@keyframes slFooterShine {
-    from {
-        transform: translateX(-130%);
-        opacity: 0;
-    }
-
-    20% {
-        opacity: .65;
-    }
-
-    65% {
-        opacity: .35;
-    }
-
-    to {
-        transform: translateX(340%);
-        opacity: 0;
-    }
-}
-
-/* Footer pada tampilan ponsel */
-@media (max-width: 600px) {
-    footer.sl-universal-footer,
-    .sl-universal-footer {
-        min-height: 45px !important;
-        padding: 7px 9px !important;
-    }
-
-    footer.sl-universal-footer .sl-footer-text-universal,
-    .sl-universal-footer .sl-footer-text-universal {
-        width: 100% !important;
-        min-height: 29px !important;
-        padding: 5px 8px !important;
-        font-size: 9px !important;
-        letter-spacing: .4px !important;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    footer.sl-universal-footer::after,
-    .sl-universal-footer::after {
-        animation: none !important;
-    }
+@keyframes flash{
+    0%{background:#000;}
+    50%{background:#fff;}
+    100%{background:#000;}
 }
 </style>
 
 <script>
-(function () {
-    function rapikanFooterUniversal() {
-        const footer =
-            document.querySelector("footer.sl-universal-footer") ||
-            document.querySelector("footer");
+function showJumpScare(){
+    const js = document.getElementById("jumpscare");
+    const audio = document.getElementById("scream");
 
-        if (!footer) return;
+    js.style.display = "flex";
 
-        footer.classList.add("sl-universal-footer");
+    audio.currentTime = 0;
+    audio.play().catch(()=>{});
 
-        /*
-         * Cari elemen terkecil yang berisi teks footer.
-         * Jangan memilih induk besar bila ada anak yang lebih tepat.
-         */
-        const candidates = Array.from(
-            footer.querySelectorAll("div, p, span, strong")
-        ).filter(function (element) {
-            const text =
-                (element.textContent || "")
-                    .replace(/\s+/g, " ")
-                    .trim()
-                    .toUpperCase();
+    setTimeout(()=>{
+        js.style.display="none";
+    },2500);
+}
 
-            return (
-                text.includes("TOURNAMENT MOBILE LEGENDS") &&
-                text.includes("SEASON 2")
-            );
-        });
+document.addEventListener("keydown",function(e){
 
-        let textElement = null;
-
-        candidates.forEach(function (element) {
-            const hasMatchingChild =
-                Array.from(element.children).some(function (child) {
-                    const childText =
-                        (child.textContent || "")
-                            .replace(/\s+/g, " ")
-                            .trim()
-                            .toUpperCase();
-
-                    return (
-                        childText.includes("TOURNAMENT MOBILE LEGENDS") &&
-                        childText.includes("SEASON 2")
-                    );
-                });
-
-            if (!hasMatchingChild && !textElement) {
-                textElement = element;
-            }
-        });
-
-        if (!textElement) {
-            textElement =
-                candidates[candidates.length - 1] ||
-                footer.firstElementChild ||
-                footer;
-        }
-
-        textElement.classList.add(
-            "sl-footer-text-universal"
-        );
-
-        textElement.style.setProperty(
-            "color",
-            "#ffffff",
-            "important"
-        );
-
-        textElement.style.setProperty(
-            "opacity",
-            "1",
-            "important"
-        );
-
-        textElement.querySelectorAll("*")
-            .forEach(function (child) {
-                child.style.setProperty(
-                    "color",
-                    "#ffffff",
-                    "important"
-                );
-
-                child.style.setProperty(
-                    "opacity",
-                    "1",
-                    "important"
-                );
-            });
+    if(
+        e.key==="F12" ||
+        (e.ctrlKey && (e.key==="u" || e.key==="U")) ||
+        (e.ctrlKey && e.shiftKey &&
+            ["I","i","J","j","C","c"].includes(e.key))
+    ){
+        e.preventDefault();
+        showJumpScare();
+        return false;
     }
 
-    if (document.readyState === "loading") {
-        document.addEventListener(
-            "DOMContentLoaded",
-            rapikanFooterUniversal
-        );
-    } else {
-        rapikanFooterUniversal();
-    }
-})();
+});
+
 </script>
-<!-- SL-UNIVERSAL-FOOTER-END -->
-<!-- SL-SEAMLESS-MOBILE-START -->
-<style>
-/* ==========================================================
-   HILANGKAN SCROLL KE KANAN
-   ========================================================== */
-
-html {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow-x: hidden !important;
-    overscroll-behavior-x: none !important;
-}
-
-body {
-    position: relative !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    overflow-x: hidden !important;
-    overscroll-behavior-x: none !important;
-}
-
-/* Jangan izinkan gambar dan SVG melebihi layar */
-img,
-svg,
-video,
-canvas {
-    max-width: 100%;
-}
-
-/* ==========================================================
-   AREA EFEK HARUS PAS SELEBAR LAYAR
-   ========================================================== */
-
-#slPremiumFinal {
-    left: 50% !important;
-    right: auto !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin: 0 !important;
-    transform: translateX(-50%) !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-    border: 0 !important;
-    outline: 0 !important;
-}
-
-/*
- * Hilangkan kemungkinan garis vertikal dari SVG
- * yang keluar dari batas layar.
- */
-#slPremiumFinal .sl-premium-svg {
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow: hidden !important;
-}
-
-/* ==========================================================
-   FOOTER MENYATU DENGAN EFEK
-   ========================================================== */
-
-footer.sl-premium-footer-final,
-footer.sl-universal-footer,
-.sl-premium-footer-final,
-.sl-universal-footer {
-    position: relative !important;
-    left: 50% !important;
-    right: auto !important;
-
-    width: 100vw !important;
-    max-width: 100vw !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    transform: translateX(-50%) !important;
-
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-
-    border-left: none !important;
-    border-right: none !important;
-
-    /*
-     * Warna awal sama dengan warna bagian bawah efek,
-     * sehingga tidak terlihat seperti dua bagian.
-     */
-    background:
-        radial-gradient(
-            ellipse at 50% 0%,
-            rgba(0, 216, 255, .30),
-            transparent 50%
-        ),
-        linear-gradient(
-            180deg,
-            #06336f 0%,
-            #052d68 45%,
-            #031e4e 100%
-        ) !important;
-}
-
-/* Hilangkan celah satu piksel antara efek dan footer */
-#slPremiumFinal + footer,
-#slPremiumFinal ~ footer.sl-premium-footer-final,
-#slPremiumFinal ~ footer.sl-universal-footer {
-    margin-top: -2px !important;
-}
-
-/* ==========================================================
-   SAMBUNGAN GRADASI ATAS DAN BAWAH
-   ========================================================== */
-
-#slPremiumFinal .sl-top-blend {
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-
-    background: linear-gradient(
-        180deg,
-        #edfaff 0%,
-        rgba(237,250,255,.96) 7%,
-        rgba(220,246,255,.80) 24%,
-        rgba(172,230,250,.48) 49%,
-        rgba(92,201,239,.18) 76%,
-        transparent 100%
-    ) !important;
-}
-
-/* Lapisan penyambung ke footer */
-#slPremiumFinal .sl-bottom-blend {
-    position: absolute;
-    z-index: 18;
-    left: 0;
-    right: 0;
-    bottom: -1px;
-    height: 32px;
-    pointer-events: none;
-
-    background: linear-gradient(
-        180deg,
-        transparent 0%,
-        rgba(5,70,135,.20) 34%,
-        rgba(5,52,112,.68) 72%,
-        #06336f 100%
-    );
-}
-
-/* ==========================================================
-   KHUSUS TAMPILAN HP — DIBUAT LEBIH RINGAN
-   ========================================================== */
-
-@media (max-width: 768px) {
-    html,
-    body {
-        overflow-x: hidden !important;
-        max-width: 100vw !important;
-        touch-action: pan-y !important;
-    }
-
-    /*
-     * Hindari wrapper halaman menjadi lebih lebar
-     * daripada layar ponsel.
-     */
-    body > *,
-    main,
-    section,
-    header,
-    footer,
-    .container,
-    .wrapper,
-    .page,
-    .page-wrapper,
-    .main-wrapper {
-        max-width: 100vw !important;
-        box-sizing: border-box !important;
-    }
-
-    #slPremiumFinal {
-        width: 100vw !important;
-        max-width: 100vw !important;
-        min-height: 165px !important;
-        height: 165px !important;
-        contain: layout paint !important;
-    }
-
-    /*
-     * SVG tetap terlihat, tetapi filter berat
-     * dikurangi pada HP.
-     */
-    #slPremiumFinal .sl-premium-svg {
-        filter: none !important;
-        shape-rendering: optimizeSpeed;
-    }
-
-    #slPremiumFinal .sl-particles-front {
-        display: none !important;
-    }
-
-    #slPremiumFinal .sl-ring-rays,
-    #slPremiumFinal .sl-energy-ring-two {
-        display: none !important;
-    }
-
-    #slPremiumFinal .sl-logo-shine {
-        display: none !important;
-    }
-
-    #slPremiumFinal .sl-logo-wrap,
-    #slPremiumFinal .sl-logo-halo,
-    #slPremiumFinal .sl-energy-ring-one,
-    #slPremiumFinal .sl-original-logo-final,
-    #slPremiumFinal .sl-glass-stage,
-    #slPremiumFinal .sl-stage-gold-light,
-    footer.sl-premium-footer-final::after,
-    footer.sl-universal-footer::after {
-        animation: none !important;
-    }
-
-    #slPremiumFinal .sl-logo-halo {
-        filter: none !important;
-        opacity: .82 !important;
-    }
-
-    #slPremiumFinal .sl-energy-ring-one {
-        box-shadow:
-            0 0 5px rgba(115,236,255,.55) !important;
-    }
-
-    #slPremiumFinal .sl-original-logo-final {
-        filter:
-            drop-shadow(0 0 4px rgba(255,255,255,.82))
-            drop-shadow(0 5px 7px rgba(0,29,80,.46)) !important;
-    }
-
-    #slPremiumFinal .sl-glass-stage::before,
-    #slPremiumFinal .sl-glass-stage::after {
-        box-shadow: none !important;
-    }
-
-    #slPremiumFinal .sl-stage-gold-light {
-        filter: blur(2px) !important;
-    }
-
-    /*
-     * Footer pas di layar dan tidak menciptakan
-     * area scroll horizontal.
-     */
-    footer.sl-premium-footer-final,
-    footer.sl-universal-footer,
-    .sl-premium-footer-final,
-    .sl-universal-footer {
-        left: 50% !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-        transform: translateX(-50%) !important;
-
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 8px !important;
-        padding-right: 8px !important;
-
-        overflow: hidden !important;
-    }
-
-    .sl-footer-glass-final,
-    .sl-footer-text-universal {
-        width: calc(100vw - 18px) !important;
-        max-width: calc(100vw - 18px) !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        box-sizing: border-box !important;
-    }
-}
-
-/* Matikan animasi jika perangkat meminta pengurangan gerakan */
-@media (prefers-reduced-motion: reduce) {
-    #slPremiumFinal *,
-    footer *,
-    .sl-premium-footer-final *,
-    .sl-universal-footer * {
-        animation: none !important;
-        transition: none !important;
-    }
-}
-</style>
-
 <script>
-(function () {
-    function pasangSeamlessMobile() {
-        const premium =
-            document.getElementById("slPremiumFinal");
+const data=[
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 15,000,000",date:"23 OKT 2026",img:"https://pxdrop.online/raw/dbd53ma81qec73f6pb10",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS TRIPLE POT",amount:"IDR 4,663,680",date:"23 OKT 2026",img:"https://pxdrop.online/raw/dbd53ma81qec73f6pb10",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS",amount:"IDR 23,514,000",date:"23 OKT 2026",img:"https://pxdrop.online/raw/dbd53ma81qec73f6pb10",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"BATTLEGROUND ROYALE",amount:"IDR 22,376,540",date:"23 OKT 2026",img:"https://pxdrop.online/raw/dbd52ja81qec73f6pb0g",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 1",amount:"IDR 20,615,490",date:"22 OKT 2026",img:"https://pxdrop.online/raw/dbchgba81qec73f6p97g",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 27,432,010",date:"22 OKT 2026",img:"https://pxdrop.online/raw/dbchg3q81qec73f6p970",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BANDITO",amount:"IDR 19,012,600",date:"22 OKT 2026",img:"https://pxdrop.online/raw/dbchfq281qec73f6p96g",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"GLADIATOR'S GLORY",amount:"IDR 29,400,940",date:"22 OKT 2026",img:"https://pxdrop.online/raw/dbchfei81qec73f6p95g",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"BONANZA GOLD",amount:"IDR 100,957,500",date:"21 OKT 2026",img:"https://pxdrop.online/raw/dbchevq81qec73f6p950",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 30,000,000",date:"21 OKT 2026",img:"https://pxdrop.online/raw/dbchem281qec73f6p94g",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"WISDOM OF ATHENA 1000",amount:"IDR 13,358,000",date:"21 OKT 2026",img:"https://pxdrop.online/raw/dbcheai81qec73f6p940",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS 1000",amount:"IDR 18,000,000",date:"20 OKT 2026",img:"https://pxdrop.online/raw/dbb8o8q81qec73f6p7ig",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 17,877,000",date:"20 OKT 2026",img:"https://pxdrop.online/raw/dbb8o3281qec73f6p7i0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"LUCKY NEKO",amount:"IDR 41,672,240",date:"20 OKT 2026",img:"https://pxdrop.online/raw/dbb8noi81qec73f6p7hg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"CAISHEN WINS",amount:"IDR 144,460,050",date:"20 OKT 2026",img:"https://pxdrop.online/raw/dbb8nhq81qec73f6p7h0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 64,545,860",date:"20 OKT 2026",img:"https://pxdrop.online/raw/dbb8n1281qec73f6p7g0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS SUPER SCATTER",amount:"IDR 169,400,000",date:"20 OKT 2026",img:"https://pxdrop.online/raw/dbb8mpq81qec73f6p7fg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS SUPER SCATTER",amount:"IDR 49,470,000",date:"20 OKT 2026",img:"https://pxdrop.online/raw/dbb8mga81qec73f6p7f0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 2500",amount:"IDR 14,667,150",date:"20 OKT 2026",img:"https://pxdrop.online/raw/dbb8m5i81qec73f6p7eg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BANDITO",amount:"IDR 33,927,190",date:"20 OKT 2026",img:"https://pxdrop.online/raw/dbb8lla81qec73f6p7e0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA 1000",amount:"IDR 8,842,200",date:"19 OKT 2026",img:"https://pxdrop.online/raw/dbagh3a81qec73f6p5cg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 17,813,470",date:"19 OKT 2026",img:"https://pxdrop.online/raw/dbaggja81qec73f6p5c0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 1",amount:"IDR 48,759,980",date:"19 OKT 2026",img:"https://pxdrop.online/raw/dbaggfa81qec73f6p5bg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS SUPER SCATTER",amount:"IDR 11,253,000",date:"18 OKT 2026",img:"https://pxdrop.online/raw/db9qsea81qec73f6p4m0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS",amount:"IDR 7,950,000",date:"18 OKT 2026",img:"https://pxdrop.online/raw/db9qsea81qec73f6p4m0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS 1000",amount:"IDR 15,780,000",date:"18 OKT 2026",img:"https://pxdrop.online/raw/db9qs6q81qec73f6p4lg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BANDITO",amount:"IDR 23,070,170",date:"18 OKT 2026",img:"https://pxdrop.online/raw/db9qrqi81qec73f6p4l0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WAYS OF THE QILIN",amount:"IDR 43,750,370",date:"18 OKT 2026",img:"https://pxdrop.online/raw/db9qrja81qec73f6p4kg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS 1000",amount:"IDR 225,000,000",date:"17 OKT 2026",img:"https://pxdrop.online/raw/db9c17q81qec73f6p3rg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BANDITO",amount:"IDR 27,606,190",date:"17 OKT 2026",img:"https://pxdrop.online/raw/db8ijh281qec73f6p2b0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"BONANZA GOLD",amount:"IDR 32,772,000",date:"17 OKT 2026",img:"https://pxdrop.online/raw/db9c0mi81qec73f6p3r0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 28,950,750",date:"17 OKT 2026",img:"https://pxdrop.online/raw/db9bvva81qec73f6p3qg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD APE #3258",amount:"IDR 5,244,000",date:"16 OKT 2026",img:"https://pxdrop.online/raw/db8ijh281qec73f6p2b0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS SUPER SCATTER",amount:"IDR 8,850,000",date:"16 OKT 2026",img:"https://pxdrop.online/raw/db8ij2a81qec73f6p2ag",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 4,865,250",date:"16 OKT 2026",img:"https://pxdrop.online/raw/db8iiha81qec73f6p2a0",playUrl:"https://wadah4d02.com/"}, 
 
-        if (premium) {
-            /*
-             * Tambahkan penyambung gradasi bawah.
-             */
-            let bottomBlend =
-                premium.querySelector(".sl-bottom-blend");
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 2500",amount:"IDR 12,928,000",date:"29 Sep 2026",img:"https://imglink.cc/cdn/l70j1Zm7mk.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS 1000",amount:"IDR 282,390,000",date:"29 Sep 2026",img:"https://imglink.cc/cdn/4CUl_6R4Xh.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"DRAGON HATCH",amount:"IDR 11,114,400",date:"29 Sep 2026",img:"https://imglink.cc/cdn/_OUcK1Ej4x.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"LUCKY NEKO",amount:"IDR 7,639,300",date:"29 Sep 2026",img:"https://imglink.cc/cdn/ahXqYs47o2.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BANDITO",amount:"IDR 17,800,360",date:"29 Sep 2026",img:"https://imglink.cc/cdn/ku8CLT_kyM.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 12,312,000",date:"28 Sep 2026",img:"https://imglink.cc/cdn/i5YI5LGT20.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA 2500",amount:"IDR 5,000,000",date:"28 Sep 2026",img:"https://imglink.cc/cdn/RHz0ciFCuf.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"FURY OF ANUBIS",amount:"IDR 33,382,400",date:"27 Sep 2026",img:"https://imglink.cc/cdn/FkxrhaWmZJ.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 12,000,000",date:"27 Sep 2026",img:"https://imglink.cc/cdn/az133uWw7h.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 12,000,000",date:"27 Sep 2026",img:"https://imglink.cc/cdn/az133uWw7h.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"ANUBIS WRATH",amount:"IDR 14,588,780",date:"26 Sep 2026",img:"https://imglink.cc/cdn/nxdf5eMeJO.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 22,131,230",date:"26 Sep 2026",img:"https://imglink.cc/cdn/bbzCmiQhiX.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 10,006,200",date:"27 Sep 2026",img:"https://imglink.cc/cdn/Er4zpQTO1F.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"PINATA WINS",amount:"IDR 25,562,870",date:"26 Sep 2026",img:"https://imglink.cc/cdn/ql2TfM0NpG.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BANDITO",amount:"IDR 17,675,340",date:"26 Sep 2026",img:"https://imglink.cc/cdn/r83ILZVxG-.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"JADE LEGENDS",amount:"IDR 4,992,200",date:"26 Sep 2026",img:"https://imglink.cc/cdn/_JMFxB5LXl.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA 2500",amount:"IDR 176,775,000",date:"26 Sep 2026",img:"https://imglink.cc/cdn/njYge97ORr.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 6,000,000",date:"26 Sep 2026",img:"https://imglink.cc/cdn/frfYMGg-7o.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"FORTUNE ACE SUPER SCATTER",amount:"IDR 7,120,000",date:"25 Sep 2026",img:"https://imglink.cc/cdn/0Eyilv_UDt.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS",amount:"IDR 7,676,360",date:"25 Sep 2026",img:"https://imglink.cc/cdn/p3uKv0bU67.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD APE #3258",amount:"IDR 8,694,720",date:"24 Sep 2026",img:"https://i.postimg.cc/1XmwBnYp/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 332,325,000",date:"24 Sep 2026",img:"https://imglink.cc/cdn/jR5eGO2Jcx.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"GALATIC GEMS",amount:"IDR 595,550,850",date:"24 Sep 2026",img:"https://imglink.cc/cdn/HbVeqncTp5.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 24,231,670",date:"24 Sep 2026",img:"https://imglink.cc/cdn/x5dxjVeQes.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 15,000,000",date:"24 Sep 2026",img:"https://imglink.cc/cdn/_pcWYghGmC.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 1",amount:"IDR 6,874,780",date:"23 Sep 2026",img:"https://imglink.cc/cdn/aPNrklx7TV.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SUGAR RUSH 1000",amount:"IDR 25,758,000",date:"23 Sep 2026",img:"https://imglink.cc/cdn/_d9cGeIKUW.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MONSTER SUPERLANCHE",amount:"IDR 6,180,000",date:"23 Sep 2026",img:"https://imglink.cc/cdn/HHyMXB2_jk.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"GEMSTONE GOLD",amount:"IDR 20,055,050",date:"23 Sep 2026",img:"https://imglink.cc/cdn/-Q-VOv_8ef.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA 1000",amount:"IDR 75,960,000",date:"23 Sep 2026",img:"https://imglink.cc/cdn/EjVaBF3NI9.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 2",amount:"IDR 27,873,000",date:"23 Sep 2026",img:"https://imglink.cc/cdn/c1Q49LVYJM.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS ",amount:"IDR 50,000,000",date:"23 Sep 2026",img:"https://i.postimg.cc/5y4zTZNQ/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"HELLOS - TRIPLE SUN",amount:"IDR 6,500,000",date:"22 Sep 2026",img:"https://imglink.cc/cdn/IgsYCGY2_k.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 5,838,000",date:"22 Sep 2026",img:"https://imglink.cc/cdn/4wbPUYxAfj.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"GALATIC GEMS",amount:"IDR 145,490,310",date:"22 Sep 2026",img:"https://imglink.cc/cdn/rSH2BIcx9l.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"50,000x MANIA",amount:"IDR 9,125,000",date:"22 Sep 2026",img:"https://imglink.cc/cdn/96Gxhhav1A.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 1",amount:"IDR 21,482,010",date:"22 Sep 2026",img:"https://imglink.cc/cdn/de9yUjzgXY.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 24,231,670",date:"22 Sep 2026",img:"https://imglink.cc/cdn/mYlEDH2-g2.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 13,062,680",date:"22 Sep 2026",img:"https://imglink.cc/cdn/05cFtLoq-e.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 7,636,350",date:"22 Sep 2026",img:"https://imglink.cc/cdn/in8pfJI3We.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"ZOMBIE SCHOLL MEGAWAYS",amount:"IDR 11,202,450",date:"21 Sep 2026",img:"https://pxdrop.online/raw/dao9fjmhv1ts73cu8qr0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA 1000",amount:"IDR 82,500,000",date:"21 Sep 2026",img:"https://pxdrop.online/raw/dao4vd6hv1ts73cu8qjg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"GALATIC GEMS",amount:"IDR 248,122,700",date:"21 Sep 2026",img:"https://pxdrop.online/raw/dao3ltmhv1ts73cu8qhg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"RUJAK BONANZA 1000",amount:"IDR 17,983,140",date:"21 Sep 2026",img:"https://pxdrop.online/raw/dao3llehv1ts73cu8qh0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SUGAR RUSH 1000",amount:"IDR 22,455,900",date:"21 Sep 2026",img:"https://pxdrop.online/raw/dao3lauhv1ts73cu8qgg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 2",amount:"IDR 4,676,000",date:"21 Sep 2026",img:"https://pxdrop.online/raw/dao3l1ehv1ts73cu8qfg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS ",amount:"IDR 22,242,910",date:"21 Sep 2026",img:"https://pxdrop.online/raw/dao3komhv1ts73cu8qeg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS SUPER SCATTER",amount:"IDR 17,793,300",date:"21 Sep 2026",img:"https://pxdrop.online/raw/dao3kc6hv1ts73cu8qe0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA 1000",amount:"IDR 3,238,150",date:"21 Sep 2026",img:"https://pxdrop.online/raw/dao3jrmhv1ts73cu8qdg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 50,025,000",date:"20 Sep 2026",img:"https://pxdrop.online/raw/danerl6hv1ts73cu8nug",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 9,917,170",date:"19 Sep 2026",img:"https://pxdrop.online/raw/damogjmhv1ts73cu8l00",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"50.000x MANIA",amount:"IDR 103,941,000",date:"18 Sep 2026",img:"https://pxdrop.online/raw/damlsguhv1ts73cu8kq0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WAYS OF THE QILIN",amount:"IDR 18,233,400",date:"18 Sep 2026",img:"https://pxdrop.online/raw/damlrnehv1ts73cu8kp0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS SUPER SCATTER",amount:"IDR 44,250,000",date:"18 Sep 2026",img:"https://pxdrop.online/raw/damlqsehv1ts73cu8ko0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA XMASS",amount:"IDR 9,961,000",date:"18 Sep 2026",img:"https://pxdrop.online/raw/damlqgehv1ts73cu8kng",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 26,335,130",date:"18 Sep 2026",img:"https://pxdrop.online/raw/damlq7mhv1ts73cu8kn0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 6,000,000",date:"18 Sep 2026",img:"https://pxdrop.online/raw/dam39kehv1ts73cu8iq0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS BONUS",amount:"IDR 20,000,000",date:"18 Sep 2026",img:"https://pxdrop.online/raw/dam397uhv1ts73cu8ip0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SUGAR RUSH SUPER SCATTER",amount:"IDR 12,717,800",date:"17 Sep 2026",img:"https://pxdrop.online/raw/dalkc16hv1ts73cu8htg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"SUPERMARKET SPREEE",amount:"IDR 10,199,860",date:"17 Sep 2026",img:"https://pxdrop.online/raw/dalj2iuhv1ts73cu8hsg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS BONUS",amount:"IDR 5,754,700",date:"17 Sep 2026",img:"https://pxdrop.online/raw/dalj2bmhv1ts73cu8hs0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"YAKUZA HONOR",amount:"IDR 5,985,580",date:"17 Sep 2026",img:"https://pxdrop.online/raw/daldv96hv1ts73cu8h8g",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"CHAISEN WINS",amount:"IDR 242,285,060",date:"17 Sep 2026",img:"https://pxdrop.online/raw/daldtq6hv1ts73cu8h80",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 6,000,000",date:"17 Sep 2026",img:"https://pxdrop.online/raw/daldshuhv1ts73cu8h6g",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA 2500",amount:"IDR 5,000,000",date:"16 Sep 2026",img:"https://pxdrop.online/raw/dakvrv6hv1ts73cu8geg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 7,350,000",date:"16 Sep 2026",img:"https://pxdrop.online/raw/dakvrmuhv1ts73cu8ge0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"GALATIC GEMS",amount:"IDR 94,370,540",date:"16 Sep 2026",img:"https://pxdrop.online/raw/dakvremhv1ts73cu8gdg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BANDITO",amount:"IDR 9,539,870",date:"16 Sep 2026",img:"https://pxdrop.online/raw/dakvr56hv1ts73cu8gd0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 9,496,000",date:"16 Sep 2026",img:"https://pxdrop.online/raw/dakvqgmhv1ts73cu8gcg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS 1000",amount:"IDR 7,210,500",date:"16 Sep 2026",img:"https://pxdrop.online/raw/dakrd96hv1ts73cu8g60",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"FORTUNE ACE SUPER SCATTER ",amount:"IDR 9,250,500",date:"16 Sep 2026",img:"https://pxdrop.online/raw/dakrcv6hv1ts73cu8g5g",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"HELIOS - TRIPLE SUN (NEW GAME) ",amount:"IDR 3,832,500",date:"16 Sep 2026",img:"https://pxdrop.online/raw/dakrdvmhv1ts73cu8g6g",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 2 ",amount:"IDR 3,960,000",date:"16 Sep 2026",img:"https://pxdrop.online/raw/dakrbl6hv1ts73cu8g30",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA 1000",amount:"IDR 4,129,300",date:"16 Sep 2026",img:"https://pxdrop.online/raw/dakrb6uhv1ts73cu8g20",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA 1000",amount:"IDR 10,110,000",date:"15 Sep 2026",img:"https://pxdrop.online/raw/dak709uhv1ts73cu8e20",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MYTHICAL GUARDIANS",amount:"IDR 16,782,280",date:"15 Sep 2026",img:"https://pxdrop.online/raw/dak6vqehv1ts73cu8e1g",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 5,850,080",date:"15 Sep 2026",img:"https://pxdrop.online/raw/dak3qtmhv1ts73cu8dpg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"GALATIC GEMS",amount:"IDR 70,370,340",date:"15 Sep 2026",img:"https://pxdrop.online/raw/dak3qduhv1ts73cu8dp0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS SUPER SCATTER",amount:"IDR 25,808,000",date:"15 Sep 2026",img:"https://pxdrop.online/raw/dak30iuhv1ts73cu8dmg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 7,534,340",date:"14 Sep 2026",img:"https://pxdrop.online/raw/dak1umuhv1ts73cu8dkg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 1",amount:"IDR 4,136,020",date:"14 Sep 2026",img:"https://pxdrop.online/raw/dak1ueuhv1ts73cu8dk0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 8,571,010",date:"14 Sep 2026",img:"https://pxdrop.online/raw/dak1u66hv1ts73cu8djg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"LUCKY NEKO",amount:"IDR 52,702,500",date:"14 Sep 2026",img:"https://pxdrop.online/raw/dak1tfehv1ts73cu8dj0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS 1000",amount:"IDR 12,232,260",date:"14 Sep 2026",img:"https://pxdrop.online/raw/dak1tb6hv1ts73cu8dig",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 6,645,800",date:"14 Sep 2026",img:"https://pxdrop.online/raw/dak1spuhv1ts73cu8dhg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BANDITO",amount:"IDR 34,614,420",date:"14 Sep 2026",img:"https://pxdrop.online/raw/dak1t26hv1ts73cu8di0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS 1000",amount:"IDR 15,000,800",date:"14 Sep 2026",img:"https://pxdrop.online/raw/dajjfgmhv1ts73cu8cjg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"FORTUNE OF OLYMPUS",amount:"IDR 2,068,800",date:"14 Sep 2026",img:"https://pxdrop.online/raw/dajjev6hv1ts73cu8cj0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 7,819,800",date:"14 Sep 2026",img:"https://pxdrop.online/raw/dajfc66hv1ts73cu8ceg",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA 2500",amount:"IDR 12,381,510",date:"14 Sep 2026",img:"https://pxdrop.online/raw/dajejbuhv1ts73cu8ce0",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 8,365,660",date:"14 Sep 2026",img:"https://uploadsimage.org/i/398705e138035d122674.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 20,359,220",date:"14 Sep 2026",img:"https://uploadsimage.org/i/3f2fc34bfaa842816152.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MINI MAFIA MEGAWAYS",amount:"IDR 6,660,000",date:"13 Sep 2026",img:"https://imglink.cc/cdn/yVT0VPCir9.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 2",amount:"IDR 6,583,500",date:"13 Sep 2026",img:"https://imglink.cc/cdn/_81LSzxaez.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 4,348,800",date:"13 Sep 2026",img:"https://imglink.cc/cdn/ajX6jxRJk3.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"spade",provider:"Spadegaming",game:"GALAXY GUARDIAN",amount:"IDR 15,210,000",date:"05 Sep 2026",img:"https://i.ytimg.com/vi/ZbCrdXM_P7U/maxresdefault.jpg",playUrl:"https://wadah4d02.com/"},
+ {p:"nolimit",provider:"Nolimit City",game:"Mental",amount:"IDR 20,560,000",date:"13 Sep 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdr4emPr2lBWA9_XsMRVorxc2VRIUNeRp5yG-Qo50bFw&s",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"KOI GATE",amount:"IDR 44,860,050",date:"13 Sep 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYlQc_p6Ep-AFX_tK8Iz9gElaoEKzWcO8HAOO26-yynkTaJNAs7fCTwnQ&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"BATTLE STRIKE",amount:"IDR 54,380,000",date:"13 Sep 2026",img:"https://cdn.soloazar.com/storage/images/62827_crop916010_1600px_VPylp2MTBoIaT8LlIAfiaDwBInZCncAcPvQ.jpg",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 17,548,830",date:"12 Sep 2026",img:"https://imglink.cc/cdn/cLMYnZDlGE.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SUGAR RUSH 1000",amount:"IDR 32,441,500",date:"12 Sep 2026",img:"https://imglink.cc/cdn/W6sKN0NADc.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 5,658,290",date:"12 Sep 2026",img:"https://imglink.cc/cdn/tsjN2kQlmn.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 123,680,080",date:"12 Sep 2026",img:"https://imglink.cc/cdn/yPQYa0ewww.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 1",amount:"IDR 15,302,230",date:"12 Sep 2026",img:"https://imglink.cc/cdn/Vu06SsSzVO.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 9,732,270",date:"12 Sep 2026",img:"https://imglink.cc/cdn/2Flq0Jxtjm.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 30,000,000",date:"12 Sep 2026",img:"https://imglink.cc/cdn/Q6ZqFOiovQ.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS SUPER SCATTER",amount:"IDR 8,488,560",date:"12 Sep 2026",img:"https://imglink.cc/cdn/y1zXtPl9c8.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 1",amount:"IDR 26,105,740",date:"12 Sep 2026",img:"https://imglink.cc/cdn/P7l_I_x-j6.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"LUCKY NEKO",amount:"IDR 5,671,570",date:"11 Sep 2026",img:"https://imglink.cc/cdn/zoZF9AHHF0.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 82,000,000",date:"11 Sep 2026",img:"https://imglink.cc/cdn/d6TZQjrINy.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"TREASURES OF AZTEC",amount:"IDR 5,341,010",date:"11 Sep 2026",img:"https://imglink.cc/cdn/SsCtxrROJb.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS 1000",amount:"IDR 9,000,000",date:"11 Sep 2026",img:"https://imglink.cc/cdn/IwwK3zaXP6.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 1",amount:"IDR 6,637,980",date:"11 Sep 2026",img:"https://imglink.cc/cdn/w5PEp29oU4.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 33,447,200",date:"11 Sep 2026",img:"https://imglink.cc/cdn/MVILEMbYX4.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"GALATIC GEMS",amount:"IDR 118,647,240",date:"11 Sep 2026",img:"https://i.postimg.cc/ydpJDkZL/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 6,804,000",date:"11 Sep 2026",img:"https://i.postimg.cc/QxhLF0jR/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 11,167,100",date:"11 Sep 2026",img:"https://i.postimg.cc/yx9V7dXx/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA 1000",amount:"IDR 10,758,000",date:"11 Sep 2026",img:"https://i.postimg.cc/2SxSq1pj/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET BONANZA XMASS",amount:"IDR 30,946,500",date:"10 Sep 2026",img:"https://i.postimg.cc/5N0XY37q/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS SUPER SCATTER",amount:"IDR 15,070,500",date:"10 Sep 2026",img:"https://i.postimg.cc/k4mV2Pz8/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"GALATIC GEMS",amount:"IDR 14,327,520",date:"10 Sep 2026",img:"https://i.postimg.cc/44p52JXC/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 30,000,000",date:"10 Sep 2026",img:"https://i.postimg.cc/5jcS0RBs/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"LUCKY NEKO",amount:"IDR 10,462,830",date:"09 Sep 2026",img:"https://i.postimg.cc/mkPTDcmj/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS SUPER SCATTER",amount:"IDR 5,032,800",date:"10 Sep 2026",img:"https://i.postimg.cc/nLxVkhLR/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 14,735,230",date:"09 Sep 2026",img:"https://i.postimg.cc/Nfq3TrnS/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 18,356,470",date:"09 Sep 2026",img:"https://i.postimg.cc/8zDV8rB6/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pg",provider:"PG Soft",game:"LUCKY NEKO",amount:"IDR 21,676,330",date:"09 Sep 2026",img:"https://i.postimg.cc/3RqL3PM5/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS TRIPLE POT",amount:"IDR 4,698,000",date:"09 Sep 2026",img:"https://i.postimg.cc/Yqs9Wpk4/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF GATOT KACA SUPER SCATTER",amount:"IDR 2,008,500",date:"09 Sep 2026",img:"https://i.postimg.cc/hthv3kCV/image.png",playUrl:"https://wadah4d02.com/"}, 
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 269,000,000",date:"08 Sep 2026",img:"https://i.postimg.cc/RCDtZY1Q/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pragmatic",provider:"Pragmatic Play",game:"GATES OF OLYMPUS 1000",amount:"IDR 30,000,000",date:"08 Sep 2026",img:"https://i.postimg.cc/rmmLX7R6/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pragmatic",provider:"Pragmatic Play",game:"STARLIGHT PRINCESS SUPER SCATTER",amount:"IDR 15,597,520",date:"08 Sep 2026",img:"https://i.postimg.cc/x8dj5tS7/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SNOW PARTY",amount:"IDR 16,043,000",date:"08 Sep 2026",img:"https://i.postimg.cc/jdN2FJr3/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 41,120,000",date:"08 Sep 2026",img:"https://i.postimg.cc/hPFPTP70/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pragmatic",provider:"Pragmatic Play",game:"SWEET RUSH BONANZA",amount:"IDR 6,607,500",date:"08 Sep 2026",img:"https://i.postimg.cc/MHvpWv4t/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 6,001,200",date:"06 Sep 2026",img:"https://i.postimg.cc/0jfsCCtP/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pragmatic",provider:"Pragmatic Play",game:"MAHJONG WINS 3 - BLACK SCATTER",amount:"IDR 268,600,000",date:"06 Sep 2026",img:"https://i.postimg.cc/WzPZZsK2/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pragmatic",provider:"Pragmatic Play",game:"Gates of Olympus 1000",amount:"IDR 75,000,000",date:"06 Sep 2026",img:"https://i.postimg.cc/K8YZJdSf/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pragmatic",provider:"Pragmatic Play",game:"Sweet Bonanza 2500",amount:"IDR 15,000,000",date:"03 Sep 2026",img:"https://i.postimg.cc/RFJ1fsZz/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pragmatic",provider:"Pragmatic Play",game:"AZTEC GEMS",amount:"IDR 24,000,000",date:"03 Sep 2026",img:"https://i.postimg.cc/rpxxwdn9/image.png",playUrl:"https://wadah4d02.com/"},
 
-            if (!bottomBlend) {
-                bottomBlend =
-                    document.createElement("div");
+ {p:"pg",provider:"PG Soft",game:"MUSEUM MYSTERY",amount:"IDR 270,613,510",date:"09 Sep 2026",img:"https://i.postimg.cc/4dFLtJvD/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 1",amount:"IDR 186,062,330",date:"09 Sep 2026",img:"https://i.postimg.cc/RC851q3T/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"GEISHA'S REVENGE",amount:"IDR 222,535,820",date:"09 Sep 2026",img:"https://i.postimg.cc/ZRwZzc5K/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"PINATA WINS",amount:"IDR 59,963,140",date:"08 Sep 2026",img:"https://i.postimg.cc/g2Pnwbwp/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"WILD APE #3258",amount:"IDR 7,160,400",date:"08 Sep 2026",img:"https://i.postimg.cc/CM8whT6R/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"CAISHEN WINS",amount:"IDR 160,705,590",date:"08 Sep 2026",img:"https://i.postimg.cc/nzZGXtGn/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"LUCKY NEKO",amount:"IDR 9,408,230",date:"08 Sep 2026",img:"https://i.postimg.cc/SQgfx3XH/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 2",amount:"IDR 19,076,550",date:"08 Sep 2026",img:"https://i.postimg.cc/SKjpHwMk/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"WILD BOUNTY SHOWDOWN",amount:"IDR 11,524,920",date:"08 Sep 2026",img:"https://i.postimg.cc/bN8fqGt6/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"MAHJONG WAYS 1 ",amount:"IDR 17,120,800",date:"08 Sep 2026",img:"https://i.postimg.cc/kX7zk0r3/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"Mahjong Ways 1",amount:"IDR 14,953,270",date:"06 Sep 2026",img:"https://i.postimg.cc/YC7F02F9/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"GALATIC GEMS",amount:"IDR 125,505,050",date:"06 Sep 2026",img:"https://i.postimg.cc/g2rWv83J/image.png",playUrl:"https://wadah4d02.com/"},
+ {p:"pg",provider:"PG Soft",game:"WILD APE #3258",amount:"IDR 11,605,260",date:"06 Sep 2026",img:"https://i.postimg.cc/sfS9gNL0/image.png",playUrl:"https://wadah4d02.com/"},
 
-                bottomBlend.className =
-                    "sl-bottom-blend";
+ {p:"habanero",provider:"Habanero",game:"Fa Cai Shen",amount:"IDR 96,300,000",date:"01 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ01vMEqEvRxjH7j2F9kmTEFm8chAhzWU5DJn2m5sRKPw&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Koi Gate",amount:"IDR 42,750,000",date:"01 Oct 2026",img:"https://images.weserv.nl/?url=habanerosystems.com/games/SGTheKoiGate",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Hot Hot Fruit",amount:"IDR 18,900,000",date:"02 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSihci_OkLKEnLU2HE8W4BUXc22QMb9531hHAg9ANdzLA&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Fa Cai Shen Deluxe",amount:"IDR 125,600,000",date:"02 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxyKLSCG_k4hl4hYf988QNrAnjOONsyZsntJ_HolA8PQ&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Laughing Buddha",amount:"IDR 67,450,000",date:"03 Oct 2026",img:"https://igamingbusiness.com/img-srv/Yvm9lgjYRkyL5nsadnVhCU0YcU_CGw_gZ9YD0babr2A/resizing_type:auto/width:0/height:0/gravity:sm/enlarge:1/ext:webp/strip_metadata:1/quality:90/cachebuster:filesize-246361/bG9jYWw6Ly8vaWdhbWluZ2J1c2luZXNzLmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMi8wOC9IYWJhbmVyby1MYXVnaGluZy1CdWRkaGEuanBn.webp",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Egyptian Dreams Deluxe",amount:"IDR 31,800,000",date:"03 Oct 2026",img:"https://igamingbusiness.com/img-srv/5CaFWBvOS_FX6KFx6AyL65PW_xb12v--Q73Kpbv-fqU/resizing_type:auto/width:0/height:0/gravity:sm/enlarge:1/ext:webp/strip_metadata:1/quality:90/cachebuster:filesize-120514/bG9jYWw6Ly8vaWdhbWluZ2J1c2luZXNzLmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMC8wOC8zMDB4MTc1LUhhYmFuZXJvLVNsb3RzLU5ld3MtRWd5cHRpYW4tRHJlYW1zLURlbHV4ZS5wbmc.webp",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Ways Of Fortune",amount:"IDR 84,200,000",date:"04 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO2LmHxOPKkPmbeJPaviH71N_jjoX703olp4cn6yfRddtM_CHmK7aXOhE&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Knockout Football",amount:"IDR 53,750,000",date:"04 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShsStiZ8Vcf3so1D-ctFT1oS3wCcHn4MILs0dtkQxMwg&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Dragon Tiger",amount:"IDR 112,500,000",date:"05 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ73BL8F9zMA_pUiyKgLGTawos9vc2Bqypc-4H1g2Wb-A&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Presto!",amount:"IDR 27,350,000",date:"05 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztOejnf13Yl0ymp9nT3mf42IuaNXvJyBj4X7Q_Kn_Q&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Nuwa",amount:"IDR 76,900,000",date:"06 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXif-OTOUl3TgGJ1PzjF3QO5WfRDcnJlhSNK4GntS6bg&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Wild Trucks",amount:"IDR 39,650,000",date:"06 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT68-_3C4qaPm3IJQyZTaVb8sCjAVf1VE0d-CWp82mqMg&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"5 Mariachis",amount:"IDR 22,450,000",date:"07 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaoPMP4Hdrft7ITqwweZZYmGiWc0QolAcfbLjYh2OaQ&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Glam Rock",amount:"IDR 91,700,000",date:"08 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW-Dl3Ehqpvk0KKlvR1RJjzf5zjOFtW4fEfl4bOWOxTB9FXKGWqDls0mQ&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Sky's the Limit",amount:"IDR 35,250,000",date:"08 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq8SovnxR0StB5hKakC6rynf_vJk8xLwG3YW0giizSxg&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Zeus",amount:"IDR 58,600,000",date:"09 Oct 2026",img:"https://igamingbusiness.com/img-srv/K98YQfdY8yFEPPApKbGgJlX378_tEplYGjs_9k4xsfw/resizing_type:auto/width:0/height:0/gravity:sm/enlarge:1/ext:webp/strip_metadata:1/quality:90/cachebuster:filesize-811066/bG9jYWw6Ly8vaWdhbWluZ2J1c2luZXNzLmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMy8xMS9aZXVzLURlbHV4ZV8xMjgweDcyMC5qcGc.webp",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Joker Poker",amount:"IDR 109,350,000",date:"09 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK40iLaPCjiIyYL_3DUpWxt4R8viEZB7c1heKkvcnASw&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Fire Rooster",amount:"IDR 46,850,000",date:"09 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfuacYkOBzM11OiQBFaZLiqKeFBlQXlyFee-_egGt4cQ&s",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Lucky Durian",amount:"IDR 73,550,000",date:"09 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWQ5C9a6d-rZ_yQ4gsfanbY95cIsxI9bnEOd8nwV30xw&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Wild Trucks",amount:"IDR 73,550,000",date:"09 Oct 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgdXsD4Q5dQ73NFbx8YIIGqzI_ZPMzio_apNfZK4qseg&s=10",playUrl:"https://wadah4d02.com/"},
+ {p:"habanero",provider:"Habanero",game:"Fa Cai Shen",amount:"IDR 96,300,000",date:"06 Sep 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgdXsD4Q5dQ73NFbx8YIIGqzI_ZPMzio_apNfZK4qseg&s=10",playUrl:"https://wadah4d02.com/"},
+  
+ {p:"nolimit",provider:"Nolimit City",game:"Mental",amount:"IDR 87,560,000",date:"05 Sep 2026",img:"https://i.postimg.cc/d3pVC6Dv/image.png",playUrl:"https://wadah4d02.com/"},
 
-                premium.appendChild(bottomBlend);
-            }
+ {p:"spade",provider:"Spadegaming",game:"Lucky Koi",amount:"IDR 54,210,000",date:"05 Sep 2026",img:"https://static.casino.guru/pict/682007/Lucky-Koi-Exclusive.png?timestamp=1706599803000&imageDataId=752128&width=320&height=247",playUrl:"https://wadah4d02.com/"},
 
-            /*
-             * Hapus elemen SVG animate pada ponsel.
-             * Ini membuat scrolling jauh lebih ringan.
-             */
-            const isMobile =
-                window.matchMedia(
-                    "(max-width: 768px)"
-                ).matches;
+ {p:"habanero",provider:"Habanero",game:"Hot Hot Fruit",amount:"IDR 31,250,000",date:"04 Sep 2026",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6RkuTP3DPt5BvHw_2mf_SjLF_iEaabCouYW6Uerk6jAvJLc3mMJV662RD&s=10",playUrl:"https://wadah4d02.com/"}
+];
 
-            if (isMobile) {
-                premium.querySelectorAll(
-                    "animate, animateTransform, animateMotion"
-                ).forEach(function (animation) {
-                    animation.remove();
-                });
-            }
+
+const gallery=document.getElementById("gallery");
+const empty=document.getElementById("empty");
+const total=document.getElementById("total");
+const result=document.getElementById("result");
+const searchInput=document.getElementById("searchInput");
+
+
+function render(list){
+
+  gallery.innerHTML="";
+
+  total.textContent=list.length;
+  result.textContent=list.length+" album";
+
+  empty.style.display=list.length?"none":"block";
+
+
+  list.forEach(x=>{
+
+    const card=document.createElement("article");
+
+    card.className="card";
+
+    card.innerHTML=`
+      <div class="photo">
+        <span>BUKTI FOTO</span>
+      </div>
+
+      <div class="info">
+        <div class="provider-name">${x.provider}</div>
+        <div class="game">${x.game}</div>
+        <div class="amount">${x.amount}</div>
+        <div class="date">${x.date}</div>
+      </div>
+    `;
+
+
+    const photo=card.querySelector(".photo");
+
+    const img=new Image();
+
+    img.src=x.img;
+    img.alt=x.game;
+
+
+    img.onload=()=>{
+
+      photo.innerHTML="";
+
+      /* GAMBAR */
+      photo.appendChild(img);
+
+
+      /* =========================
+         TOMBOL VIEW
+      ========================= */
+
+      const view=document.createElement("div");
+
+      view.style.cssText=
+        "position:absolute;" +
+        "right:43px;" +
+        "bottom:7px;" +
+        "background:rgba(0,0,0,.72);" +
+        "color:#fff;" +
+        "border:1px solid #555;" +
+        "border-radius:5px;" +
+        "padding:4px 6px;" +
+        "font-size:7px;" +
+        "cursor:pointer;" +
+        "z-index:10;";
+
+      view.textContent="VIEW";
+
+
+      /* VIEW KLIK */
+      view.onclick=(e)=>{
+        e.stopPropagation();
+        openImage(x.img);
+      };
+
+
+      photo.appendChild(view);
+
+
+      /* =========================
+         TOMBOL PLAY
+      ========================= */
+
+      const play=document.createElement("button");
+
+      play.type="button";
+
+      play.textContent="PLAY";
+
+      play.style.cssText=
+        "position:absolute;" +
+        "right:7px;" +
+        "bottom:7px;" +
+        "background:rgba(0,0,0,.85);" +
+        "color:#fff;" +
+        "border:1px solid #55c7ff;" +
+        "border-radius:5px;" +
+        "padding:4px 8px;" +
+        "font-size:7px;" +
+        "font-weight:800;" +
+        "cursor:pointer;" +
+        "z-index:10;" +
+        "transition:.2s ease;";
+
+
+      /* PLAY KLIK */
+      play.onclick=(e)=>{
+
+        e.stopPropagation();
+
+        if(x.playUrl){
+
+          window.open(
+            x.playUrl,
+            "_blank",
+            "noopener,noreferrer"
+          );
+
         }
 
-        /*
-         * Cegah elemen halaman melebar keluar layar.
-         * Hanya perbaiki elemen yang benar-benar overflow.
-         */
-        if (
-            window.matchMedia(
-                "(max-width: 768px)"
-            ).matches
-        ) {
-            document.querySelectorAll("body *")
-                .forEach(function (element) {
-                    if (
-                        element.id === "slPremiumFinal" ||
-                        element.closest("#slPremiumFinal")
-                    ) {
-                        return;
-                    }
+      };
 
-                    const rect =
-                        element.getBoundingClientRect();
 
-                    if (
-                        rect.width >
-                        document.documentElement.clientWidth + 3
-                    ) {
-                        element.style.setProperty(
-                            "max-width",
-                            "100%",
-                            "important"
-                        );
+      photo.appendChild(play);
 
-                        element.style.setProperty(
-                            "box-sizing",
-                            "border-box",
-                            "important"
-                        );
-                    }
-                });
-        }
+    };
 
-        /*
-         * Pastikan posisi horizontal selalu kembali ke kiri.
-         */
-        if (window.scrollX !== 0) {
-            window.scrollTo({
-                left: 0,
-                top: window.scrollY,
-                behavior: "instant"
-            });
-        }
-    }
 
-    if (document.readyState === "loading") {
-        document.addEventListener(
-            "DOMContentLoaded",
-            pasangSeamlessMobile
-        );
-    } else {
-        pasangSeamlessMobile();
-    }
+    /* KLIK GAMBAR */
+    photo.onclick=()=>openImage(x.img);
 
-    window.addEventListener(
-        "load",
-        pasangSeamlessMobile
+
+    gallery.appendChild(card);
+
+  });
+
+}
+
+
+function filterProvider(p){
+
+  document
+    .querySelectorAll(".provider")
+    .forEach(b=>
+      b.classList.toggle(
+        "active",
+        b.dataset.provider===p
+      )
     );
 
-    window.addEventListener(
-        "resize",
-        pasangSeamlessMobile
+  applyFilter(p,searchInput.value);
+
+}
+
+
+function applyFilter(p,query){
+
+  const q=query.trim().toLowerCase();
+
+  let list=
+    p==="all"
+      ?data
+      :data.filter(x=>x.p===p);
+
+
+  if(q){
+
+    list=list.filter(x=>
+      (
+        x.provider+" "+
+        x.game+" "+
+        x.amount
+      )
+      .toLowerCase()
+      .includes(q)
     );
-})();
+
+  }
+
+
+  render(list);
+
+}
+
+
+document
+  .querySelectorAll(".provider")
+  .forEach(b=>{
+
+    b.addEventListener(
+      "click",
+      ()=>filterProvider(b.dataset.provider)
+    );
+
+  });
+
+
+searchInput.addEventListener(
+  "input",
+  ()=>{
+
+    const active=
+      document
+        .querySelector(".provider.active")
+        .dataset.provider;
+
+    applyFilter(
+      active,
+      searchInput.value
+    );
+
+  }
+);
+
+
+function openImage(src){
+
+  document
+    .getElementById("lightboxImg")
+    .src=src;
+
+  document
+    .getElementById("lightbox")
+    .classList.add("show");
+
+}
+
+
+document
+  .getElementById("close")
+  .onclick=()=>{
+
+    document
+      .getElementById("lightbox")
+      .classList
+      .remove("show");
+
+  };
+
+
+document
+  .getElementById("lightbox")
+  .onclick=e=>{
+
+    if(e.target.id==="lightbox"){
+
+      e.currentTarget
+        .classList
+        .remove("show");
+
+    }
+
+  };
+
+
+render(data);
 </script>
-<!-- SL-SEAMLESS-MOBILE-END -->
-<script src="/panel-public-settings.js"></script>
 </body>
 </html>
